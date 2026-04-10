@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Taiwan Sweepstakes — Kick Off Your Adventure</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1KFW5EHHT4"></script>
+<script>
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-1KFW5EHHT4',{
+    page_location:'https://feeltaiwan.com/kickoff',
+    page_title:'Taiwan Sweepstakes — Kick Off Your Adventure',
+    debug_mode:true
+  });
+</script>
+<style>
+:root{--brand:#ff5629;--brand-dark:#e04a22;--brand-light:#ff562915;--brand-glow:#ff562940;--green:#22c55e;--green-light:#f0fdf4;--green-border:#bbf7d0;--red:#ef4444;--red-light:#fef2f2;--hint-bg:#FFF8E1;--hint-border:#FFE082;--hint-text:#E65100;--text-dark:#1a1a1a;--text-body:#444;--text-mid:#666;--text-light:#999;--text-faint:#ccc;--bg:#f5f5f5;--card:#fff;--border:#e8e8e8;--border-light:#f0f0f0;--disabled-bg:#fafafa;--disabled-text:#bbb;--radius-md:14px;--radius-xl:24px;--font:'Montserrat',sans-serif;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);background:transparent;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;align-items:flex-start;padding:12px;min-height:100vh;}
+img{max-width:100%;display:block;}a{color:var(--brand);text-decoration:none;}
+.screen{width:100%;max-width:800px;margin:0 auto;animation:fadeUp .45s ease both;}
+.screen.quiz{max-width:480px;}
+.hidden{display:none!important;}
+.qs{width:100%;background:var(--card);border-radius:var(--radius-xl);box-shadow:0 4px 20px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);overflow:hidden;margin:0 auto;}
+.qh{padding:14px 18px 6px;display:flex;align-items:center;justify-content:space-between;}.qh img{height:80px;cursor:pointer;}.back-to-grid{font-size:13px;font-weight:600;color:var(--brand);cursor:pointer;white-space:nowrap;}
+.sc{font-size:12px;color:var(--text-light);font-weight:600;}
+.tb{padding:2px 18px 0;display:flex;align-items:center;gap:6px;}.tb .i{font-size:16px;}.tb .n{font-size:13px;font-weight:700;color:var(--brand);}
+.pw{padding:12px 18px 8px;}.pt{height:4px;background:#f0f0f0;border-radius:2px;overflow:hidden;}.pf{height:100%;background:var(--brand);border-radius:2px;transition:width .5s cubic-bezier(.22,1,.36,1);}
+.ii{width:100%;aspect-ratio:16/10;overflow:hidden;position:relative;}.ii img{width:100%;height:100%;object-fit:cover;}.ii .img-cap{position:absolute;bottom:12px;left:12px;padding:4px 10px;background:rgba(0,0,0,.55);border-radius:6px;font-size:11px;font-weight:600;color:#fff;letter-spacing:.02em;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
+.ib{padding:16px 24px 0;}.ibg{display:inline-block;padding:5px 14px;background:var(--brand-light);border-radius:20px;margin-bottom:14px;font-size:12px;font-weight:600;color:var(--brand);letter-spacing:.04em;text-transform:uppercase;}.ib h2{font-size:22px;font-weight:700;margin-bottom:10px;color:var(--text-dark);}.ib p{font-size:15px;line-height:1.75;color:var(--text-mid);}.ibtn{padding:20px 24px 24px;}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;padding:16px;background:var(--brand);color:#fff;border:none;border-radius:var(--radius-md);font-size:16px;font-weight:700;font-family:var(--font);cursor:pointer;box-shadow:0 4px 20px var(--brand-glow);transition:transform .15s;-webkit-tap-highlight-color:transparent;text-decoration:none;flex-direction:column;}.btn:active{transform:scale(.98);}.btn-g{background:var(--green);box-shadow:0 4px 16px rgba(34,197,94,.3);}.btn small{font-size:11px;font-weight:400;margin-top:4px;opacity:.85;}
+.btn-cta{display:inline-flex;align-items:center;justify-content:center;width:auto;padding:16px 32px;}
+.qhd{padding:24px 24px 28px;background:linear-gradient(135deg,var(--brand),#ff5629cc);position:relative;overflow:hidden;}.qhd .c1{position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.08);}.qhd .c2{position:absolute;bottom:-20px;left:30px;width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,.05);}.qn{display:inline-block;padding:4px 12px;background:rgba(255,255,255,.2);border-radius:8px;font-size:11px;font-weight:700;color:#fff;letter-spacing:.08em;margin-bottom:14px;}.qhd h2{font-size:18px;font-weight:700;color:#fff;line-height:1.45;position:relative;}.qw{height:20px;background:linear-gradient(135deg,var(--brand),#ff5629cc);clip-path:ellipse(120% 100% at 50% 0%);margin-top:-1px;}
+.os{padding:8px 24px 0;display:flex;flex-direction:column;gap:8px;}.op{width:100%;padding:14px 16px;border:2px solid var(--border);border-radius:var(--radius-md);font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;text-align:left;transition:all .25s;display:flex;align-items:center;gap:12px;line-height:1.45;background:#fff;-webkit-tap-highlight-color:transparent;}.op .lb{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;background:#f5f5f5;color:#888;transition:all .25s;}.op.correct{border-color:var(--green);background:var(--green-light);color:#15803d;}.op.correct .lb{background:var(--green);color:#fff;}.op.wrong{border-color:var(--red);background:var(--red-light);color:#dc2626;animation:shakeX .35s;}.op.wrong .lb{background:var(--red);color:#fff;}.op.dim{border-color:#eee;background:var(--disabled-bg);color:var(--disabled-text);cursor:default;}.op.dim .lb{background:#f0f0f0;color:#ccc;}.op.used{border-color:#e5e5e5;background:var(--disabled-bg);color:var(--disabled-text);cursor:default;}.op.used .lb{background:#f0f0f0;color:#ccc;}
+.ht{margin:12px 24px 0;padding:14px 16px;background:var(--hint-bg);border-radius:12px;border:1px solid var(--hint-border);font-size:14px;color:var(--hint-text);line-height:1.5;animation:fadeUp .35s;}.fw{padding:12px 24px 24px;animation:fadeUp .4s;}.ff{padding:14px 16px;background:var(--green-light);border-radius:12px;border:1px solid var(--green-border);margin-bottom:14px;font-size:14px;color:#15803d;line-height:1.6;}
+.cmp{text-align:center;padding:48px 24px 32px;animation:fadeUp .6s;}.cmp-t{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--brand),#FFB800);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;box-shadow:0 8px 32px var(--brand-glow);animation:pulseGlow 2s infinite;font-size:44px;}.cmp h2{font-size:24px;font-weight:800;margin-bottom:8px;color:var(--text-dark);}.cmp p{font-size:15px;color:#666;margin-bottom:24px;line-height:1.6;}.cmp p strong{color:var(--brand);}.cmp .eb{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--brand-light);border-radius:14px;border:2px solid #ff562925;margin-bottom:28px;font-size:15px;font-weight:700;color:var(--brand);}.cmp .sub{font-size:13px;color:#aaa;margin-bottom:24px;}
+.qf{padding:10px 18px 14px;text-align:center;border-top:1px solid var(--border-light);font-size:11px;color:var(--text-faint);font-weight:500;letter-spacing:.02em;}
+.cw{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1000;overflow:hidden;}.cp{position:absolute;top:-12px;animation:confettiFall 2s ease-in forwards;}
+.scr{animation:fadeUp .45s ease both;}.scr.hidden{display:none!important;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes shakeX{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes confettiFall{0%{transform:translateY(0) rotate(0);opacity:1}80%{opacity:1}100%{transform:translateY(100vh) rotate(1080deg);opacity:0}}
+@keyframes pulseGlow{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+.intro-container{max-width:800px;margin:0 auto;padding:0;}
+.intro-body{padding:40px 24px;}
+.intro-header{text-align:center;margin-bottom:32px;}.intro-header h1{font-size:32px;font-weight:800;color:var(--text-dark);margin-bottom:12px;line-height:1.2;}.intro-header p{font-size:15px;color:var(--text-mid);line-height:1.7;max-width:540px;margin:0 auto;}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}.cards-grid .card{background:var(--bg);padding:20px 16px;border-radius:var(--radius-md);border:1px solid var(--border);text-align:center;}.cards-grid .card .card-step{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;font-size:14px;font-weight:700;margin-bottom:10px;}.cards-grid .card h3{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:6px;}.cards-grid .card p{font-size:13px;color:var(--text-mid);line-height:1.5;}
+.intro-cta{text-align:center;margin-bottom:8px;}
+.intro-disclaimer{text-align:center;font-size:12px;color:var(--text-light);margin-top:12px;}
+.hub-container{max-width:960px;margin:0 auto;padding:40px 24px;}
+.hub-header{text-align:center;margin-bottom:32px;}.hub-header .back-link{display:inline-block;font-size:14px;color:var(--brand);margin-bottom:16px;cursor:pointer;}.hub-header h2{font-size:24px;font-weight:800;color:var(--text-dark);margin-bottom:8px;}.hub-header p{font-size:15px;color:var(--text-mid);}
+.entry-counter{display:inline-flex;align-items:center;gap:10px;background:var(--brand-light);padding:12px 20px;border-radius:20px;margin:24px 0;font-size:15px;font-weight:700;color:var(--brand);}.counter-bar{height:6px;background:#f0f0f0;border-radius:3px;width:100px;overflow:hidden;}.counter-fill{height:100%;background:var(--brand);border-radius:3px;transition:width .3s;}
+.quiz-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:40px;}
+.quiz-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;cursor:pointer;transition:all .25s;}.quiz-card:hover{border-color:var(--brand);box-shadow:0 4px 12px rgba(255,86,41,.15);}
+.quiz-card.locked{opacity:.5;cursor:default;}.quiz-card.locked:hover{border-color:var(--border);box-shadow:none;}
+.quiz-card-header{padding:16px;text-align:center;}.quiz-card-icon{font-size:32px;margin-bottom:8px;}.quiz-card-title{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:6px;}.quiz-card-subtitle{font-size:12px;color:var(--text-light);}
+.quiz-card-footer{padding:0 16px 16px;text-align:center;}.quiz-badge{display:inline-block;padding:6px 12px;border-radius:12px;font-size:12px;font-weight:700;}.quiz-badge.done{background:var(--green-light);color:#15803d;}.quiz-badge.pending{background:var(--brand-light);color:var(--brand);}.quiz-badge.soon{background:#f5f5f5;color:#aaa;}
+.hub-footer{text-align:center;font-size:12px;color:var(--text-light);padding-top:24px;border-top:1px solid var(--border-light);}.hub-footer a{color:var(--brand);}
+.hub-section-label{grid-column:1/-1;font-size:13px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.06em;padding:8px 0 0;}
+@media(max-width:540px){.cards-grid{grid-template-columns:1fr;}.intro-header h1{font-size:26px;}.quiz-grid{grid-template-columns:1fr;}}
+@media(min-width:541px) and (max-width:767px){.quiz-grid{grid-template-columns:repeat(2,1fr);}}
+@media(min-width:768px){
+.screen.quiz{max-width:960px;}
+.qs{max-width:none;}
+.qs .scr{display:grid;grid-template-columns:1fr 1fr;}
+.qs .scr .ii{aspect-ratio:auto;height:420px;}.qs .scr .ii img{height:100%;object-fit:cover;border-radius:0;}
+.qs .scr .q-right{display:flex;flex-direction:column;}
+.qs .scr .q-right .ib{flex:1;padding:24px 28px 0;}
+.qs .scr .q-right .ibtn{padding:20px 28px 28px;}
+.qs .scr .q-right .qhd{padding:28px 28px 24px;}
+.qs .scr .q-right .qw{display:none;}
+.qs .scr .q-right .os{padding:12px 28px 0;}
+.qs .scr .q-right .ht{margin:12px 28px 0;}
+.qs .scr .q-right .fw{padding:12px 28px 20px;}
+.qs .scr .q-right .op{padding:12px 14px;font-size:13px;}.qs .scr .q-right .op .lb{width:26px;height:26px;}
+.qs .cmp{padding:60px 40px 40px;}
+.qh{padding:14px 24px 6px;}.tb{padding:2px 24px 0;}.pw{padding:12px 24px 8px;}
+.quiz-grid{grid-template-columns:repeat(3,1fr);}
+.register-form-row{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;}
+.intro-header h1{font-size:36px;}
+}
+@media(min-width:1024px){.quiz-grid{grid-template-columns:repeat(4,1fr);}.hub-container{max-width:1080px;}}
+.register-container{max-width:800px;margin:0 auto;padding:40px 24px;}
+.register-header{text-align:center;margin-bottom:36px;}.register-header h2{font-size:24px;font-weight:800;color:var(--text-dark);margin-bottom:8px;}.register-header p{font-size:14px;color:var(--text-mid);}
+.form-group{margin-bottom:20px;}.form-group label{display:block;font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:8px;}.form-group input,.form-group select{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:var(--radius-md);font-size:14px;font-family:var(--font);transition:all .25s;}.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--brand);}
+.form-checkbox{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px;font-size:13px;color:var(--text-mid);line-height:1.5;}.form-checkbox input[type="checkbox"]{width:18px;height:18px;margin-top:2px;cursor:pointer;flex-shrink:0;}
+.form-disclaimer{font-size:13px;color:var(--text-light);text-align:center;margin-bottom:24px;line-height:1.6;}
+.form-footer{text-align:center;font-size:13px;color:var(--text-light);padding-top:20px;border-top:1px solid var(--border-light);}.form-footer a{color:var(--brand);cursor:pointer;text-decoration:underline;}
+.toggle-link{color:var(--brand);cursor:pointer;margin-left:4px;}
+.hub-banner{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border-radius:var(--radius-md);margin-bottom:20px;font-size:14px;line-height:1.55;animation:fadeUp .4s ease both;position:relative;}
+.hub-banner.banner-new{background:#fff8f0;border:1px solid #ffd5c2;color:#c0410a;}
+.hub-banner.banner-returning{background:#f0f7ff;border:1px solid #bdd9ff;color:#1a5fb5;}
+.hub-banner.banner-maxed{background:var(--green-light);border:1px solid var(--green-border);color:#15803d;}
+.hub-banner .bicon{font-size:20px;flex-shrink:0;margin-top:1px;}
+.hub-banner .bmsg{flex:1;}
+.hub-banner .bmsg strong{display:block;margin-bottom:2px;}
+.hub-banner .bclose{font-size:18px;color:inherit;opacity:.5;cursor:pointer;flex-shrink:0;line-height:1;padding:0 2px;background:none;border:none;font-family:inherit;}.hub-banner .bclose:hover{opacity:1;}
+</style>
+</head>
+<body>
+
+<!-- SCREEN 1: INTRO -->
+<div id="screen-intro" class="screen"><div class="intro-container"><div class="intro-body"><div class="intro-header"><h1>Win a Round-Trip Flight to Taiwan</h1><p>We're giving away 3 round-trip tickets (SFO ↔ TPE). Register for a free entry, then take quizzes to earn up to 12 bonus entries — 13 total chances to win.</p></div><div class="cards-grid"><div class="card"><div class="card-step">1</div><h3>Register for Free</h3><p>Sign up to receive your first sweepstakes entry instantly.</p></div><div class="card"><div class="card-step">2</div><h3>Take Quizzes</h3><p>Complete up to 12 Taiwan adventure quizzes. Each earns 1 bonus entry.</p></div><div class="card"><div class="card-step">3</div><h3>Win a Flight</h3><p>3 winners drawn. Each receives one round-trip ticket SFO ↔ TPE.</p></div></div><div class="intro-cta"><a class="btn btn-cta" onclick="handleIntroCTA()">Enter Sweepstakes<small>Explore Taiwan, One Quiz at a Time</small></a></div><div class="intro-disclaimer">No purchase necessary. See <a href="#" onclick="event.preventDefault();" style="color:var(--brand);">Official Rules</a> for details.</div></div></div></div>
+
+<!-- SCREEN 2: REGISTRATION -->
+<div id="screen-register" class="screen hidden"><div class="register-container"><div class="register-header"><h2>Register for Free Entry</h2><p>One step to start your Taiwan adventure</p></div><div id="register-mode-new"><form id="register-form" onsubmit="handleRegisterSubmit(event)"><div class="register-form-row"><div class="form-group"><label for="firstName">First Name *</label><input type="text" id="firstName" name="firstName" required placeholder="First Name"></div><div class="form-group"><label for="lastName">Last Name *</label><input type="text" id="lastName" name="lastName" required placeholder="Last Name"></div></div><div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required placeholder="your@email.com"></div><div class="form-group"><label for="phone">Phone (optional)</label><input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000"></div><div class="form-group"><label for="zipcode">ZIP Code *</label><input type="text" id="zipcode" name="zipcode" required placeholder="12345"></div><div class="form-checkbox"><input type="checkbox" id="age-check" name="age-check" required><label for="age-check" style="margin:0;">I confirm I am 18+ and a US resident</label></div><div class="form-checkbox"><input type="checkbox" id="rules-check" name="rules-check" required><label for="rules-check" style="margin:0;">I agree to the <a href="#" onclick="event.preventDefault();" style="color:var(--brand);">Official Rules</a></label></div><div class="form-checkbox"><input type="checkbox" id="optin-check" name="optin-check"><label for="optin-check" style="margin:0;">Send me exclusive Taiwan travel tips and updates (optional)</label></div><div class="form-disclaimer">No purchase necessary. See <a href="#" onclick="event.preventDefault();" style="color:var(--brand);">Official Rules</a> for details.</div><button type="submit" class="btn" id="register-btn">Register & Get Free Entry →</button></form></div><div id="register-mode-returning" style="display:none;"><form id="returning-form" onsubmit="handleReturningSubmit(event)"><div class="form-group"><label for="returning-email">Email Address</label><input type="email" id="returning-email" name="returning-email" required placeholder="your@email.com"></div><button type="submit" class="btn">Continue Where You Left Off →</button></form></div><div class="form-footer"><span id="toggle-text">Already registered? <span class="toggle-link" onclick="toggleRegisterMode()">Sign in →</span></span></div></div></div>
+
+<!-- SCREEN 3: QUIZ HUB -->
+<div id="screen-hub" class="screen hidden"><div class="hub-container"><div class="hub-header"><div class="back-link" onclick="goTo('intro')">← Back to intro</div><h2>Welcome, <span id="hub-name">Friend</span>!</h2><p>Explore Taiwan, One Quiz at a Time</p></div><div id="hub-banner" class="hub-banner hidden"></div><div style="text-align:center;"><div class="entry-counter"><span>🎫</span><span id="entries-text">0 / 13 entries</span></div><div class="counter-bar" style="margin:12px auto;width:200px;"><div class="counter-fill" id="counter-fill" style="width:0%;"></div></div></div><div class="quiz-grid" id="quiz-grid"></div><div class="hub-footer">⚽ Kick Off Your Adventure in Taiwan · <a href="#">Official Rules</a> · No purchase necessary</div></div></div>
+
+<!-- QUIZ 1: Reach the Summit -->
+<div id="screen-quiz-1" class="screen quiz hidden"><div class="qs">
+  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q1_sc">1/5</span></div>
+  <div class="tb" id="q1_tb"><span class="i">⛰️</span><span class="n">Reach the Summit</span></div>
+  <div class="pw" id="q1_pw"><div class="pt"><div class="pf" id="q1_pf" style="width:20%"></div></div></div>
+
+  <div class="scr" id="q1_s0">
+    <div class="ii"><img src="https://static.wixstatic.com/media/dea9d9_199ffba05fae418eb1e20ff85c8587bc~mv2.png" alt="Yushan Main Peak"><span class="img-cap">Yushan Main Peak</span></div>
+    <div class="q-right">
+      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Taiwan's Jade Mountain</h2><p>Yushan (Jade Mountain) rises to 3,952 meters (12,966 feet). It is Taiwan's highest peak and the tallest in Northeast Asia.</p><p style="margin-top:12px">Many of Taiwan's mountain routes, including Yushan, require permits to help manage access. Some popular routes and mountain huts are assigned by lottery about a month in advance.</p></div>
+      <div class="ibtn"><button class="btn" onclick="go_1()">Continue →</button></div>
+    </div>
+  </div>
+
+  <div class="scr hidden" id="q1_s1">
+    <div class="ii"><img src="https://static.wixstatic.com/media/dea9d9_6ca8725241f941579142676a9f0eccb6~mv2.png" loading="lazy" alt="Hehuanshan (Hehuan Mt.)"><span class="img-cap">Hehuanshan (Hehuan Mt.)</span></div>
+    <div class="q-right">
+      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>The Baiyue Challenge</h2><p>Taiwan has 268 peaks above 3,000 meters (nearly 10,000 feet), packing serious mountain terrain into a small island. The most iconic hiking goal is the Baiyue, Taiwan's Hundred Peaks, a celebrated checklist of 100 signature summits.</p><p style="margin-top:12px">From knife-edge ridgelines to wide-open alpine views, every peak feels like a new chapter. Choose your first Baiyue summit and kick off your Taiwan adventure.</p></div>
+      <div class="ibtn"><button class="btn" onclick="go_1()">Continue →</button></div>
+    </div>
+  </div>
+
+  <div class="scr hidden" id="q1_s2">
+    <div class="ii"><img src="https://static.wixstatic.com/media/dea9d9_09abe05d1c01451f8929c444a99ae295~mv2.png" loading="lazy" alt="Yushan"><span class="img-cap">Yushan</span></div>
+    <div class="q-right">
+      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>How tall is Yushan, Taiwan's highest peak and the tallest in Northeast Asia?</h2></div><div class="qw"></div>
+      <div class="os" id="q1_o2">
+        <button class="op" onclick="ans_1(2,0,3)"><span class="lb">A</span><span>2,476m (8,123 ft)</span></button>
+        <button class="op" onclick="ans_1(2,1,3)"><span class="lb">B</span><span>2,852m (9,357 ft)</span></button>
+        <button class="op" onclick="ans_1(2,2,3)"><span class="lb">C</span><span>3,416m (11,207 ft)</span></button>
+        <button class="op" onclick="ans_1(2,3,3)"><span class="lb">D</span><span>3,952m (12,966 ft)</span></button>
+      </div>
+      <div class="ht hidden" id="q1_h2"><strong>Hint:</strong> It is taller than Japan's famous Mt. Fuji! 🗻</div>
+      <div class="fw hidden" id="q1_f2"><div class="ff"><strong>🎉 Correct!</strong> At 3,952m, Yushan stands taller than any peak in Japan, Korea, or Southeast Asia. And yes, it is a hike you can actually do.</div><button class="btn btn-g" onclick="go_1()">Continue →</button></div>
+      <div style="height:20px" id="q1_sp2"></div>
+    </div>
+  </div>
+
+  <div class="scr hidden" id="q1_s3">
+    <div class="ii"><img src="https://static.wixstatic.com/media/dea9d9_1cddb54f2cf54aa3a0a2ac7e006d7cbb~mv2.png" loading="lazy" alt="Dabajianshan (Dabajian Mt.)"><span class="img-cap">Dabajianshan (Dabajian Mt.)</span></div>
+    <div class="q-right">
+      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>How many peaks in Taiwan exceed 3,000 meters?</h2></div><div class="qw"></div>
+      <div class="os" id="q1_o3">
+        <button class="op" onclick="ans_1(3,0,3)"><span class="lb">A</span><span>36 peaks</span></button>
+        <button class="op" onclick="ans_1(3,1,3)"><span class="lb">B</span><span>48 peaks</span></button>
+        <button class="op" onclick="ans_1(3,2,3)"><span class="lb">C</span><span>100 peaks</span></button>
+        <button class="op" onclick="ans_1(3,3,3)"><span class="lb">D</span><span>268 peaks</span></button>
+      </div>
+      <div class="ht hidden" id="q1_h3"><strong>Hint:</strong> Taiwan packs serious altitude into a small island. ⛰️</div>
+      <div class="fw hidden" id="q1_f3"><div class="ff"><strong>🎉 Correct!</strong> Taiwan's 268 peaks above 3,000m make it one of the most mountainous islands on Earth.</div><button class="btn btn-g" onclick="go_1()">Continue →</button></div>
+      <div style="height:20px" id="q1_sp3"></div>
+    </div>
+  </div>
+
+  <div class="scr hidden" id="q1_s4">
+    <div class="ii"><img src="https://static.wixstatic.com/media/dea9d9_a9094c5cfa774699bc10a52590900ca9~mv2.png" loading="lazy" alt="Jiaming Lake"><span class="img-cap">Jiaming Lake</span></div>
+    <div class="q-right">
+      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>How are permits for popular mountain trails like Yushan typically allocated?</h2></div><div class="qw"></div>
+      <div class="os" id="q1_o4">
+        <button class="op" onclick="ans_1(4,0,1)"><span class="lb">A</span><span>First come, first served online booking</span></button>
+        <button class="op" onclick="ans_1(4,1,1)"><span class="lb">B</span><span>A lottery system, with a separate first-come-first-served quota for international visitors on weekdays</span></button>
+        <button class="op" onclick="ans_1(4,2,1)"><span class="lb">C</span><span>Only available through licensed tour operators</span></button>
+        <button class="op" onclick="ans_1(4,3,1)"><span class="lb">D</span><span>No permits needed, trails are open to everyone</span></button>
+      </div>
+      <div class="ht hidden" id="q1_h4"><strong>Hint:</strong> There is a weekday quota for international visitors that does not require the lottery if you apply early enough. 🌏</div>
+      <div class="fw hidden" id="q1_f4"><div class="ff"><strong>🎉 Correct!</strong> Popular routes use a lottery, but international visitors can apply for a separate weekday quota on a first-come-first-served basis. Apply early and you can skip the lottery entirely.</div><button class="btn btn-g" onclick="go_1()">Continue →</button></div>
+      <div style="height:20px" id="q1_sp4"></div>
+    </div>
+  </div>
+
+  <div class="scr hidden" id="q1_s5">
+    <div class="cmp">
+      <div class="cmp-t">✈️</div>
+      <h2>Quiz Complete!</h2>
+      <p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p>
+      <div class="eb">🎫 +1 BONUS ENTRY EARNED</div>
+      <p class="sub" id="q1_remaining">11 more quizzes available — keep exploring Taiwan!</p>
+      <button class="btn" onclick="goTo('hub')">Back to Quizzes →</button>
+    </div>
+  </div>
+  <div class="qf">⚽ Kick Off Your Adventure in Taiwan</div>
+</div></div>
+
+<!-- QUIZZES 2-12: Coming Soon placeholders -->
+<div id="screen-quiz-2" class="screen quiz hidden"><div class="qs">
+  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q2_sc">1/5</span></div>
+  <div class="tb" id="q2_tb"><span class="i">🚲</span><span class="n">Ride Around the Island</span></div>
+  <div class="pw" id="q2_pw"><div class="pt"><div class="pf" id="q2_pf" style="width:20%"></div></div></div>
+
+  <div class="scr" id="q2_s0">
+    <div class="ii"><img src="https://static.wixstatic.com/media/dea9d9_7c9cd4ed94f844a591debd4f3e61fdbb~mv2.png" alt="Xinwei Scenic Bridge, Kaohsiung"><span class="img-cap">Xinwei Scenic Bridge, Kaohsiung</span></div>
+    <div class="q-right">
+      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Taiwan's Cycling Route No. 1</h2><p>The route circles the entire island, roughly 960 km (about 600 miles) of dedicated bike paths along the coastline, through rice paddies, past hot springs, and over mountain terrain.</p><p style="margin-top:12px">Riders typically complete it in 9 to 12 days. The route is fully sign-posted with rest stops and bike repair stations every few kilometers.</p></div>
+      <div class="ibtn"><button class="btn" onclick="go_2()">Continue →</button></div>
+    </div>
+  </div>
+
+  <div class="scr hidden" id="q2_s1">
+    <div class="ii"><img src="https://static.wixstatic.com/media/dea9d9_e755b8c165c24ae8a4ad95368e59afa6~mv2.png" loading="lazy" alt="Sun Moon Lake, Nantou"><span class="img-cap">Sun Moon Lake, Nantou</span></div>
+    <div class="q-right">
+      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Sun Moon Lake: A World-Class Cycling Route</h2><p>The roughly 30 km (18-mile) loop around Sun Moon Lake was named one of the world's top 10 most beautiful bike paths by CNN Travel. The lakeside path hugs the shoreline through forests, passing indigenous Thao villages and grand temples.</p><p style="margin-top:12px">Every autumn, the Sun Moon Lake Come! Bikeday festival draws thousands of cyclists.</p></div>
+      <div class="ibtn"><button class="btn" onclick="go_2()">Continue →</button></div>
+    </div>
+  </div>
+
+  <div class="scr hidden" id="q2_s2">
+    <div class="ii"><img src="https://static.wixstatic.com/media/dea9d9_45f18b5c9886473cb3e71fc6989a8419~mv2.png" loading="lazy" alt="Mr. Brown Blvd., Taitung"><span class="img-cap">Mr. Brown Blvd., Taitung</span></div>
+    <div class="q-right">
+      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>How long is Taiwan's Cycling Route No. 1 that circles the entire island?</h2></div><div class="qw"></div>
+      <div class="os" id="q2_o2">
+        <button class="op" onclick="ans_2(2,0,3)"><span class="lb">A</span><span>350 km (about 220 miles)</span></button>
+        <button class="op" onclick="ans_2(2,1,3)"><span class="lb">B</span><span>520 km (about 320 miles)</span></button>
+        <button class="op" onclick="ans_2(2,2,3)"><span class="lb">C</span><span>740 km (about 460 miles)</span></button>
+        <button class="op" onclick="ans_2(2,3,3)"><span class="lb">D</span><span>960 km (about 600 miles)</span></button>
+      </div>
+      <div class="ht hidden" id="q2_h2"><strong>Hint:</strong> Riders typically complete it in 9 to 12 days, so do the math! 🚴</div>
+      <div class="fw hidden" id="q2_f2"><div class="ff"><strong>🎉 Correct!</strong> One of the world's great cycling circuits, fully sign-posted with rest stops the whole way. One island, one ride, total freedom.</div><button class="btn btn-g" onclick="go_2()">Continue →</button></div>
+      <div style="height:20px" id="q2_sp2"></div>
+    </div>
+  </div>
+
+  <div class="scr hidden" id="q2_s3">
+    <div class="ii"><img src="https://static.wixstatic.com/media/dea9d9_6430428cc2aa49798c96fe02b23acebd~mv2.png" loading="lazy" alt="Sun Moon Lake"><span class="img-cap">Sun Moon Lake</span></div>
+    <div class="q-right">
+      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>Which of the following is true about the Sun Moon Lake cycling route?</h2></div><div class="qw"></div>
+      <div class="os" id="q2_o3">
+        <button class="op" onclick="ans_2(3,0,3)"><span class="lb">A</span><span>It was ranked among the world's top 10 most beautiful bike paths by CNN Travel</span></button>
+        <button class="op" onclick="ans_2(3,1,3)"><span class="lb">B</span><span>The route passes through indigenous Thao villages along the lakeshore</span></button>
+        <button class="op" onclick="ans_2(3,2,3)"><span class="lb">C</span><span>Every autumn, a cycling festival draws thousands of riders to the lake</span></button>
+        <button class="op" onclick="ans_2(3,3,3)"><span class="lb">D</span><span>All of the above</span></button>
+      </div>
+      <div class="ht hidden" id="q2_h3"><strong>Hint:</strong> One of these alone would make it worth the trip, but Sun Moon Lake delivers on all fronts!</div>
+      <div class="fw hidden" id="q2_f3"><div class="ff"><strong>🎉 Correct!</strong> CNN Travel ranked it among the world's most beautiful bike paths, the Thao community adds cultural depth, and the annual Come! Bikeday festival makes autumn the perfect time to ride.</div><button class="btn btn-g" onclick="go_2()">Continue →</button></div>
+      <div style="height:20px" id="q2_sp3"></div>
+    </div>
+  </div>
+
+  <div class="scr hidden" id="q2_s4">
+    <div class="ii"><img src="https://static.wixstatic.com/media/dea9d9_379e8541b0544d2fbb0cb6da9c7e299f~mv2.png" loading="lazy" alt="Taiwan KOM Challenge 2026"><span class="img-cap">Taiwan KOM Challenge 2026</span></div>
+    <div class="q-right">
+      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>The Taiwan KOM (King of the Mountain) Challenge is one of the world's toughest single-day cycling races. How high does the route climb?</h2></div><div class="qw"></div>
+      <div class="os" id="q2_o4">
+        <button class="op" onclick="ans_2(4,0,3)"><span class="lb">A</span><span>1,200 m (about 3,900 ft)</span></button>
+        <button class="op" onclick="ans_2(4,1,3)"><span class="lb">B</span><span>2,000 m (about 6,500 ft)</span></button>
+        <button class="op" onclick="ans_2(4,2,3)"><span class="lb">C</span><span>2,600 m (about 8,500 ft)</span></button>
+        <button class="op" onclick="ans_2(4,3,3)"><span class="lb">D</span><span>3,275 m (about 10,745 ft)</span></button>
+      </div>
+      <div class="ht hidden" id="q2_h4"><strong>Hint:</strong> The finish line is at Wuling Pass, one of the highest paved roads in Asia!</div>
+      <div class="fw hidden" id="q2_f4"><div class="ff"><strong>🎉 Correct!</strong> The KOM climbs from near sea level to Wuling Pass at 3,275 m in a single day. But Taiwan's cycling isn't all extreme climbs. Flat riverside paths and gentle valley routes make it just as welcoming for casual riders.</div><button class="btn btn-g" onclick="go_2()">Continue →</button></div>
+      <div style="height:20px" id="q2_sp4"></div>
+    </div>
+  </div>
+
+  <div class="scr hidden" id="q2_s5">
+    <div class="cmp">
+      <div class="cmp-t">✈️</div>
+      <h2>Quiz Complete!</h2>
+      <p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p>
+      <div class="eb">🎫 +1 BONUS ENTRY EARNED</div>
+      <p class="sub" id="q2_remaining">10 more quizzes available — keep exploring Taiwan!</p>
+      <button class="btn" onclick="goTo('hub')">Back to Quizzes →</button>
+    </div>
+  </div>
+  <div class="qf">⚽ Kick Off Your Adventure in Taiwan</div>
+</div></div>
+<div id="screen-quiz-3" class="screen quiz hidden"><div class="qs"><div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span></div><div class="cmp"><div class="cmp-t">🏃</div><h2>Coming Soon</h2><p>Run the Races quiz is being prepared.</p><button class="btn" onclick="goTo('hub')" style="margin-top:16px;">Back to Quizzes →</button></div><div class="qf">⚽ Kick Off Your Adventure in Taiwan</div></div></div>
+<div id="screen-quiz-4" class="screen quiz hidden"><div class="qs"><div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span></div><div class="cmp"><div class="cmp-t">🏄</div><h2>Coming Soon</h2><p>Dive Into the Blue quiz is being prepared.</p><button class="btn" onclick="goTo('hub')" style="margin-top:16px;">Back to Quizzes →</button></div><div class="qf">⚽ Kick Off Your Adventure in Taiwan</div></div></div>
+<div id="screen-quiz-5" class="screen quiz hidden"><div class="qs"><div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span></div><div class="cmp"><div class="cmp-t">🧗</div><h2>Coming Soon</h2><p>Chase the Thrill quiz is being prepared.</p><button class="btn" onclick="goTo('hub')" style="margin-top:16px;">Back to Quizzes →</button></div><div class="qf">⚽ Kick Off Your Adventure in Taiwan</div></div></div>
+<div id="screen-quiz-6" class="screen quiz hidden"><div class="qs"><div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span></div><div class="cmp"><div class="cmp-t">🌲</div><h2>Coming Soon</h2><p>National Parks quiz is being prepared.</p><button class="btn" onclick="goTo('hub')" style="margin-top:16px;">Back to Quizzes →</button></div><div class="qf">⚽ Kick Off Your Adventure in Taiwan</div></div></div>
+<div id="screen-quiz-7" class="screen quiz hidden"><div class="qs"><div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span></div><div class="cmp"><div class="cmp-t">🚄</div><h2>Coming Soon</h2><p>Ride the Rails quiz is being prepared.</p><button class="btn" onclick="goTo('hub')" style="margin-top:16px;">Back to Quizzes →</button></div><div class="qf">⚽ Kick Off Your Adventure in Taiwan</div></div></div>
+<div id="screen-quiz-8" class="screen quiz hidden"><div class="qs"><div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span></div><div class="cmp"><div class="cmp-t">🏙️</div><h2>Coming Soon</h2><p>Old Streets, New Cities quiz is being prepared.</p><button class="btn" onclick="goTo('hub')" style="margin-top:16px;">Back to Quizzes →</button></div><div class="qf">⚽ Kick Off Your Adventure in Taiwan</div></div></div>
+<div id="screen-quiz-9" class="screen quiz hidden"><div class="qs"><div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span></div><div class="cmp"><div class="cmp-t">🍜</div><h2>Coming Soon</h2><p>Food Adventure quiz is being prepared.</p><button class="btn" onclick="goTo('hub')" style="margin-top:16px;">Back to Quizzes →</button></div><div class="qf">⚽ Kick Off Your Adventure in Taiwan</div></div></div>
+<div id="screen-quiz-10" class="screen quiz hidden"><div class="qs"><div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span></div><div class="cmp"><div class="cmp-t">🫖</div><h2>Coming Soon</h2><p>Experience Different Cultures quiz is being prepared.</p><button class="btn" onclick="goTo('hub')" style="margin-top:16px;">Back to Quizzes →</button></div><div class="qf">⚽ Kick Off Your Adventure in Taiwan</div></div></div>
+<div id="screen-quiz-11" class="screen quiz hidden"><div class="qs"><div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span></div><div class="cmp"><div class="cmp-t">🪷</div><h2>Coming Soon</h2><p>Faith on Every Corner quiz is being prepared.</p><button class="btn" onclick="goTo('hub')" style="margin-top:16px;">Back to Quizzes →</button></div><div class="qf">⚽ Kick Off Your Adventure in Taiwan</div></div></div>
+<div id="screen-quiz-12" class="screen quiz hidden"><div class="qs"><div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span></div><div class="cmp"><div class="cmp-t">🌿</div><h2>Coming Soon</h2><p>Rest & Restore quiz is being prepared.</p><button class="btn" onclick="goTo('hub')" style="margin-top:16px;">Back to Quizzes →</button></div><div class="qf">⚽ Kick Off Your Adventure in Taiwan</div></div></div>
+
+<div class="cw hidden" id="conf"></div>
+
+<script>
+var API_URL='https://script.google.com/macros/s/AKfycbyhJiJyyL_7f2bMeserpTD8HrIIiAfIFXj6WznnqQEWbKduOOk1bR-UF1wXx5PZnJLrxQ/exec';
+var currentUser=null;
+var TOTAL_QUIZZES=12;
+var TOTAL_ENTRIES=TOTAL_QUIZZES+1;
+
+var quizData={
+  1:{title:'Reach the Summit',icon:'⛰️',section:'land',ready:true},
+  2:{title:'Ride Around the Island',icon:'🚲',section:'land',ready:true},
+  3:{title:'Run the Races',icon:'🏃',section:'land',ready:false},
+  4:{title:'Dive Into the Blue',icon:'🏄',section:'land',ready:false},
+  5:{title:'Chase the Thrill',icon:'🧗',section:'land',ready:false},
+  6:{title:'National Parks',icon:'🌲',section:'land',ready:false},
+  7:{title:'Ride the Rails',icon:'🚄',section:'people',ready:false},
+  8:{title:'Old Streets, New Cities',icon:'🏙️',section:'people',ready:false},
+  9:{title:'Food Adventure',icon:'🍜',section:'people',ready:false},
+  10:{title:'Experience Different Cultures',icon:'🫖',section:'people',ready:false},
+  11:{title:'Faith on Every Corner',icon:'🪷',section:'people',ready:false},
+  12:{title:'Rest & Restore',icon:'🌿',section:'people',ready:false}
+};
+
+function saveLocal(){if(currentUser)localStorage.setItem('tw_user',JSON.stringify(currentUser));}
+function loadLocal(){try{var u=localStorage.getItem('tw_user');return u?JSON.parse(u):null;}catch(e){return null;}}
+function handleIntroCTA(){if(currentUser){renderHub();goTo('hub');}else{goTo('register');}}
+
+function goTo(screen,quizId){
+  document.querySelectorAll('.screen').forEach(function(s){s.classList.add('hidden');});
+  var target=quizId?'quiz-'+quizId:screen;
+  var el=document.getElementById('screen-'+target);
+  if(el){
+    el.classList.remove('hidden');
+    if(screen==='hub')renderHub();
+    if(quizId&&quizData[quizId].ready){setTimeout(function(){initQuiz(quizId);},50);}
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+}
+
+function toggleRegisterMode(){var newMode=document.getElementById('register-mode-new');var retMode=document.getElementById('register-mode-returning');var tgl=document.querySelector('.toggle-link');var hdr=document.querySelector('.register-header');if(retMode.style.display==='none'){retMode.style.display='block';newMode.style.display='none';tgl.textContent='New here? Register →';hdr.querySelector('h2').textContent='Welcome Back';hdr.querySelector('p').textContent='Enter your email to continue where you left off';}else{retMode.style.display='none';newMode.style.display='block';tgl.textContent='Sign in →';hdr.querySelector('h2').textContent='Register for Free Entry';hdr.querySelector('p').textContent='One step to start your Taiwan adventure';}}
+
+function handleReturningSubmit(e){
+  e.preventDefault();
+  var em=document.getElementById('returning-email').value.trim();
+  if(!em){alert('Please enter your email');return;}
+  var btn=e.target.querySelector('button');
+  btn.textContent='Looking up…';btn.disabled=true;
+  if(API_URL.indexOf('YOUR_')===0){
+    currentUser={email:em,name:'Friend',totalEntries:1,quizzesCompleted:[],_banner:'returning',_synced:true};
+    saveLocal();renderHub();goTo('hub');return;
+  }
+  fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'lookup',email:em})})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.found){
+        currentUser={email:em,name:d.name||'Friend',totalEntries:d.totalEntries||1,quizzesCompleted:d.quizzesCompleted||[],_banner:'returning',_synced:true};
+        saveLocal();renderHub();goTo('hub');
+      }else{
+        btn.textContent='Continue Where You Left Off →';btn.disabled=false;
+        alert('Email not found. Please register first.');toggleRegisterMode();
+      }
+    })
+    .catch(function(){
+      btn.textContent='Continue Where You Left Off →';btn.disabled=false;
+      alert('Connection error. Please try again.');
+    });
+}
+
+function handleRegisterSubmit(e){
+  e.preventDefault();
+  var fn=document.getElementById('firstName').value.trim();
+  var ln=document.getElementById('lastName').value.trim();
+  var em=document.getElementById('email').value.trim();
+  var ph=document.getElementById('phone').value.trim();
+  var zc=document.getElementById('zipcode').value.trim();
+  var age=document.getElementById('age-check').checked;
+  var rules=document.getElementById('rules-check').checked;
+  var optIn=document.getElementById('optin-check').checked;
+  if(!fn||!ln||!em||!zc||!age||!rules){alert('Please fill all required fields and agree to terms');return;}
+
+  // Optimistic: go to hub instantly, sync in background
+  var regPayload={action:'register',email:em,firstName:fn,lastName:ln,phone:ph,zipCode:zc,age:age,rules:rules,optIn:optIn};
+  currentUser={email:em,name:fn+' '+ln,totalEntries:1,quizzesCompleted:[],_banner:'new',_synced:false,_regData:regPayload};
+  gtag('event','sign_up',{method:'sweepstakes_form'});
+  saveLocal();renderHub();goTo('hub');
+
+  if(API_URL.indexOf('YOUR_')===0){currentUser._synced=true;saveLocal();return;}
+  fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(regPayload)})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.exists){
+        // email already in sheet — restore their real data, flip to returning banner
+        currentUser.totalEntries=d.totalEntries||1;
+        currentUser.quizzesCompleted=d.quizzesCompleted||[];
+        currentUser._banner='returning';
+      }
+      currentUser._synced=true;currentUser._regData=null;
+      saveLocal();renderHub();
+    })
+    .catch(function(){/* silent — will retry before first quiz submit */});
+}
+
+function renderHub(){
+  if(!currentUser){goTo('intro');return;}
+  var firstName=currentUser.name.split(' ')[0];
+  document.getElementById('hub-name').textContent=firstName;
+  var entries=currentUser.totalEntries||1;
+  document.getElementById('entries-text').textContent=entries+' / '+TOTAL_ENTRIES+' entries';
+  document.getElementById('counter-fill').style.width=(entries/TOTAL_ENTRIES*100)+'%';
+
+  // Banner
+  var banner=document.getElementById('hub-banner');
+  if(currentUser._banner){
+    var type=currentUser._banner;
+    var icon,cls,title,msg;
+    if(type==='new'){
+      icon='🎉';cls='banner-new';title="You're in!";
+      msg='Your first entry is confirmed. Now explore Taiwan and earn up to 12 more.';
+    }else if(entries>=TOTAL_ENTRIES){
+      icon='🏆';cls='banner-maxed';title="You've maxed out your entries!";
+      msg='13 chances to win. Fingers crossed and good luck!';
+    }else{
+      icon='👋';cls='banner-returning';title='Welcome back, '+firstName+'!';
+      msg='You have '+entries+(entries===1?' entry':' entries')+' so far. Keep going!';
+    }
+    banner.className='hub-banner '+cls;
+    banner.innerHTML='<span class="bicon">'+icon+'</span><span class="bmsg"><strong>'+title+'</strong>'+msg+'</span><button class="bclose" onclick="dismissBanner()">✕</button>';
+    banner.classList.remove('hidden');
+    currentUser._banner=null;saveLocal();
+    if(window._bannerTimer)clearTimeout(window._bannerTimer);
+    window._bannerTimer=setTimeout(dismissBanner,5000);
+  }
+
+  var grid=document.getElementById('quiz-grid');
+  grid.innerHTML='';
+
+  for(var i=1;i<=TOTAL_QUIZZES;i++){
+    var q=quizData[i];
+    var done=currentUser.quizzesCompleted.indexOf(i)>=0;
+    var card=document.createElement('div');
+    card.className='quiz-card'+((!q.ready&&!done)?' locked':'');
+    card.onclick=function(qid){return function(){goTo('quiz',qid);};}(i);
+
+    var badge='';
+    if(done){badge='<span class="quiz-badge done">✓ DONE</span>';}
+    else if(q.ready){badge='<span class="quiz-badge pending">+1 ENTRY</span>';}
+    else{badge='<span class="quiz-badge soon">COMING SOON</span>';}
+
+    card.innerHTML='<div class="quiz-card-header"><div class="quiz-card-icon">'+q.icon+'</div><div class="quiz-card-title">'+q.title+'</div><div class="quiz-card-subtitle">5 pages · 3 questions</div></div><div class="quiz-card-footer">'+badge+'</div>';
+    grid.appendChild(card);
+  }
+}
+
+function initQuiz(qId){
+  var cur=0,TOT=5;
+  var wrongs={2:new Set(),3:new Set(),4:new Set()};
+  var pfx='q'+qId+'_';
+  var qTitle=quizData[qId].title;
+  gtag('event','quiz_start',{quiz_id:qId,quiz_title:qTitle});
+
+  function show(n){
+    var els=document.querySelectorAll('#screen-quiz-'+qId+' .scr');
+    els.forEach(function(s){s.classList.add('hidden');});
+    var el=document.getElementById(pfx+'s'+n);
+    if(el){el.classList.remove('hidden');el.style.animation='none';el.offsetHeight;el.style.animation='fadeUp .45s ease both';}
+    if(n===0||n===1){gtag('event','quiz_page_view',{quiz_id:qId,quiz_title:qTitle,info_page:n+1});}
+    if(n>=2&&n<=4){gtag('event','quiz_question_view',{quiz_id:qId,quiz_title:qTitle,question:n-1});}
+    if(n<=4){
+      document.getElementById(pfx+'sc').textContent=(n+1)+'/'+TOT;
+      document.getElementById(pfx+'pf').style.width=((n+1)/TOT*100)+'%';
+      document.getElementById(pfx+'tb').classList.remove('hidden');
+      document.getElementById(pfx+'pw').classList.remove('hidden');
+      document.getElementById(pfx+'sc').classList.remove('hidden');
+    }else{
+      document.getElementById(pfx+'tb').classList.add('hidden');
+      document.getElementById(pfx+'pw').classList.add('hidden');
+      document.getElementById(pfx+'sc').classList.add('hidden');
+    }
+  }
+
+  function go(){cur++;if(cur>TOT)cur=TOT;show(cur);if(cur===5){submitQuizAPI(qId);boom();}window.scrollTo({top:0,behavior:'smooth'});}
+
+  function ans(scr,idx,ci){
+    if(wrongs[scr].has(idx))return;
+    var btns=document.querySelectorAll('#screen-quiz-'+qId+' #'+pfx+'o'+scr+' .op');
+    if(idx===ci){
+      btns.forEach(function(b,i){if(i===idx){b.className='op correct';b.querySelector('.lb').textContent='✓';}else{b.className='op dim';}b.onclick=null;});
+      document.getElementById(pfx+'h'+scr).classList.add('hidden');
+      document.getElementById(pfx+'sp'+scr).classList.add('hidden');
+      setTimeout(function(){document.getElementById(pfx+'f'+scr).classList.remove('hidden');},400);
+    }else{
+      wrongs[scr].add(idx);btns[idx].className='op wrong';btns[idx].querySelector('.lb').textContent='✗';
+      setTimeout(function(){btns[idx].className='op used';btns[idx].onclick=null;},800);
+      document.getElementById(pfx+'h'+scr).classList.remove('hidden');
+    }
+  }
+
+  window['go_'+qId]=go;
+  window['ans_'+qId]=function(s,i,c){ans(s,i,c);};
+  show(0);
+}
+
+function dismissBanner(){
+  var b=document.getElementById('hub-banner');
+  if(b){b.classList.add('hidden');}
+  if(window._bannerTimer){clearTimeout(window._bannerTimer);window._bannerTimer=null;}
+}
+
+function fireQuizComplete(qId){
+  if(API_URL.indexOf('YOUR_')===0)return;
+  fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'quiz_complete',email:currentUser.email,quizId:qId,quizTitle:quizData[qId].title})}).catch(function(){});
+}
+
+function submitQuizAPI(qId){
+  if(!currentUser)return;
+  if(currentUser.quizzesCompleted.indexOf(qId)<0){
+    currentUser.quizzesCompleted.push(qId);
+    currentUser.totalEntries=(currentUser.quizzesCompleted.length+1);
+    saveLocal();
+    gtag('event','quiz_complete',{quiz_id:qId,quiz_title:quizData[qId].title,total_entries:currentUser.totalEntries});
+  }
+  var remaining=TOTAL_QUIZZES-currentUser.quizzesCompleted.length;
+  if(remaining<0)remaining=0;
+  var remEl=document.getElementById('q'+qId+'_remaining');
+  if(remEl)remEl.textContent=remaining+(remaining===1?' more quiz available':' more quizzes available — keep exploring Taiwan!');
+  // If registration hasn't synced yet, retry it first then submit quiz
+  if(!currentUser._synced&&currentUser._regData){
+    fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(currentUser._regData)})
+      .then(function(r){return r.json();})
+      .then(function(){currentUser._synced=true;currentUser._regData=null;saveLocal();fireQuizComplete(qId);})
+      .catch(function(){fireQuizComplete(qId);});
+  }else{
+    fireQuizComplete(qId);
+  }
+}
+
+function boom(){var w=document.getElementById('conf');w.innerHTML='';w.classList.remove('hidden');var cols=['#ff5629','#FFD700','#4CAF50','#2196F3','#E91E63','#FF9800','#9C27B0'];for(var i=0;i<50;i++){var p=document.createElement('div');p.className='cp';var sz=5+Math.random()*7;p.style.left=(Math.random()*100)+'%';p.style.width=sz+'px';p.style.height=(i%3===0?sz:sz*1.6)+'px';p.style.background=cols[i%cols.length];p.style.borderRadius=(i%4===0)?'50%':'2px';p.style.transform='rotate('+(Math.random()*360)+'deg)';p.style.animationDelay=(Math.random()*.6)+'s';p.style.animationDuration=(1.5+Math.random()*1.5)+'s';w.appendChild(p);}}
+
+currentUser=loadLocal();
+if(currentUser){renderHub();goTo('hub');}else{goTo('intro');}
+
+// DEV RESET — remove before launch
+(function(){
+  var btn=document.createElement('button');
+  btn.textContent='🔄 Reset';
+  btn.style.cssText='position:fixed;bottom:16px;right:16px;z-index:9999;padding:8px 14px;background:#1a1a1a;color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;opacity:.7;font-family:inherit;';
+  btn.onmouseenter=function(){this.style.opacity='1';};
+  btn.onmouseleave=function(){this.style.opacity='.7';};
+  btn.onclick=function(){localStorage.removeItem('tw_user');location.reload();};
+  document.body.appendChild(btn);
+})();
+</script>
+</body>
+</html>
