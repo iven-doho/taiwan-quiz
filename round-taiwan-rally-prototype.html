@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Round Taiwan Rally — Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- GA: add production gtag config here before launch (same pattern as quiz index.html) -->
+<style>
+:root{
+  /* ── vintage travel-poster palette ── */
+  --brand:#c9502c;--brand-dark:#a83f21;--brand-light:#c9502c14;--brand-glow:#c9502c33;
+  --green:#4e7d43;--green-light:#eef0e0;--green-border:#c6cfa8;
+  --red:#a63a2e;--red-light:#f6e8e2;
+  --hint-bg:#f6ecd2;--hint-border:#e3cf9d;--hint-text:#8a5a19;
+  --text-dark:#372e22;--text-body:#4c4234;--text-mid:#6b5d4a;--text-light:#9a8b74;--text-faint:#c9bda9;
+  --bg:#efe6d3;--card:#faf5e9;--border:#dfd3ba;--border-light:#eae0cb;
+  --disabled-bg:#f1ebdc;--disabled-text:#b9ac95;
+  --radius-md:10px;--radius-xl:16px;--font:'Montserrat',sans-serif;--font-disp:'Oswald',var(--font);
+  --north:#46688c;--east:#3e7d5c;--south:#c98a2e;--central:#7d5c8a;
+  --thsr:#b25a1f;--tra:#2e6e8e;--special:#6b5d4a;
+  --cal:#b8253f;--eva:#265c46;--jx:#7a6446;
+  --ink:#372e22;--paper:#faf5e9;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:var(--font);background:var(--bg);-webkit-font-smoothing:antialiased;color:var(--text-dark);display:flex;justify-content:center;padding:12px;}
+img{max-width:100%;display:block;}
+.hidden{display:none!important;}
+button{font-family:var(--font);}
+.wrap{width:100%;max-width:860px;}
+
+/* ── CHECK-IN ── */
+.checkin{background:var(--card);border-radius:var(--radius-xl);box-shadow:0 4px 20px rgba(0,0,0,.06);padding:32px 26px;animation:fadeUp .45s ease both;}
+.ck-head{text-align:center;margin-bottom:22px;}
+.ck-head .kicker{display:inline-block;padding:5px 14px;background:var(--brand-light);border-radius:20px;font-size:12px;font-weight:700;color:var(--brand);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;}
+.ck-head h1{font-size:30px;font-weight:800;line-height:1.15;margin-bottom:10px;}
+.ck-head p{font-size:14.5px;color:var(--text-mid);line-height:1.65;max-width:560px;margin:0 auto;}
+.ck-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0;}
+.ck-cards .card{background:var(--bg);padding:16px 12px;border-radius:var(--radius-md);border:1px solid var(--border);text-align:center;}
+.ck-cards .card .n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--brand);color:#fff;font-size:13px;font-weight:700;margin-bottom:8px;}
+.ck-cards .card h3{font-size:13px;font-weight:700;margin-bottom:4px;}
+.ck-cards .card p{font-size:12px;color:var(--text-mid);line-height:1.5;}
+.ck-form{max-width:460px;margin:0 auto;}
+.fg{margin-bottom:14px;}
+.fg label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;}
+.fg input{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:var(--radius-md);font-size:14px;font-family:var(--font);}
+.fg input:focus{outline:none;border-color:var(--brand);}
+.tok-label{font-size:13px;font-weight:600;margin:18px 0 8px;text-align:center;}
+.tokens{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px;}
+.tok{width:88px;padding:10px 6px 8px;border:2px solid var(--border);border-radius:var(--radius-md);background:#fff;cursor:pointer;text-align:center;transition:all .2s;}
+.tok:hover{border-color:var(--brand);}
+.tok.sel{border-color:var(--brand);background:var(--brand-light);box-shadow:0 2px 12px var(--brand-glow);}
+.tok svg{width:52px;height:52px;margin:0 auto 6px;display:block;}
+.tok span{font-size:10.5px;font-weight:700;color:var(--text-mid);display:block;line-height:1.3;}
+.tok.sel span{color:var(--brand);}
+.partner-note{text-align:center;font-size:11.5px;color:var(--text-light);margin:14px 0 18px;line-height:1.6;}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;padding:15px;background:var(--brand);color:#fff;border:none;border-radius:var(--radius-md);font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px var(--brand-glow);transition:transform .15s;}
+.btn:active{transform:scale(.98);}
+.btn:disabled{background:#ddd;box-shadow:none;cursor:default;}
+.btn-g{background:var(--green);box-shadow:0 4px 16px rgba(34,197,94,.3);}
+.btn-ghost{background:#fff;color:var(--brand);border:2px solid var(--brand);box-shadow:none;}
+.ck-fine{text-align:center;font-size:11px;color:var(--text-light);margin-top:12px;line-height:1.6;}
+
+/* ── GAME HEADER ── */
+.ghead{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap;}
+.ghead .gtitle{font-size:16px;font-weight:800;color:var(--brand);}
+.ghead .gtitle small{display:block;font-size:10px;color:var(--text-light);font-weight:600;letter-spacing:.05em;text-transform:uppercase;}
+.gstats{display:flex;gap:8px;align-items:center;flex-wrap:wrap;}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:18px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid var(--border);color:var(--text-mid);cursor:default;}
+.chip.hot{background:var(--brand-light);border-color:#ffc9b8;color:var(--brand);}
+.chip.click{cursor:pointer;}
+.chip.pass{background:#fff7ed;border-color:#fed7aa;color:#c2410c;cursor:pointer;animation:pulseGlow 2s infinite;}
+
+/* ── BOARD (square grid + real Taiwan map in center) ── */
+.board-wrap{position:relative;width:100%;aspect-ratio:1;max-width:820px;margin:0 auto;}
+.board{position:absolute;inset:0;display:grid;grid-template-columns:1.35fr repeat(7,1fr) 1.35fr;grid-template-rows:1.35fr repeat(7,1fr) 1.35fr;gap:3px;background:#d9c8a6;border:3px double #a89370;border-radius:12px;padding:4px;box-shadow:inset 0 0 40px #00000012;}
+.sp{position:relative;background:#fffdf9;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;overflow:hidden;cursor:pointer;transition:box-shadow .2s;min-width:0;}
+.sp:hover{box-shadow:0 0 0 2px var(--brand);z-index:5;}
+.sp .band{width:100%;height:16%;min-height:9px;flex-shrink:0;}
+.sp .ico{font-size:clamp(13px,2.6vw,24px);line-height:1;margin-top:6%;}
+.sp .nm{font-size:clamp(6px,1.05vw,9.5px);font-weight:700;color:var(--text-mid);text-align:center;line-height:1.15;padding:2px 2px 0;}
+.sp.corner .ico{font-size:clamp(18px,3.4vw,32px);}
+.sp.corner .nm{font-size:clamp(6.5px,1.15vw,10.5px);}
+.sp.corner{background:linear-gradient(160deg,#fff8f0,#ffefe6);}
+.sp.rail .band{background-image:repeating-linear-gradient(90deg,#fff 0 4px,transparent 4px 8px);}
+.sp.got{background:#f0fdf4;}
+.sp.got::after{content:"✓";position:absolute;top:2px;right:4px;font-size:clamp(8px,1.4vw,12px);font-weight:800;color:var(--green);}
+.sp .pin{position:absolute;bottom:2%;left:50%;transform:translateX(-50%);width:clamp(18px,3.6vw,34px);height:clamp(18px,3.6vw,34px);filter:drop-shadow(0 2px 3px rgba(0,0,0,.3));transition:all .18s;z-index:6;}
+.sp .pin svg{width:100%;height:100%;}
+.center{grid-area:2/2/9/9;display:flex;flex-direction:column;background:radial-gradient(ellipse at 40% 30%,#e7e6d0,#d8dcc4 75%,#ccd2ba);border-radius:8px;position:relative;overflow:hidden;box-shadow:inset 0 0 34px #6b5d4a22;}
+.map-zone{flex:1;min-height:0;display:flex;align-items:center;justify-content:center;padding:3.5% 3% 0;}
+#twmap{height:100%;width:auto;max-width:100%;overflow:visible;}
+.tw-island{fill:#efe7cb;stroke:#7c6a4d;stroke-width:.8;stroke-linejoin:round;}
+.mdot{stroke:#fff;stroke-width:.55;cursor:pointer;opacity:.6;transition:opacity .2s;}
+.mdot.got{opacity:1;}
+.mdot.here{opacity:1;}
+.mring{fill:none;stroke:var(--brand);stroke-width:.8;pointer-events:none;}
+.cn-panel{position:relative;z-index:5;background:#fffefbf5;border-top:1px solid #eadfd4;padding:8px 12px 12px;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.cn-panel .cn-logo{font-size:clamp(12px,2.2vw,19px);font-weight:800;color:var(--brand);line-height:1.1;}
+.cn-panel .cn-sub{font-size:clamp(7px,1.1vw,9.5px);font-weight:700;color:#c98a6f;letter-spacing:.13em;text-transform:uppercase;margin:1px 0 6px;}
+.roll-row{display:flex;align-items:center;gap:10px;margin:2px 0 4px;}
+#links{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4;}
+#links line{stroke:#7c6a4d;stroke-width:1;opacity:.16;transition:opacity .2s;}
+#links line.hot{stroke:var(--brand);stroke-width:1.8;opacity:.95;}
+.cn-panel.docked{border-radius:14px;border:1px solid var(--border);margin-top:10px;box-shadow:0 4px 16px rgba(0,0,0,.06);background:#fff;padding:14px;}
+@media(max-width:620px){
+  .board-wrap{aspect-ratio:0.66;}
+  .board{grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(11,1fr);}
+  .center{grid-area:2/2/11/7;}
+  .map-zone{padding:4% 3%;}
+  .sp .ico{font-size:16px;margin-top:4%;}
+  .sp .nm{font-size:6.8px;}
+  .sp.corner .ico{font-size:20px;}
+}
+.dice{display:flex;gap:10px;margin:2% 0;}
+.die{width:clamp(34px,6.5vw,54px);height:clamp(34px,6.5vw,54px);background:var(--paper);border:2px solid #b9a684;border-radius:18%;box-shadow:0 3px 8px #6b5d4a33,inset 0 0 6px #6b5d4a14;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);padding:12%;}
+.die i{background:var(--ink)!important;}
+.die.rolling{animation:diceShake .5s ease;}
+.die i{border-radius:50%;background:var(--text-dark);opacity:0;}
+.die[data-v="1"] i:nth-child(5),
+.die[data-v="2"] i:nth-child(1),.die[data-v="2"] i:nth-child(9),
+.die[data-v="3"] i:nth-child(1),.die[data-v="3"] i:nth-child(5),.die[data-v="3"] i:nth-child(9),
+.die[data-v="4"] i:nth-child(1),.die[data-v="4"] i:nth-child(3),.die[data-v="4"] i:nth-child(7),.die[data-v="4"] i:nth-child(9),
+.die[data-v="5"] i:nth-child(1),.die[data-v="5"] i:nth-child(3),.die[data-v="5"] i:nth-child(5),.die[data-v="5"] i:nth-child(7),.die[data-v="5"] i:nth-child(9),
+.die[data-v="6"] i:nth-child(1),.die[data-v="6"] i:nth-child(3),.die[data-v="6"] i:nth-child(4),.die[data-v="6"] i:nth-child(6),.die[data-v="6"] i:nth-child(7),.die[data-v="6"] i:nth-child(9){opacity:1;}
+.roll-btn{padding:clamp(9px,1.6vw,14px) clamp(20px,4vw,38px);background:var(--brand);color:#fff;border:none;border-radius:12px;font-size:clamp(12px,1.9vw,16px);font-weight:800;cursor:pointer;box-shadow:0 4px 16px var(--brand-glow);transition:transform .15s;}
+.roll-btn:active{transform:scale(.96);}
+.roll-btn:disabled{background:#e0d5cc;box-shadow:none;cursor:default;}
+.cn-status{font-size:clamp(9px,1.5vw,12.5px);color:var(--text-mid);font-weight:600;margin-top:2.5%;min-height:1.4em;line-height:1.45;max-width:92%;}
+.cn-prog{width:70%;max-width:280px;margin-top:3%;}
+.cn-prog .lbl{display:flex;justify-content:space-between;font-size:clamp(8px,1.25vw,10.5px);font-weight:700;color:var(--text-light);margin-bottom:4px;}
+.cn-prog .pt{height:6px;background:#f3e3d8;border-radius:3px;overflow:hidden;}
+.cn-prog .pf{height:100%;background:var(--brand);border-radius:3px;transition:width .5s cubic-bezier(.22,1,.36,1);}
+.cn-links{margin-top:3.5%;display:flex;gap:14px;}
+.cn-links a{font-size:clamp(9px,1.4vw,12px);font-weight:700;color:var(--brand);cursor:pointer;text-decoration:underline;}
+.partner-strip{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap;}
+.partner-strip .ps-lbl{font-size:10.5px;color:var(--text-light);font-weight:600;letter-spacing:.04em;text-transform:uppercase;}
+.pl-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:14px;font-size:11px;font-weight:800;color:#fff;}
+.pl-chip.cal{background:var(--cal);}
+.pl-chip.eva{background:var(--eva);}
+.pl-chip.jx{background:var(--jx);}
+
+/* ── MODALS ── */
+.mask{position:fixed;inset:0;background:rgba(20,10,5,.5);display:flex;align-items:center;justify-content:center;padding:14px;z-index:100;animation:fadeIn .25s;overflow-y:auto;}
+.modal{background:#fff;border-radius:var(--radius-xl);max-width:480px;width:100%;overflow:hidden;animation:fadeUp .35s ease both;max-height:94vh;overflow-y:auto;margin:auto;}
+.md-img{width:100%;aspect-ratio:16/7.5;background:linear-gradient(135deg,#ffe3d6,#ffd0bb);display:flex;align-items:center;justify-content:center;font-size:56px;position:relative;}
+.md-img .cap{position:absolute;bottom:8px;left:10px;padding:3px 9px;background:rgba(0,0,0,.5);border-radius:6px;font-size:10px;font-weight:600;color:#fff;}
+.md-img .regionTag{position:absolute;top:8px;left:10px;padding:4px 11px;border-radius:14px;font-size:10.5px;font-weight:800;color:#fff;letter-spacing:.05em;text-transform:uppercase;}
+.md-body{padding:18px 22px 22px;}
+.md-body .kick{display:inline-block;padding:4px 12px;background:var(--brand-light);border-radius:16px;font-size:11px;font-weight:700;color:var(--brand);letter-spacing:.05em;text-transform:uppercase;margin-bottom:10px;}
+.md-body h2{font-size:20px;font-weight:800;margin-bottom:8px;line-height:1.25;}
+.md-body .fact{font-size:14px;line-height:1.7;color:var(--text-mid);margin-bottom:14px;}
+.md-q{font-size:15px;font-weight:700;line-height:1.45;margin-bottom:12px;}
+.ops{display:flex;flex-direction:column;gap:8px;}
+.op{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:var(--radius-md);font-size:13.5px;font-weight:600;cursor:pointer;text-align:left;transition:all .25s;display:flex;align-items:center;gap:10px;line-height:1.4;background:#fff;}
+.op .lb{width:26px;height:26px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;background:#f5f5f5;color:#888;}
+.op.correct{border-color:var(--green);background:var(--green-light);color:#15803d;}
+.op.correct .lb{background:var(--green);color:#fff;}
+.op.wrong{border-color:var(--red);background:var(--red-light);color:#dc2626;animation:shakeX .35s;}
+.op.wrong .lb{background:var(--red);color:#fff;}
+.op.dim{border-color:#eee;background:#fafafa;color:#bbb;cursor:default;}
+.op.dim .lb{background:#f0f0f0;color:#ccc;}
+.ht{margin-top:12px;padding:12px 14px;background:var(--hint-bg);border-radius:12px;border:1px solid var(--hint-border);font-size:13.5px;color:var(--hint-text);line-height:1.5;animation:fadeUp .35s;}
+.ff{margin-top:12px;padding:12px 14px;background:var(--green-light);border-radius:12px;border:1px solid var(--green-border);font-size:13.5px;color:#15803d;line-height:1.6;animation:fadeUp .35s;}
+.ff.bad{background:var(--red-light);border-color:#fecaca;color:#b91c1c;}
+.md-foot{padding:0 22px 22px;}
+.reward-line{display:flex;align-items:center;gap:8px;justify-content:center;padding:10px;background:#fff7ed;border:1px solid #fed7aa;border-radius:12px;font-size:13px;font-weight:700;color:#c2410c;margin-bottom:12px;animation:fadeUp .4s;}
+
+/* boarding screens */
+.boarding{background:linear-gradient(145deg,#101826,#1d2a3f);color:#fff;text-align:center;}
+.boarding .md-body h2{color:#fff;}
+.boarding .bp-airline{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:20px;font-weight:800;font-size:14px;margin:10px 0 4px;color:#fff;}
+.boarding .bp-lap{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#93a5c4;margin-bottom:8px;}
+.boarding .fact{color:#c6d2e6;}
+.gate-row{display:flex;justify-content:center;gap:18px;margin:12px 0;font-size:11px;color:#93a5c4;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.gate-row b{display:block;font-size:16px;color:#fff;letter-spacing:0;margin-top:2px;}
+
+/* passport */
+.pp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:12px 0;}
+.pp-cell{aspect-ratio:1;border:1.5px dashed var(--border);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:17px;background:#fafafa;position:relative;}
+.pp-cell span{font-size:6.8px;font-weight:700;color:var(--text-light);text-align:center;line-height:1.1;padding:0 2px;margin-top:2px;}
+.pp-cell.got{border:1.5px solid var(--green-border);background:var(--green-light);}
+.pp-cell.got::after{content:"✓";position:absolute;top:1px;right:4px;font-size:9px;font-weight:800;color:var(--green);}
+.tier-list{display:flex;flex-direction:column;gap:7px;margin-top:12px;}
+.tier{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:10px;border:1px solid var(--border);font-size:12.5px;font-weight:600;color:var(--text-mid);background:#fff;}
+.tier .tk{margin-left:auto;font-weight:800;color:var(--text-light);white-space:nowrap;}
+.tier.done{background:var(--green-light);border-color:var(--green-border);color:#15803d;}
+.tier.done .tk{color:#15803d;}
+
+/* fly picker */
+.fly-list{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px;max-height:260px;overflow-y:auto;}
+.fly-opt{padding:9px 10px;border:1.5px solid var(--border);border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;background:#fff;display:flex;align-items:center;gap:7px;transition:all .2s;color:var(--text-mid);}
+.fly-opt:hover{border-color:var(--brand);color:var(--brand);}
+
+/* toast + confetti */
+.toast{pointer-events:none;position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:11px 20px;border-radius:14px;font-size:13px;font-weight:600;z-index:200;animation:fadeUp .3s;box-shadow:0 6px 24px rgba(0,0,0,.25);max-width:92vw;text-align:center;}
+.cw{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1000;overflow:hidden;}
+.cp{position:absolute;top:-12px;animation:confettiFall 2s ease-in forwards;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes shakeX{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes diceShake{0%,100%{transform:rotate(0)}25%{transform:rotate(-14deg) translateY(-4px)}50%{transform:rotate(10deg)}75%{transform:rotate(-6deg) translateY(-2px)}}
+@keyframes confettiFall{0%{transform:translateY(0) rotate(0);opacity:1}80%{opacity:1}100%{transform:translateY(100vh) rotate(1080deg);opacity:0}}
+@keyframes pulseGlow{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@media(max-width:560px){
+  .ck-cards{grid-template-columns:1fr;}
+  .pp-grid{grid-template-columns:repeat(5,1fr);}
+  .ghead .gtitle{width:100%;text-align:center;}
+  .gstats{width:100%;justify-content:center;}
+}
+
+/* ══════════ VINTAGE PASS ══════════ */
+.ck-head h1,.md-body h2,.cn-panel .cn-logo,.ghead .gtitle,.island-logo .cn-logo,.cmp h2{
+  font-family:var(--font-disp);text-transform:uppercase;letter-spacing:.05em;font-weight:600;}
+.ck-head h1{font-size:34px;letter-spacing:.07em;}
+.roll-btn,.btn{font-family:var(--font-disp);text-transform:uppercase;letter-spacing:.08em;font-weight:600;outline:2px solid #ffffff88;outline-offset:-5px;}
+.btn-ghost{outline:none;}
+.ck-head .kicker,.md-body .kick{background:transparent;border:1.5px solid var(--brand);border-radius:4px;letter-spacing:.14em;font-family:var(--font-disp);font-weight:600;}
+.qs,.checkin,.modal{box-shadow:0 4px 20px #6b5d4a26,0 0 0 1px #dfd3ba;}
+.md-img{background:linear-gradient(135deg,#e8ddc0,#dccfa9);}
+.toast{background:var(--ink);border:1px solid #d9c8a6;}
+.reward-line{background:transparent;border:2.5px solid var(--red);color:var(--red);border-radius:6px;
+  font-family:var(--font-disp);text-transform:uppercase;letter-spacing:.08em;font-weight:600;
+  animation:stampIn .55s cubic-bezier(.2,1.4,.4,1) both;}
+@keyframes stampIn{0%{transform:scale(2.1) rotate(-16deg);opacity:0}55%{transform:scale(.94) rotate(-1deg);opacity:1}75%{transform:scale(1.03) rotate(-2.5deg)}100%{transform:scale(1) rotate(-2deg)}}
+.pp-cell.got{border:1.6px solid #a63a2e88;background:#f6efe0;transform:rotate(-2deg);}
+.pp-cell.got::after{color:#a63a2e;}
+.sp.got::after{color:#a63a2e;}
+.sp.got{background:#f3eedd;}
+.chip{font-family:var(--font-disp);font-weight:600;letter-spacing:.05em;background:var(--paper);}
+.chip.hot{outline:1.5px solid var(--brand);outline-offset:-1px;}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9998;opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- ══════════ CHECK-IN ══════════ -->
+<section class="checkin" id="checkin">
+  <div class="ck-head">
+    <div class="kicker">Taiwan — Waves of Wonder</div>
+    <h1>Round Taiwan Rally</h1>
+    <p>Roll the dice and travel around the island. Collect destinations, learn what makes Taiwan unforgettable, and earn bonus entries toward <strong>3 round-trip flight tickets to Taiwan</strong> — plus smaller gifts along the way.</p>
+  </div>
+  <div class="ck-cards">
+    <div class="card"><span class="n">1</span><h3>Check in = you're entered</h3><p>Registering gives you your first sweepstakes entry. No play required.</p></div>
+    <div class="card"><span class="n">2</span><h3>Roll &amp; explore</h3><p>Travel the island, discover real destinations, answer one question to stamp each into your passport.</p></div>
+    <div class="card"><span class="n">3</span><h3>Collect for bonus entries</h3><p>Finish laps, complete regions, ride the rails — every milestone earns extra chances to win.</p></div>
+  </div>
+  <div class="ck-form">
+    <div class="fg"><label>Name</label><input id="ckName" type="text" placeholder="Your name" maxlength="40"></div>
+    <div class="fg"><label>Email</label><input id="ckEmail" type="email" placeholder="you@email.com" maxlength="80"></div>
+    <label class="form-checkbox" style="font-size:12.5px;color:var(--text-mid);display:flex;gap:8px;align-items:flex-start;margin:2px 0 6px;cursor:pointer;">
+      <input type="checkbox" id="ckConsent" style="width:16px;height:16px;margin-top:2px;flex-shrink:0;">
+      <span>I agree to the <a href="#" onclick="return false">Official Rules</a> and to receive sweepstakes-related email. No purchase necessary.</span>
+    </label>
+    <div class="tok-label">Choose your travel token</div>
+    <div class="tokens" id="tokens"></div>
+    <p class="partner-note">Grand prizes provided by our airline partners<br>
+      <span class="pl-chip cal">🌸 China Airlines</span>
+      <span class="pl-chip eva">🌏 EVA Air</span>
+      <span class="pl-chip jx">✦ STARLUX</span>
+    </p>
+    <button class="btn" id="ckStart">Check In &amp; Board ✈️</button>
+    <p class="ck-fine">Prototype — registration is not wired to a server. No purchase necessary. See Official Rules.</p>
+  </div>
+</section>
+
+<!-- ══════════ GAME ══════════ -->
+<section id="game" class="hidden">
+  <div class="ghead">
+    <div class="gtitle">Round Taiwan Rally<small>Taiwan — Waves of Wonder</small></div>
+    <div class="gstats">
+      <span class="chip hot" id="chipEntries">🎟️ 1 entry</span>
+      <span class="chip" id="chipLap">🌀 Lap 1</span>
+      <span class="chip click" id="chipPassport">📔 Passport 0/29</span>
+      <span class="chip pass hidden" id="chipPass">🎫 Boarding pass!</span>
+    </div>
+  </div>
+  <div class="board-wrap">
+    <div class="board" id="board">
+      <div class="center" id="center">
+        <div class="map-zone"><svg id="twmap" preserveAspectRatio="xMidYMid meet"></svg></div>
+        <div class="cn-panel">
+          <div class="cn-logo">Round Taiwan Rally</div>
+          <div class="cn-sub">Collect the whole island</div>
+          <div class="roll-row">
+            <div class="dice"><div class="die" id="d1" data-v="3"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            <button class="roll-btn" id="rollBtn">ROLL 🎲</button>
+          </div>
+          <div class="cn-status" id="status">Welcome aboard! Roll to start your trip from Taoyuan Airport.</div>
+          <div class="cn-prog"><div class="lbl"><span>Passport</span><span id="progTxt">0 / 29</span></div><div class="pt"><div class="pf" id="progFill" style="width:0%"></div></div></div>
+          <div class="cn-links"><a id="lnkPassport">My Passport</a><a id="lnkHow">How to play</a></div>
+        </div>
+      </div>
+    </div>
+    <svg id="links"></svg>
+  </div>
+  <div id="panelDock"></div>
+  <div class="partner-strip">
+    <span class="ps-lbl">Grand prizes by</span>
+    <span class="pl-chip cal">🌸 China Airlines</span>
+    <span class="pl-chip eva">🌏 EVA Air</span>
+    <span class="pl-chip jx">✦ STARLUX</span>
+  </div>
+</section>
+
+<div id="modalHost"></div>
+</div>
+<script>
+'use strict';
+/* ══════════ DEPLOYMENT CONFIG ══════════
+   backend: 'local'    → progress in this browser only (demo mode, works offline)
+            'supabase' → also registers players + syncs progress + entry ledger
+   See DEPLOYMENT.md for the Supabase schema and setup steps. */
+const CONFIG = {
+  backend: 'local',
+  supabaseUrl: 'https://YOUR-PROJECT.supabase.co',
+  supabaseAnonKey: 'YOUR-ANON-KEY',
+  gaId: '',                                     // e.g. 'G-1KFW5EHHT4' — enables GA4 with cross-domain linking
+  gaLinkDomains: ['feeltaiwan.com','game.feeltaiwan.com']
+};
+/* ── GA4 (cross-domain) ── */
+if(CONFIG.gaId){
+  const s=document.createElement('script'); s.async=true;
+  s.src='https://www.googletagmanager.com/gtag/js?id='+CONFIG.gaId;
+  document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=function(){dataLayer.push(arguments);};
+  gtag('js',new Date());
+  gtag('config',CONFIG.gaId,{linker:{domains:CONFIG.gaLinkDomains}});
+}
+function track(ev,params){ try{ if(window.gtag) gtag('event',ev,params||{}); }catch(e){} }
+function getUTM(){
+  const u={}, q=new URLSearchParams(location.search);
+  for(const k of ['utm_source','utm_medium','utm_campaign','utm_content','utm_term']) if(q.get(k)) u[k]=q.get(k);
+  return u;
+}
+/* ── Supabase REST (fire-and-forget; game never blocks on network) ── */
+async function sb(path, body, prefer){
+  if(CONFIG.backend!=='supabase') return null;
+  try{
+    const r=await fetch(CONFIG.supabaseUrl+'/rest/v1/'+path,{
+      method:'POST',
+      headers:{apikey:CONFIG.supabaseAnonKey,Authorization:'Bearer '+CONFIG.supabaseAnonKey,
+               'Content-Type':'application/json',Prefer:prefer||'return=minimal'},
+      body:JSON.stringify(body)});
+    return r.ok;
+  }catch(e){ return false; }
+}
+const apiRegister=()=>sb('players?on_conflict=email',
+  {email:S.email,name:S.name,token:S.token,consent:true,utm:getUTM()},
+  'resolution=merge-duplicates,return=minimal');
+let syncT=null;
+function apiProgress(){
+  if(CONFIG.backend!=='supabase') return;
+  clearTimeout(syncT);
+  syncT=setTimeout(()=>sb('progress?on_conflict=email',
+    {email:S.email,collected:S.collected,lap:S.lap,pos:S.pos,pass:S.pass},
+    'resolution=merge-duplicates,return=minimal'),1500);
+}
+const apiEntry=(tier,pts)=>sb('entries',{email:S.email,tier,pts});
+
+/* ══════════ DATA ══════════ */
+const REGIONS = {
+  north:  {name:'North',   color:'var(--north)',   hex:'#46688c'},
+  east:   {name:'East',    color:'var(--east)',    hex:'#3e7d5c'},
+  south:  {name:'South',   color:'var(--south)',   hex:'#c98a2e'},
+  central:{name:'Central & West', color:'var(--central)', hex:'#7d5c8a'},
+  thsr:   {name:'THSR — High Speed Rail', color:'var(--thsr)', hex:'#b25a1f'},
+  tra:    {name:'TRA — East Coast Line',  color:'var(--tra)',  hex:'#2e6e8e'},
+  special:{name:'Special', color:'var(--special)', hex:'#6b5d4a'}
+};
+
+const AIRLINES = [
+  {id:'cal', name:'China Airlines', emoji:'🌸', cls:'cal', hex:'#CE0E2D'},
+  {id:'eva', name:'EVA Air',        emoji:'🌏', cls:'eva', hex:'#00653A'},
+  {id:'jx',  name:'STARLUX Airlines', emoji:'✦', cls:'jx', hex:'#8D7249'}
+];
+
+/* Board: 32 spaces clockwise from TPE (top-left corner) */
+const SPACES = [
+ {t:'go', ico:'✈️', name:'TPE Taoyuan Airport', region:'special',
+  fact:'Taoyuan International Airport is Taiwan’s gateway to the world — China Airlines, EVA Air and STARLUX all fly nonstop from San Francisco to TPE in about 13 hours.'},
+ {t:'dest', ico:'🏙️', name:'Taipei 101', region:'north',
+  fact:'Taipei 101 was the world’s tallest building from 2004 to 2010. Inside hangs a 660-tonne golden damper ball that sways to steady the tower during typhoons and earthquakes — it even has its own mascot.',
+  q:'What keeps Taipei 101 steady during typhoons and earthquakes?',
+  ops:['Deep-sea anchor cables','A 660-tonne damper ball suspended inside the tower','Retractable wind sails','It closes during storms'], a:1,
+  hint:'It’s golden, it’s huge, and you can visit it on the observation deck!',
+  ok:'The tuned mass damper swings like a giant pendulum to absorb the building’s motion — and it’s become a beloved attraction itself.'},
+ {t:'dest', ico:'🏛️', name:'National Palace Museum', region:'north',
+  fact:'The National Palace Museum in Taipei holds nearly 700,000 imperial artifacts spanning 8,000 years of Chinese art history — one of the greatest collections on Earth.',
+  q:'Which beloved "must-see" treasure is carved from a single piece of jadeite?',
+  ops:['The Jadeite Cabbage','A jade dragon throne','A jade map of Taiwan','A jade teapot'], a:0,
+  hint:'It looks good enough to stir-fry. 🥬',
+  ok:'The Jadeite Cabbage — complete with a tiny katydid hidden in its leaves — is the museum’s superstar, alongside the famous Meat-Shaped Stone.'},
+ {t:'dest', ico:'♨️', name:'Beitou Hot Springs', region:'north',
+  fact:'Beitou’s steaming thermal valley is just 30 minutes from downtown Taipei by metro — one of the only capital cities on Earth with natural hot springs on its doorstep.',
+  q:'How do you reach Beitou’s hot springs from downtown Taipei?',
+  ops:['A 3-hour mountain drive','A domestic flight','About 30 minutes by metro','Ferry only'], a:2,
+  hint:'You can carry a towel onto the MRT.',
+  ok:'Hop on the metro and you’re soaking within the hour — Taiwan has over 100 hot spring sites island-wide.'},
+ {t:'dest', ico:'🌋', name:'Yangmingshan National Park', region:'north',
+  fact:'Yangmingshan National Park sits on a volcanic landscape minutes from Taipei — steaming fumaroles, sulfur vents and hot springs prove the Datun volcanoes are only sleeping.',
+  q:'What can you still see at Yangmingshan from its volcanic origins?',
+  ops:['Flowing lava rivers','Active fumaroles, sulfur vents and hot springs','A snow-capped crater','Petrified forests'], a:1,
+  hint:'The earth beneath your feet is very much alive!',
+  ok:'From downtown Taipei to steaming sulfur vents in under an hour — one of nine national parks packed onto one small island.'},
+ {t:'dest', ico:'🪨', name:'Yehliu Geopark', region:'north',
+  fact:'Wind and waves sculpted Yehliu’s cape into a gallery of hoodoo rocks. Its most famous resident has a neck so slim geologists monitor it every year.',
+  q:'What is Yehliu Geopark’s most famous rock formation called?',
+  ops:['The Dragon’s Tail','The Queen’s Head','The Turtle King','The Stone Lantern'], a:1,
+  hint:'Her profile looks distinctly royal. 👑',
+  ok:'The Queen’s Head is Taiwan’s most photographed rock — erosion keeps slimming her neck, so see her while you can!'},
+ {t:'dest', ico:'🏮', name:'Pingxi Sky Lanterns', region:'north',
+  fact:'In the old mining town of Pingxi, visitors paint wishes on paper lanterns and release them over the valley. The Pingxi Sky Lantern Festival lights up the night sky with thousands at once.',
+  q:'What do visitors traditionally do with a Pingxi sky lantern?',
+  ops:['Hang it outside their door','Write wishes on it and release it into the sky','Float it down the river','Bury it for good luck'], a:1,
+  hint:'Your hopes literally take flight. ✨',
+  ok:'Each lantern color carries a different wish — the festival is regularly named one of the world’s most beautiful celebrations.'},
+ {t:'dest', ico:'⛰️', name:'Jiufen Old Street', region:'north',
+  fact:'Jiufen was a quiet mountain village until the late 1800s, when a discovery turned it into a boomtown. Its lantern-lit alleys and hillside teahouses now overlook the Pacific.',
+  q:'What transformed Jiufen into a boomtown in the late 1800s?',
+  ops:['A tea plantation boom','A new railway station','The discovery of gold','A typhoon that redirected trade'], a:2,
+  hint:'The mountain was hiding a fortune underground!',
+  ok:'Jiufen’s gold rush legacy lives on in its atmospheric alleyways, teahouses and ocean views.'},
+ {t:'corner', ico:'🍢', name:'Miaokou Night Market', region:'special', corner:'food',
+  fact:'Keelung’s Miaokou Night Market wraps around a century-old temple — part food court, part carnival, part neighborhood living room. Taiwan’s night markets are where the island really comes alive after dark.'},
+ {t:'rail', line:'tra', ico:'🚂', name:'TRA Yilan Station', region:'tra',
+  fact:'Yilan is the gateway to Taiwan’s northeast — Jiaoxi’s hot springs are steps from the station, and the TRA line south hugs the Pacific all the way down the east coast.'},
+ {t:'dest', ico:'🌊', name:'Qingshui Cliffs', region:'east',
+  fact:'The Qingshui Cliffs tower up to 800 meters straight out of the Pacific — one of the most dramatic coastal walls in Asia. Paddlers glide beneath them on SUP boards at sunrise.',
+  q:'What makes the Qingshui Cliffs one of Taiwan’s most jaw-dropping sights?',
+  ops:['They glow at night','Sheer cliffs plunge some 800 m straight into the Pacific','They are made of pure marble','A castle sits on top'], a:1,
+  hint:'Imagine paddleboarding beneath a wall of rock half a mile high.',
+  ok:'The cliffs squeeze the highway between mountain and ocean — sunrise SUP beneath them is a bucket-list Taiwan moment.'},
+ {t:'dest', ico:'🏞️', name:'Taroko Gorge', region:'east',
+  fact:'The Liwu River carved Taroko Gorge through solid rock, leaving canyon walls that gleam white and grey. Trails and temples cling to the cliffsides.',
+  q:'Taroko Gorge is world-famous for canyon walls made largely of what stone?',
+  ops:['Granite','Sandstone','Marble','Limestone'], a:2,
+  hint:'The nearby city of Hualien is nicknamed for this stone.',
+  ok:'Taroko is one of the world’s great marble canyons — river tracing routes near the gorge climb straight up its side canyons.'},
+ {t:'rail', line:'tra', ico:'🚂', name:'TRA Hualien Station', region:'tra',
+  fact:'Hualien Station is the doorway to Taroko Gorge — and a shrine to the railway bento. Grab a braised pork chop box with a soy egg before boarding; fans debate which station makes the best one.'},
+ {t:'dest', ico:'🎈', name:'East Rift Valley & Luye', region:'east',
+  fact:'Every summer, Luye Highland in the East Rift Valley hosts the Taiwan International Balloon Festival — named one of the world’s top 12 balloon festivals, drawing over a million visitors for rides and night-glow concerts.',
+  q:'What happens at Luye Highland every summer?',
+  ops:['A dragon boat regatta','One of the world’s top hot air balloon festivals','An international surf contest','A high-speed rail expo'], a:1,
+  hint:'Look up — way up. 🎈',
+  ok:'Special-shaped balloons from around the globe, tethered rides at dawn, and balloons glowing in sync with music after dark.'},
+ {t:'dest', ico:'🌉', name:'Sanxiantai', region:'east',
+  fact:'Sanxiantai’s eight-arch dragon bridge steps across the sea to a rocky islet named for three immortals of legend. It’s one of the first places in Taiwan to catch the sunrise.',
+  q:'How do visitors reach the islet at Sanxiantai?',
+  ops:['A famous eight-arch footbridge that ripples like a dragon','Glass-bottom boat','Cable car','Swimming only'], a:0,
+  hint:'The bridge itself is the most photographed dragon on the east coast.',
+  ok:'Arrive before dawn — Sanxiantai’s sunrise over the Pacific is legendary, especially during the annual sunrise concerts.'},
+ {t:'rail', line:'tra', ico:'🚂', name:'TRA Taitung Station', region:'tra',
+  fact:'Taitung — the "Hometown of the Sun" — is base camp for the balloon festival, Zhiben’s forest hot springs, and Challenge Taiwan, one of Asia’s biggest triathlon celebrations.'},
+ {t:'corner dest', ico:'🏖️', name:'Kenting National Park', region:'south',
+  fact:'At Taiwan’s southern tip, Kenting National Park pairs tropical beaches with coral reefs — white sand, surf breaks and a famous night street, all a short drive from Kaohsiung.',
+  q:'What makes Kenting National Park special?',
+  ops:['It’s Taiwan’s highest mountain park','Tropical beaches and coral reefs at the island’s southern tip','It’s an urban park inside Taipei','It’s only accessible by boat'], a:1,
+  hint:'Think white sand and snorkels at the bottom of the island.',
+  ok:'Kenting is Taiwan’s tropical playground — one of nine national parks protecting everything from coral to alpine peaks.'},
+ {t:'dest', ico:'🐢', name:'Xiaoliuqiu Island', region:'south',
+  fact:'Xiaoliuqiu, a coral island 30 minutes by ferry from Pingtung, is nicknamed "Green Turtle Paradise" — you’re practically guaranteed to meet turtles while snorkeling, any month of the year.',
+  q:'Roughly how many green sea turtles live around Xiaoliuqiu?',
+  ops:['50','150','400','800+'], a:3,
+  hint:'One of the highest concentrations of green sea turtles in the world!',
+  ok:'800+ resident turtles make Xiaoliuqiu one of the best places on Earth to swim alongside them.'},
+ {t:'dest', ico:'⛵', name:'Dapeng Bay', region:'south',
+  fact:'Dapeng Bay is Taiwan’s largest lagoon — calm, sheltered water and steady wind make it the island’s sailing and SUP playground. Each spring, hundreds of sails fill the bay for its marine festival.',
+  q:'Why are Dapeng Bay’s waters uniquely suited to water sports?',
+  ops:['Fed by hot springs','It’s Taiwan’s largest lagoon — calm, sheltered, with steady winds','Strongest currents in Taiwan','It’s a mountain lake'], a:1,
+  hint:'Only one narrow inlet connects it to the open sea!',
+  ok:'The sheltered lagoon is perfect for sailing, SUP and yacht cruises — beginner-friendly all year round.'},
+ {t:'dest', ico:'🛕', name:'Fo Guang Shan', region:'south',
+  fact:'Fo Guang Shan Buddha Museum near Kaohsiung is crowned by one of the world’s tallest seated bronze Buddhas, with eight pagodas lining a grand boulevard toward it.',
+  q:'What towers over the boulevard at Fo Guang Shan?',
+  ops:['A giant golden bell','One of the world’s tallest seated bronze Buddha statues','A thousand-year-old banyan tree','A lighthouse'], a:1,
+  hint:'It’s seated, serene, and visible from miles away.',
+  ok:'Taiwan has over 12,000 registered temples — from tiny street shrines to monumental complexes like this one. All are free to enter.'},
+ {t:'rail', line:'thsr', ico:'🚄', name:'THSR Zuoying Station', region:'thsr',
+  fact:'Taiwan High Speed Rail links Taipei and Kaohsiung — about 350 km — in around 1.5 hours at up to 300 km/h, with trains every 15–30 minutes. The whole west coast is a day trip.'},
+ {t:'dest', ico:'🎨', name:'Pier-2 Art Center', region:'south',
+  fact:'Kaohsiung turned its abandoned harbor warehouses into Pier-2, one of Asia’s most vibrant art districts — galleries, giant murals and installations along the waterfront light rail.',
+  q:'What was Pier-2 Art Center before it became an art district?',
+  ops:['A naval academy','Abandoned harbor warehouses','A sugar refinery','A train depot'], a:1,
+  hint:'Taiwan has a talent for giving old places new life.',
+  ok:'Like Huashan 1914 (an old distillery) and Songshan (a tobacco factory) in Taipei, Pier-2 shows how Taiwan reinvents its industrial past.'},
+ {t:'dest', ico:'🏰', name:'Anping Old Fort', region:'south',
+  fact:'Tainan is Taiwan’s oldest city — its recorded urban history began around 1624, when the Dutch East India Company built a trading fort at Anping, long before Taipei existed.',
+  q:'When did Tainan’s recorded urban history begin?',
+  ops:['Around 1850','Around 1750','Around 1700','Around 1624'], a:3,
+  hint:'The Dutch East India Company got here first!',
+  ok:'Tainan served as Taiwan’s capital for over 200 years — home to the island’s first Confucian temple and 300+ historic sanctuaries.'},
+ {t:'dest', ico:'🥟', name:'Tainan Street Food', region:'south',
+  fact:'Tainan is Taiwan’s food capital — danzai noodles, coffin bread, milkfish congee — with recipes perfected over generations. Taiwan’s food scene runs from $1 stalls to 53 Michelin-starred restaurants.',
+  q:'How many restaurants in Taiwan held Michelin stars in 2025?',
+  ops:['12','25','38','53'], a:3,
+  hint:'Three of them hold the highest three-star rating!',
+  ok:'But some of Taiwan’s most celebrated bites still come from humble stalls perfecting a single dish for generations.'},
+ {t:'corner', ico:'🪷', name:'Mazu Pilgrimage', region:'special', corner:'culture',
+  fact:'Every spring, millions join the Dajia Mazu Pilgrimage — nine days and 340 km honoring the sea goddess Mazu. Towns set up free food stations and strangers open their homes. It’s been compared to the Camino de Santiago, and anyone can join.'},
+ {t:'dest', ico:'🌲', name:'Alishan Forest Railway', region:'central',
+  fact:'The century-old Alishan Forest Railway climbs from 30 m to over 2,200 m using Z-shaped switchbacks — the train reverses direction to gain elevation, passing through four climate zones to reach sunrise viewpoints and misty oolong farms.',
+  q:'How does the Alishan Forest Railway climb its steep mountain slopes?',
+  ops:['Cable-pulled funicular','Magnetic levitation','Z-shaped switchbacks where the train reverses to gain elevation','Spiral tunnels inside the mountain'], a:2,
+  hint:'The train zigzags up, changing direction at each turn!',
+  ok:'Ride it at dawn for Alishan’s famous sea of clouds — then taste high-mountain oolong grown in the mist above 1,000 m.'},
+ {t:'dest', ico:'🚲', name:'Sun Moon Lake', region:'central',
+  fact:'Sun Moon Lake’s 30 km lakeside cycling loop was named one of the world’s top 10 most beautiful bike paths by CNN Travel, passing indigenous Thao villages and grand temples.',
+  q:'Which of these is true about the Sun Moon Lake cycling route?',
+  ops:['CNN Travel ranked it a world top-10 most beautiful bike path','It passes indigenous Thao villages','An autumn cycling festival draws thousands','All of the above'], a:3,
+  hint:'One alone would be worth the trip — the lake delivers on all fronts!',
+  ok:'And it’s just one piece of Taiwan’s cycling paradise — Route No. 1 circles the entire island in roughly 960 km.'},
+ {t:'dest', ico:'🕯️', name:'Lukang Old Town', region:'central',
+  fact:'Lukang was once Taiwan’s second-busiest port. Its winding old streets preserve centuries of temples and craftsmanship — woodcarvers, lantern makers and tinsmiths still work the same lanes.',
+  q:'What is Lukang best known for today?',
+  ops:['A modern financial district','Preserved old streets, historic temples and living craft traditions','Taiwan’s largest night market','A ski resort'], a:1,
+  hint:'Walking its lanes feels like stepping back 200 years.',
+  ok:'Lukang’s Longshan Temple is considered one of Taiwan’s finest works of traditional temple architecture.'},
+ {t:'rail', line:'thsr', ico:'🚄', name:'THSR Taichung Station', region:'thsr',
+  fact:'Taichung is the birthplace of bubble tea — Chun Shui Tang started adding tapioca pearls to iced tea in 1988, and the rest is global history. The HSR gets you there from Taipei in under an hour.'},
+ {t:'dest', ico:'🌅', name:'Gaomei Wetlands', region:'central',
+  fact:'Gaomei’s tidal flats stretch toward a line of wind turbines — at sunset the shallow water turns to a mirror of gold. It’s a haven for migratory birds and one of Taiwan’s favorite photo spots.',
+  q:'What draws crowds to Gaomei Wetlands each evening?',
+  ops:['Mirror-like sunsets over tidal flats lined with wind turbines','A night zoo','Fireworks','Hot springs'], a:0,
+  hint:'Bring your camera an hour before the sun goes down.',
+  ok:'Boardwalks let you walk out over the flats among crabs, mudskippers and wading birds.'},
+ {t:'dest', ico:'🍵', name:'Beipu Hakka Village', region:'central',
+  fact:'In Hakka towns like Beipu, visitors grind their own lei cha (pounded tea), try indigo dyeing, and taste a cuisine built on bold flavors and resourceful craft.',
+  q:'Pounded tea, indigo dyeing and distinctive village architecture belong to which culture?',
+  ops:['Hokkien','Japanese','Indigenous Amis','Hakka'], a:3,
+  hint:'Towns like Beipu and Meinong are famous for hands-on craftsmanship.',
+  ok:'Taiwan’s cultural map is rich — 16 recognized indigenous peoples, Hakka and Hokkien traditions, all within a few hours of each other.'},
+ {t:'rail', line:'thsr', ico:'🚄', name:'THSR Taoyuan Station', region:'thsr',
+  fact:'THSR Taoyuan connects to the Airport MRT — landing at TPE, you can be on a high-speed train minutes after customs, and anywhere on the west coast within two hours.'}
+];
+
+/* fun facts shown when landing on an already-collected space */
+const BONUS_FACTS = [
+ 'Taiwan’s Cycling Route No. 1 circles the whole island — about 960 km with repair stations every few kilometers.',
+ 'Taiwan has 268 peaks above 3,000 meters — more serious altitude per square mile than almost anywhere on Earth.',
+ 'No Taiwan train ride is complete without a railway bento — the braised pork chop box has been beloved since the 1950s.',
+ 'Taiwan recognizes 16 indigenous peoples, each with its own language, music and festivals that welcome visitors.',
+ 'Taiwan has over 100 hot spring sites — volcanic, forest, seaside, even cold springs in Su’ao.',
+ 'The Taipei and Wan Jin Shi marathons both hold World Athletics Gold Label status.',
+ 'Taiwan counts six internationally certified Green Destinations — a leader in sustainable tourism in Asia.',
+ 'An oyster omelet, a face-sized fried chicken cutlet, and stinky tofu: the night market starter pack.',
+ 'Whale and dolphin watching tours run out of Hualien along the Pacific coast.',
+ 'Maokong’s hillside teahouses are a gondola ride from the Taipei metro.'
+];
+
+const TOKENS = [
+ {id:'ohbear', name:'OhBear 🐻', svg:'<svg viewBox="0 0 64 64"><circle cx="18" cy="16" r="9" fill="#3b332e"/><circle cx="46" cy="16" r="9" fill="#3b332e"/><circle cx="18" cy="16" r="4.5" fill="#8a7364"/><circle cx="46" cy="16" r="4.5" fill="#8a7364"/><circle cx="32" cy="34" r="22" fill="#3b332e"/><path d="M22 44 Q32 30 42 44 Q32 52 22 44Z" fill="#f5efe8"/><circle cx="25" cy="30" r="3.4" fill="#fff"/><circle cx="39" cy="30" r="3.4" fill="#fff"/><circle cx="25.7" cy="30.6" r="1.7" fill="#1a1a1a"/><circle cx="39.7" cy="30.6" r="1.7" fill="#1a1a1a"/><ellipse cx="32" cy="38" rx="4" ry="3" fill="#1a1a1a"/></svg>'},
+ {id:'twlogo', name:'Taiwan Logo', svg:'<svg viewBox="0 0 64 64"><path d="M30 6 C40 4 46 12 42 20 C48 22 50 30 44 36 L36 50 C33 56 28 58 26 52 L22 38 C16 34 16 24 22 20 C20 12 24 8 30 6 Z" fill="#ff5629"/><text x="32" y="61" font-size="11" font-weight="800" text-anchor="middle" fill="#ff5629" font-family="Montserrat,sans-serif">TAIWAN</text></svg>'},
+ {id:'cal', name:'China Airlines', air:'cal', svg:'<svg viewBox="0 0 64 64"><path d="M6 38 L46 22 C54 19 58 22 56 26 L50 34 L20 44 L10 44 Z" fill="#CE0E2D"/><path d="M38 25 L34 12 L40 12 L48 22 Z" fill="#a30b24"/><path d="M18 41 L14 50 L20 50 L26 40 Z" fill="#a30b24"/><g transform="translate(47,13)"><circle r="6" fill="#fff"/><path d="M0-5 C2-2 2 2 0 5 C-2 2 -2-2 0-5 Z M-4.3-2.5 C-1.5-2 1.5 0 4.3 2.5 C1 3.5 -3 1 -4.3-2.5 Z M4.3-2.5 C1.5-2 -1.5 0 -4.3 2.5 C-1 3.5 3 1 4.3-2.5 Z" fill="#CE0E2D"/></g></svg>'},
+ {id:'eva', name:'EVA Air', air:'eva', svg:'<svg viewBox="0 0 64 64"><path d="M6 38 L46 22 C54 19 58 22 56 26 L50 34 L20 44 L10 44 Z" fill="#00653A"/><path d="M38 25 L34 12 L40 12 L48 22 Z" fill="#F58220"/><path d="M18 41 L14 50 L20 50 L26 40 Z" fill="#F58220"/><circle cx="47" cy="13" r="6" fill="#fff"/><path d="M43 13 A4 4 0 0 1 51 13" fill="none" stroke="#00653A" stroke-width="2.2"/></svg>'},
+ {id:'jx', name:'STARLUX', air:'jx', svg:'<svg viewBox="0 0 64 64"><path d="M6 38 L46 22 C54 19 58 22 56 26 L50 34 L20 44 L10 44 Z" fill="#2B2B2B"/><path d="M38 25 L34 12 L40 12 L48 22 Z" fill="#8D7249"/><path d="M18 41 L14 50 L20 50 L26 40 Z" fill="#8D7249"/><path d="M47 7 L48.6 11.4 L53 13 L48.6 14.6 L47 19 L45.4 14.6 L41 13 L45.4 11.4 Z" fill="#C9A96A"/></svg>'}
+];
+
+/* entry tiers */
+const TIERS = [
+ {id:'checkin', label:'Check in', pts:1},
+ {id:'lap1',    label:'Complete your first lap around the island', pts:1},
+ {id:'set_north',   label:'Collect all North destinations', pts:1},
+ {id:'set_east',    label:'Collect all East destinations', pts:1},
+ {id:'set_south',   label:'Collect all South destinations', pts:1},
+ {id:'set_central', label:'Collect all Central & West destinations', pts:1},
+ {id:'rail',    label:'Rail Master — collect all 6 stations', pts:1},
+ {id:'half',    label:'Stamp 50% of your passport', pts:2},
+ {id:'full',    label:'Grand Traveler — collect the whole island', pts:3}
+];
+const MAX_ENTRIES = TIERS.reduce((s,t)=>s+t.pts,0);
+/* ══════════ STATE ══════════ */
+const COLLECTIBLES = SPACES.map((s,i)=>i).filter(i=>/dest|rail/.test(SPACES[i].t));
+const PASS_THRESHOLD = 22; // 75% of 29
+const REGION_SETS = {
+  set_north:   SPACES.map((s,i)=>i).filter(i=>s_region(i)==='north'),
+  set_east:    SPACES.map((s,i)=>i).filter(i=>s_region(i)==='east'),
+  set_south:   SPACES.map((s,i)=>i).filter(i=>s_region(i)==='south'),
+  set_central: SPACES.map((s,i)=>i).filter(i=>s_region(i)==='central'),
+  rail:        SPACES.map((s,i)=>i).filter(i=>SPACES[i].t==='rail')
+};
+function s_region(i){ return /dest/.test(SPACES[i].t) ? SPACES[i].region : null; }
+
+let S = {name:'', email:'', token:null, pos:0, lap:1, collected:[], tiers:['checkin'], pass:false, factIdx:0, started:false};
+function save(){ try{ localStorage.setItem('ttaRally', JSON.stringify(S)); }catch(e){} }
+function load(){ try{ const d=JSON.parse(localStorage.getItem('ttaRally')); if(d && d.started) S=d; }catch(e){} }
+const got = i => S.collected.includes(i);
+const entries = () => TIERS.filter(t=>S.tiers.includes(t.id)).reduce((s,t)=>s+t.pts,0);
+const airline = () => { const tk=TOKENS.find(t=>t.id===S.token); if(tk&&tk.air) return AIRLINES.find(a=>a.id===tk.air); return AIRLINES[(S.lap-1)%3]; };
+
+/* ══════════ BOARD RENDER — square grid + real Taiwan map ══════════ */
+const boardEl = document.getElementById('board');
+const TW_VB=[100,187.59];
+const TW_PATH="M97.9,17.5L95.9,18.3L94.8,19.9L94.0,20.0L90.9,25.2L90.5,29.5L91.5,32.2L91.6,35.5L92.5,37.7L93.9,38.6L93.2,38.8L93.2,42.4L91.5,43.4L92.7,45.1L90.6,46.2L89.6,47.7L88.1,54.7L86.7,57.3L82.6,60.9L82.6,64.2L80.4,66.7L80.4,68.7L81.8,71.2L80.9,73.3L80.5,72.9L79.8,73.8L79.3,79.5L78.1,82.6L78.0,85.1L76.9,87.3L75.7,95.0L74.6,98.1L75.1,99.9L73.1,105.4L72.6,109.0L71.0,110.9L70.4,114.3L69.2,115.4L69.7,117.6L69.3,119.3L70.6,119.8L67.5,121.6L65.5,127.1L63.4,129.7L62.7,131.6L60.9,134.2L58.8,135.0L58.5,135.9L59.3,138.0L58.3,138.7L58.0,140.0L50.9,145.1L49.6,149.4L48.0,151.3L43.8,163.4L43.9,173.9L43.4,174.8L44.2,176.0L43.7,178.1L44.1,180.0L42.9,181.9L41.4,182.5L41.1,184.2L42.4,187.3L41.6,187.6L40.2,185.5L37.2,184.1L36.4,184.6L36.0,186.3L35.3,186.3L34.5,185.5L34.7,182.9L33.2,180.4L34.8,176.1L33.2,170.3L31.5,168.0L30.8,164.6L27.3,160.8L21.8,157.6L20.5,156.0L17.5,154.8L15.5,152.7L15.1,153.0L15.4,152.5L14.4,153.5L13.2,151.9L14.9,152.8L11.6,147.8L11.9,147.3L11.3,145.9L12.0,144.6L11.8,143.2L9.5,137.5L8.2,137.0L9.1,136.5L7.1,129.1L5.7,126.9L0.0,123.0L1.4,119.8L3.4,110.4L4.2,109.6L5.3,105.5L6.5,105.8L6.9,105.1L6.2,104.4L6.3,101.7L5.4,101.9L6.5,99.7L7.2,99.6L4.7,99.4L4.7,98.2L6.0,98.2L6.2,97.4L5.6,95.8L5.6,91.8L5.0,92.5L4.4,91.8L7.0,85.9L6.6,83.5L9.0,80.8L10.1,78.4L11.5,77.5L12.9,74.2L15.6,70.8L15.8,68.4L18.0,66.8L20.1,61.5L22.3,59.8L25.1,54.2L32.2,45.0L34.8,38.5L38.0,35.1L40.2,34.6L41.9,32.9L44.0,29.5L43.7,28.0L44.7,24.6L46.3,23.6L51.8,14.1L61.2,9.8L63.7,10.0L68.6,8.5L68.9,7.3L69.4,7.8L70.3,6.8L69.6,6.1L70.3,6.0L72.0,2.6L74.9,0.5L75.3,0.9L76.3,0.0L76.9,0.5L78.3,0.1L80.6,1.5L81.1,3.3L82.1,3.7L82.6,5.1L83.9,5.2L84.5,4.6L83.8,6.1L85.0,6.8L84.9,7.4L89.9,8.3L89.7,9.0L90.9,9.1L90.7,9.9L95.9,9.4L95.3,11.8L96.2,13.1L96.2,14.6L97.0,15.4L98.5,15.1L100.0,15.9L97.9,17.5ZM17.8,162.2L18.3,162.5L18.2,163.0L16.5,164.0L16.9,162.7L17.8,162.2Z";
+const TW_DOTS=[[60.9,12.1],[77.7,14.7],[76.9,10.9],[74.7,9],[77.4,7.5],[84,5.2],[86.5,15.1],[91.7,10.5],[86.6,9.5],[87.4,30.1],[83.4,59.9],[80.5,62.9],[79.5,72],[55.9,131.5],[69.8,119.9],[55.4,138.1],[38.5,184.6],[17.4,163.1],[21.5,157.5],[20.8,140.2],[14.1,144],[12.9,147.7],[6.7,126.7],[8.8,127.1],[16.2,95.9],[39.3,98.6],[44.9,79.5],[20.6,68.5],[29.7,65.5],[26.4,54.5],[52.1,33.1],[60,15.8]];
+function gridPos(i){
+  if(i<=8)  return {r:1, c:i+1};
+  if(i<=15) return {r:i-7, c:9};
+  if(i<=24) return {r:9, c:9-(i-16)};
+  return {r:9-(i-24), c:1};
+}
+/* mobile: 7×11 tall ring — same clockwise order, Taiwan-true sides */
+function gridPosM(i){
+  if(i<=6)  return {r:1, c:i+1};
+  if(i<=16) return {r:i-5, c:7};
+  if(i<=22) return {r:11, c:6-(i-17)};
+  return {r:10-(i-23), c:1};
+}
+const mq = window.matchMedia('(max-width:620px)');
+const dims = () => mq.matches ? {R:11,C:7} : {R:9,C:9};
+const gridPosAny = i => mq.matches ? gridPosM(i) : gridPos(i);
+function relayout(){
+  SPACES.forEach((sp,i)=>{
+    const el=document.getElementById('sp'+i);
+    if(el){ const g=gridPosAny(i); el.style.gridArea=`${g.r}/${g.c}`; }
+  });
+  const panel=document.querySelector('.cn-panel');
+  if(panel){
+    if(mq.matches){ document.getElementById('panelDock').appendChild(panel); panel.classList.add('docked'); }
+    else { document.querySelector('.center').appendChild(panel); panel.classList.remove('docked'); }
+  }
+  requestAnimationFrame(drawLinks);
+}
+mq.addEventListener ? mq.addEventListener('change', relayout) : mq.addListener(relayout);
+function renderBoard(){
+  SPACES.forEach((sp,i)=>{
+    const d=document.createElement('div');
+    d.className='sp '+(sp.t.includes('corner')||sp.t==='go'?'corner ':'')+(sp.t==='rail'?'rail ':'');
+    d.id='sp'+i;
+    d.innerHTML=`<div class="band" style="background:${REGIONS[sp.region].hex}"></div><div class="ico">${sp.ico}</div><div class="nm">${sp.name}</div>`;
+    d.onclick=()=>peek(i);
+    d.onmouseenter=()=>setHot(i);
+    d.onmouseleave=()=>setHot(null);
+    boardEl.appendChild(d);
+  });
+  renderMap();
+  relayout();
+  refreshBoard();
+  setTimeout(drawLinks,400);
+}
+function renderMap(){
+  const svg=document.getElementById('twmap');
+  svg.setAttribute('viewBox',`0 0 ${TW_VB[0]} ${TW_VB[1]}`);
+  /* vintage chart furniture: graticule, compass rose, label */
+  let h='<g stroke="#6b5d4a" stroke-width="0.25" opacity="0.14">';
+  for(let y=15;y<TW_VB[1];y+=24) h+=`<line x1="0" y1="${y}" x2="${TW_VB[0]}" y2="${y}"/>`;
+  for(let x=14;x<TW_VB[0];x+=24) h+=`<line x1="${x}" y1="0" x2="${x}" y2="${TW_VB[1]}"/>`;
+  h+='</g>';
+  h+=`<g transform="translate(12.5,34)" opacity=".75">
+      <circle r="8.4" fill="none" stroke="#7c6a4d" stroke-width=".5"/>
+      <circle r="6.6" fill="none" stroke="#7c6a4d" stroke-width=".25" opacity=".6"/>
+      <path d="M0,-7.6 L1.6,0 L0,7.6 L-1.6,0 Z" fill="#a63a2e"/>
+      <path d="M-7.6,0 L0,1.6 L7.6,0 L0,-1.6 Z" fill="#7c6a4d"/>
+      <text y="-10.4" text-anchor="middle" font-size="3.4" fill="#7c6a4d" font-family="Oswald,serif" font-weight="600">N</text></g>`;
+  h+=`<text x="76" y="170" font-size="4" fill="#7c6a4d" opacity=".55" font-family="Oswald,serif" letter-spacing="1.2" transform="rotate(-72 76 170)">ILHA FORMOSA</text>`;
+  h+=`<path class="tw-island" d="${TW_PATH}"/>`;
+  SPACES.forEach((sp,i)=>{
+    const [x,y]=TW_DOTS[i];
+    h+=`<circle class="mdot" id="md${i}" data-i="${i}" cx="${x}" cy="${y}" r="1.9" fill="${REGIONS[sp.region].hex}"/>`;
+  });
+  h+=`<circle class="mring" id="mring" r="3.4" cx="-10" cy="-10"/>`;
+  svg.innerHTML=h;
+  svg.querySelectorAll('.mdot').forEach(c=>{
+    const i=+c.dataset.i;
+    c.addEventListener('click',()=>peek(i));
+    c.addEventListener('mouseenter',()=>setHot(i));
+    c.addEventListener('mouseleave',()=>setHot(null));
+  });
+}
+let hotIdx=null;
+function setHot(i){ hotIdx=i; paintLinks(); }
+function drawLinks(){
+  const svg=document.getElementById('links');
+  const wrap=document.querySelector('.board-wrap');
+  if(!svg||!wrap) return;
+  const wr=wrap.getBoundingClientRect();
+  if(wr.width<10) return;
+  svg.setAttribute('viewBox',`0 0 ${wr.width} ${wr.height}`);
+  const map=document.getElementById('twmap');
+  const mr=map.getBoundingClientRect();
+  if(mr.width<5){ svg.innerHTML=''; return; } // map hidden (mobile)
+  const s=Math.min(mr.width/TW_VB[0], mr.height/TW_VB[1]);
+  const ox=mr.left-wr.left+(mr.width-TW_VB[0]*s)/2;
+  const oy=mr.top-wr.top+(mr.height-TW_VB[1]*s)/2;
+  let h='';
+  const {R,C}=dims();
+  SPACES.forEach((sp,i)=>{
+    const cell=document.getElementById('sp'+i).getBoundingClientRect();
+    const g=gridPosAny(i);
+    const cx=cell.left-wr.left+cell.width/2, cy=cell.top-wr.top+cell.height/2;
+    let ex,ey;
+    if(g.r===1){ex=cx;ey=cell.bottom-wr.top;}
+    else if(g.r===R){ex=cx;ey=cell.top-wr.top;}
+    else if(g.c===C){ex=cell.left-wr.left;ey=cy;}
+    else{ex=cell.right-wr.left;ey=cy;}
+    const px=ox+TW_DOTS[i][0]*s, py=oy+TW_DOTS[i][1]*s;
+    h+=`<line id="ln${i}" x1="${px.toFixed(1)}" y1="${py.toFixed(1)}" x2="${ex.toFixed(1)}" y2="${ey.toFixed(1)}"/>`;
+  });
+  svg.innerHTML=h;
+  paintLinks();
+}
+function paintLinks(){
+  SPACES.forEach((sp,i)=>{
+    const ln=document.getElementById('ln'+i);
+    if(ln) ln.classList.toggle('hot', i===hotIdx || (S.started && i===S.pos));
+    const md=document.getElementById('md'+i);
+    if(md){
+      md.classList.toggle('got', got(i));
+      md.classList.toggle('here', S.started && i===S.pos);
+      md.setAttribute('r', (i===hotIdx || (S.started&&i===S.pos)) ? 2.6 : 1.9);
+    }
+  });
+  const ring=document.getElementById('mring');
+  if(ring && S.started){ ring.setAttribute('cx',TW_DOTS[S.pos][0]); ring.setAttribute('cy',TW_DOTS[S.pos][1]); }
+}
+let rsT; window.addEventListener('resize',()=>{ clearTimeout(rsT); rsT=setTimeout(drawLinks,150); });
+function refreshBoard(){
+  SPACES.forEach((sp,i)=>{
+    const el=document.getElementById('sp'+i);
+    el.classList.toggle('got', got(i));
+    const old=el.querySelector('.pin'); if(old) old.remove();
+    if(i===S.pos && S.started){
+      const tk=TOKENS.find(t=>t.id===S.token)||TOKENS[0];
+      const pin=document.createElement('div'); pin.className='pin'; pin.innerHTML=tk.svg;
+      el.appendChild(pin);
+    }
+  });
+  document.getElementById('chipEntries').textContent=`🎟️ ${entries()} ${entries()===1?'entry':'entries'}`;
+  document.getElementById('chipLap').textContent=`🌀 Lap ${S.lap}`;
+  document.getElementById('chipPassport').textContent=`📔 Passport ${S.collected.length}/${COLLECTIBLES.length}`;
+  document.getElementById('chipPass').classList.toggle('hidden', !S.pass);
+  document.getElementById('progTxt').textContent=`${S.collected.length} / ${COLLECTIBLES.length}`;
+  document.getElementById('progFill').style.width=(S.collected.length/COLLECTIBLES.length*100)+'%';
+  paintLinks();
+  save();
+}
+function setStatus(t){ document.getElementById('status').innerHTML=t; }
+
+/* ══════════ MODAL HELPERS ══════════ */
+const host=document.getElementById('modalHost');
+function openModal(html, cls=''){
+  const m=document.createElement('div'); m.className='mask';
+  m.innerHTML=`<div class="modal ${cls}">${html}</div>`;
+  m.addEventListener('click',e=>{ if(e.target===m && m.dataset.lock!=='1') closeModal(m); });
+  host.appendChild(m); return m;
+}
+function closeModal(m){ m.remove(); if(typeof m._after==='function'){const f=m._after; m._after=null; f();} }
+function toast(msg, ms=3200){
+  const t=document.createElement('div'); t.className='toast'; t.innerHTML=msg;
+  document.body.appendChild(t); setTimeout(()=>t.remove(), ms);
+}
+function confetti(){
+  const w=document.createElement('div'); w.className='cw'; document.body.appendChild(w);
+  const colors=['#c9502c','#d9a441','#4e7d43','#46688c','#7d5c8a'];
+  for(let i=0;i<60;i++){ const p=document.createElement('div'); p.className='cp';
+    p.style.cssText=`left:${Math.random()*100}%;width:${6+Math.random()*6}px;height:${8+Math.random()*8}px;background:${colors[i%5]};animation-delay:${Math.random()*.6}s;border-radius:${Math.random()>.5?'50%':'2px'}`;
+    w.appendChild(p); }
+  setTimeout(()=>w.remove(),2800);
+}
+function regionTag(sp){ const r=REGIONS[sp.region]; return `<span class="regionTag" style="background:${r.hex}">${r.name}</span>`; }
+function imgBlock(sp){ return `<div class="md-img">${regionTag(sp)}${sp.ico}<span class="cap">photo placeholder — real images slot in like the quiz (800×500)</span></div>`; }
+
+/* ══════════ CHECK-IN ══════════ */
+function initCheckin(){
+  const tw=document.getElementById('tokens');
+  TOKENS.forEach(t=>{
+    const b=document.createElement('div'); b.className='tok'; b.innerHTML=t.svg+`<span>${t.name}</span>`;
+    b.onclick=()=>{ document.querySelectorAll('.tok').forEach(x=>x.classList.remove('sel')); b.classList.add('sel'); S.token=t.id; };
+    tw.appendChild(b);
+  });
+  document.getElementById('ckStart').onclick=()=>{
+    S.name=document.getElementById('ckName').value.trim()||'Traveler';
+    S.email=document.getElementById('ckEmail').value.trim().toLowerCase();
+    if(CONFIG.backend==='supabase'){
+      if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(S.email)){ toast('Please enter a valid email — it\'s your sweepstakes entry 🎟️'); return; }
+      if(!document.getElementById('ckConsent').checked){ toast('Please agree to the Official Rules to enter.'); return; }
+    }
+    if(!S.token){ toast('Pick a travel token to board ✈️'); return; }
+    S.started=true;
+    apiRegister(); track('game_checkin',{token:S.token});
+    document.getElementById('checkin').classList.add('hidden');
+    document.getElementById('game').classList.remove('hidden');
+    refreshBoard();
+    requestAnimationFrame(drawLinks);
+    toast(`🎟️ Checked in — you're in the draw! Every milestone from here is a bonus.`);
+    setStatus(`Welcome aboard, <b>${S.name}</b>! Roll to leave Taoyuan Airport.`);
+  };
+}
+
+/* ══════════ DICE & MOVEMENT ══════════ */
+let busy=false;
+document.getElementById('rollBtn').onclick=roll;
+function roll(){
+  if(busy) return; busy=true;
+  const d1=document.getElementById('d1');
+  d1.classList.add('rolling');
+  let ticks=0;
+  const iv=setInterval(()=>{
+    d1.dataset.v=1+Math.floor(Math.random()*6);
+    if(++ticks>7){ clearInterval(iv);
+      const a=1+Math.floor(Math.random()*6);
+      d1.dataset.v=a;
+      d1.classList.remove('rolling');
+      setStatus(`You rolled <b>${a}</b>!`);
+      moveBy(a);
+    }
+  },70);
+}
+function moveBy(n){
+  let steps=0, crossed=false;
+  const iv=setInterval(()=>{
+    S.pos=(S.pos+1)%32; steps++;
+    if(S.pos===0) crossed=true;
+    refreshBoard();
+    if(steps>=n){ clearInterval(iv);
+      if(S.pos===0){ onLap(()=>{ busy=false; }); }
+      else if(crossed){ onLap(()=>{ resolveSpace(S.pos, ()=>{ maybeGrantPass(); busy=false; }); }); }
+      else{ resolveSpace(S.pos, ()=>{ maybeGrantPass(); busy=false; }); }
+    }
+  },140);
+}
+function onLap(after){
+  S.lap++;
+  track('lap_complete',{lap:S.lap}); apiProgress();
+  const firstLap=!S.tiers.includes('lap1');
+  const al=airline();
+  maybeGrantPass();
+  const m=openModal(`
+    <div class="md-body" style="padding-top:26px">
+      <div class="bp-lap">✦ Now boarding ✦</div>
+      <span class="bp-airline" style="background:${al.hex}">${al.emoji} ${al.name}</span>
+      <h2>Lap ${S.lap} — around the island again!</h2>
+      <div class="gate-row"><span>From<b>TPE</b></span><span>Flight<b>RTR-${String(S.lap).padStart(2,'0')}</b></span><span>Gate<b>TW${S.lap+8}</b></span></div>
+      <p class="fact">${firstLap?'First lap complete — that\'s a bonus entry! 🎟️':'Plenty of island left to stamp — destinations you already visited still share bonus facts.'}</p>
+    </div>
+    <div class="md-foot"><button class="btn btn-g" id="lapGo">Keep exploring</button></div>`,'boarding');
+  m.dataset.lock='1';
+  m.querySelector('#lapGo').onclick=()=>{ closeModal(m); after&&after(); };
+  award('lap1');
+  refreshBoard();
+}
+/* clicking any space = read-only peek */
+function peek(i){
+  if(busy) return;
+  const sp=SPACES[i];
+  const collected=got(i);
+  openModal(`${imgBlock(sp)}
+    <div class="md-body"><span class="kick">${collected?'✓ In your passport':'Not visited yet'}</span>
+    <h2>${sp.ico} ${sp.name}</h2><p class="fact">${sp.fact}</p></div>
+    <div class="md-foot"><button class="btn btn-ghost" onclick="this.closest('.mask').remove()">Close</button></div>`);
+}
+
+/* ══════════ SPACE RESOLUTION ══════════ */
+function resolveSpace(i, done){
+  const sp=SPACES[i];
+  if(sp.t==='go'){ done(); return; }
+  if(sp.t==='corner'){ // Miaokou / Mazu
+    maybeGrantPass();
+    const m=openModal(`${imgBlock(sp)}
+      <div class="md-body"><span class="kick">📖 Did you know?</span>
+      <h2>${sp.ico} ${sp.name}</h2><p class="fact">${sp.fact}</p></div>
+      <div class="md-foot"><button class="btn" id="mOk">Nice! Continue</button></div>`);
+    m.querySelector('#mOk').onclick=()=>{ closeModal(m); done(); };
+    return;
+  }
+  if(sp.t==='rail'){
+    const first=!got(i);
+    if(first){ collect(i); }
+    const others=REGION_SETS.rail.filter(x=>x!==i && SPACES[x].line===sp.line);
+    const lineName=sp.line==='thsr'?'High Speed Rail':'East Coast Line';
+    const m=openModal(`${imgBlock(sp)}
+      <div class="md-body"><span class="kick">${first?'🎉 Station stamped!':'📖 Back at the station'}</span>
+      <h2>${sp.ico} ${sp.name}</h2><p class="fact">${sp.fact}</p>
+      <p class="md-q">Ride the ${lineName}?</p>
+      <div class="ops">${others.map(x=>`<button class="op" data-to="${x}"><span class="lb">${SPACES[x].ico}</span>${SPACES[x].name}${got(x)?' ✓':''}</button>`).join('')}
+      <button class="op" data-to="-1"><span class="lb">🚶</span>Stay here — keep rolling</button></div></div>
+      <div style="height:18px"></div>`);
+    m.dataset.lock='1';
+    m.querySelectorAll('.op').forEach(b=>b.onclick=()=>{
+      const to=+b.dataset.to; closeModal(m);
+      if(to>=0){ S.pos=to; refreshBoard(); toast(`${sp.line==='thsr'?'🚄':'🚂'} Rode the ${lineName} to ${SPACES[to].name}`); resolveSpace(to, done); }
+      else done();
+    });
+    return;
+  }
+  // destination
+  if(got(i)){
+    const f=BONUS_FACTS[S.factIdx++ % BONUS_FACTS.length]; save();
+    toast(`📖 ${sp.name} again! Bonus fact: ${f}`, 5200);
+    done(); return;
+  }
+  showDestCard(i, done);
+}
+function showDestCard(i, done){
+  const sp=SPACES[i];
+  const m=openModal(`${imgBlock(sp)}
+    <div class="md-body"><span class="kick">📖 Did you know?</span>
+    <h2>${sp.ico} ${sp.name}</h2><p class="fact">${sp.fact}</p></div>
+    <div class="md-foot"><button class="btn" id="mQ">Answer 1 question to stamp it 📔</button></div>`);
+  m.dataset.lock='1';
+  m.querySelector('#mQ').onclick=()=>{ closeModal(m); showQuestion(i, done); };
+}
+function showQuestion(i, done){
+  const sp=SPACES[i];
+  let tries=0;
+  const m=openModal(`${imgBlock(sp)}
+    <div class="md-body"><span class="kick">Question</span>
+    <p class="md-q">${sp.q}</p>
+    <div class="ops">${sp.ops.map((o,x)=>`<button class="op" data-x="${x}"><span class="lb">${'ABCD'[x]}</span>${o}</button>`).join('')}</div>
+    <div id="fb"></div></div><div class="md-foot" id="mf"></div>`);
+  m.dataset.lock='1';
+  const fb=m.querySelector('#fb'), mf=m.querySelector('#mf');
+  m.querySelectorAll('.op').forEach(b=>b.onclick=()=>{
+    if(b.classList.contains('dim')||b.classList.contains('correct')) return;
+    const x=+b.dataset.x;
+    if(x===sp.a){
+      b.classList.add('correct');
+      m.querySelectorAll('.op').forEach(o=>{ if(+o.dataset.x!==x) o.classList.add('dim'); });
+      fb.innerHTML=`<div class="ff">✅ ${sp.ok}</div>`;
+      collect(i);
+      mf.innerHTML=`<div class="reward-line">📔 ${sp.name} stamped into your passport!</div><button class="btn btn-g" id="mDone">Continue</button>`;
+      mf.querySelector('#mDone').onclick=()=>{ closeModal(m); done(); };
+    } else {
+      tries++; b.classList.add('wrong');
+      if(tries===1){ fb.innerHTML=`<div class="ht">💡 Hint: ${sp.hint}</div>`; }
+      else {
+        m.querySelectorAll('.op').forEach(o=>o.classList.add('dim'));
+        fb.innerHTML=`<div class="ff bad">Not this time! The answer was <b>${'ABCD'[sp.a]}) ${sp.ops[sp.a]}</b>. Swing by ${sp.name} again on a later lap to stamp it.</div>`;
+        mf.innerHTML=`<button class="btn" id="mDone">Continue</button>`;
+        mf.querySelector('#mDone').onclick=()=>{ closeModal(m); done(); };
+      }
+    }
+  });
+}
+
+/* ══════════ COLLECTION, TIERS, PASSES ══════════ */
+function collect(i){
+  if(!got(i)){ S.collected.push(i); track('stamp_collected',{destination:SPACES[i].name, total:S.collected.length}); }
+  checkTiers(); refreshBoard(); apiProgress();
+}
+function checkTiers(){
+  Object.entries(REGION_SETS).forEach(([id,set])=>{
+    if(set.every(x=>got(x))) award(id);
+  });
+  if(S.collected.length>=Math.ceil(COLLECTIBLES.length/2)) award('half');
+  if(S.collected.length===COLLECTIBLES.length) award('full', true);
+}
+function award(id, grand=false){
+  if(S.tiers.includes(id)) return;
+  const t=TIERS.find(t=>t.id===id); if(!t) return;
+  S.tiers.push(id); save();
+  apiEntry(id, t.pts); track('tier_awarded',{tier:id, pts:t.pts});
+  if(grand) track('game_complete');
+  confetti();
+  toast(`🎟️ +${t.pts} bonus ${t.pts>1?'entries':'entry'} — ${t.label}!`, 4200);
+  if(grand) setTimeout(showGrand, 700);
+  refreshBoard();
+}
+function showGrand(){
+  const al=airline();
+  openModal(`
+    <div class="md-body" style="padding-top:30px;text-align:center">
+      <div style="font-size:56px;margin-bottom:10px">🏆</div>
+      <h2>Grand Traveler!</h2>
+      <p class="fact">You've stamped every destination on the island — the full ${COLLECTIBLES.length}. You now hold the maximum <b>${MAX_ENTRIES} entries</b> in the flight ticket draw, and you've unlocked the small-gift spin (coming in the full version).</p>
+      <span class="bp-airline" style="background:${al.hex};color:#fff">${al.emoji} See you on board — ${al.name}</span>
+    </div>
+    <div class="md-foot" style="padding-top:16px"><button class="btn btn-g" onclick="this.closest('.mask').remove()">🎉 Amazing</button></div>`);
+}
+function maybeGrantPass(){
+  if(S.pass || S.collected.length<PASS_THRESHOLD || S.collected.length===COLLECTIBLES.length) return;
+  S.pass=true; save(); refreshBoard();
+  const al=airline();
+  openModal(`
+    <div class="md-body" style="padding-top:26px">
+      <div class="bp-lap">✦ Boarding pass issued ✦</div>
+      <span class="bp-airline" style="background:${al.hex}">${al.emoji} ${al.name}</span>
+      <h2>Fly anywhere on the island</h2>
+      <p class="fact">You've stamped over 75% of your passport — ${al.name} is giving you a direct flight to any destination you're still missing. Tap the 🎫 boarding pass chip whenever you're ready.</p>
+    </div>
+    <div class="md-foot"><button class="btn btn-g" onclick="this.closest('.mask').remove()">Got it ✈️</button></div>`,'boarding');
+}
+document.getElementById('chipPass').onclick=()=>{
+  if(!S.pass||busy) return;
+  const missing=COLLECTIBLES.filter(i=>!got(i));
+  const al=airline();
+  const m=openModal(`
+    <div class="md-body" style="padding-top:24px">
+      <span class="kick" style="background:${al.hex}20;color:${al.hex}">${al.emoji} ${al.name} boarding pass</span>
+      <h2>Choose your destination</h2>
+      <div class="fly-list">${missing.map(i=>`<button class="fly-opt" data-to="${i}">${SPACES[i].ico} ${SPACES[i].name}</button>`).join('')}</div>
+    </div>
+    <div class="md-foot" style="padding-top:14px"><button class="btn btn-ghost" id="mCancel">Save it for later</button></div>`);
+  m.querySelector('#mCancel').onclick=()=>closeModal(m);
+  m.querySelectorAll('.fly-opt').forEach(b=>b.onclick=()=>{
+    const to=+b.dataset.to; closeModal(m);
+    S.pass=false; S.pos=to; busy=true; refreshBoard();
+    toast(`✈️ Flew ${al.name} direct to ${SPACES[to].name}!`);
+    resolveSpace(to, ()=>{ busy=false; maybeGrantPass(); });
+  });
+};
+
+/* ══════════ PASSPORT & HOW-TO ══════════ */
+function showPassport(){
+  const cells=COLLECTIBLES.map(i=>{
+    const sp=SPACES[i];
+    return `<div class="pp-cell ${got(i)?'got':''}">${sp.ico}<span>${sp.name}</span></div>`;
+  }).join('');
+  const tiers=TIERS.map(t=>`<div class="tier ${S.tiers.includes(t.id)?'done':''}">${S.tiers.includes(t.id)?'✅':'⬜'} ${t.label}<span class="tk">+${t.pts} 🎟️</span></div>`).join('');
+  openModal(`
+    <div class="md-body" style="padding-top:24px">
+      <span class="kick">📔 ${S.name}'s Taiwan Passport</span>
+      <h2>${S.collected.length} / ${COLLECTIBLES.length} stamped · ${entries()} / ${MAX_ENTRIES} entries</h2>
+      <div class="pp-grid">${cells}</div>
+      <div class="tier-list">${tiers}</div>
+    </div>
+    <div class="md-foot" style="padding-top:14px"><button class="btn btn-ghost" onclick="this.closest('.mask').remove()">Close</button></div>`);
+}
+document.getElementById('chipPassport').onclick=showPassport;
+document.getElementById('lnkPassport').onclick=showPassport;
+document.getElementById('lnkHow').onclick=()=>openModal(`
+  <div class="md-body" style="padding-top:24px">
+    <span class="kick">How to play</span>
+    <h2>Round Taiwan Rally</h2>
+    <p class="fact">
+    🎟️ <b>You're already entered</b> — checking in gave you your first entry in the flight ticket draw.<br><br>
+    🎲 <b>Roll</b> to travel clockwise around Taiwan.<br>
+    📖 Land on a destination, learn something real about it, then <b>answer 1 question</b> to stamp it into your passport.<br>
+    🚄 <b>Stations</b>: THSR (west coast) and TRA (east coast) stamp instantly — and let you ride ahead along their line.<br>
+    🎟️ <b>Bonus entries</b>: first lap, each region set, all 6 stations, 50%, and the full island (max ${MAX_ENTRIES}).<br>
+    🎫 Stamp 75% and a partner airline issues a <b>boarding pass</b> to fly anywhere you're missing.<br><br>
+    Play as little or as much as you like — your passport saves in this browser.</p>
+  </div>
+  <div class="md-foot"><button class="btn" onclick="this.closest('.mask').remove()">Let's go 🎲</button></div>`);
+
+/* ══════════ INIT ══════════ */
+load();
+renderBoard();
+initCheckin();
+if(S.started){
+  document.getElementById('checkin').classList.add('hidden');
+  document.getElementById('game').classList.remove('hidden');
+  refreshBoard();
+  requestAnimationFrame(drawLinks);
+  setTimeout(drawLinks,400);
+  setStatus(`Welcome back, <b>${S.name}</b>! Passport: ${S.collected.length}/${COLLECTIBLES.length}.`);
+}
+/* Wix iframe height (same pattern as quiz embed) */
+setInterval(()=>{ try{ parent.postMessage({iframeHeight:document.body.scrollHeight+24},'*'); }catch(e){} },800);
+</script>
+</body>
+</html>
