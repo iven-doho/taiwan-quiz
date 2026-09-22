@@ -1,1287 +1,656 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Taiwan Sweepstakes — Kick Off Your Adventure</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1KFW5EHHT4"></script>
-<script>
-  window.dataLayer=window.dataLayer||[];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js',new Date());
-  gtag('config','G-1KFW5EHHT4',{
-    page_location:'https://feeltaiwan.com/kickoff',
-    page_title:'Taiwan Sweepstakes — Kick Off Your Adventure',
-  });
-</script>
+<meta charset="utf-8">
+<base target="_top">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feel Taiwan — Unfold Taiwan board</title>
 <style>
-:root{--brand:#ff5629;--brand-dark:#e04a22;--brand-light:#ff562915;--brand-glow:#ff562940;--green:#22c55e;--green-light:#f0fdf4;--green-border:#bbf7d0;--red:#ef4444;--red-light:#fef2f2;--hint-bg:#FFF8E1;--hint-border:#FFE082;--hint-text:#E65100;--text-dark:#1a1a1a;--text-body:#444;--text-mid:#666;--text-light:#999;--text-faint:#ccc;--bg:#f5f5f5;--card:#fff;--border:#e8e8e8;--border-light:#f0f0f0;--disabled-bg:#fafafa;--disabled-text:#bbb;--radius-md:14px;--radius-xl:24px;--font:'Montserrat',sans-serif;}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:var(--font);background:transparent;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;align-items:flex-start;padding:12px;min-height:100vh;}
-img{max-width:100%;display:block;}a{color:var(--brand);text-decoration:none;}
-.screen{width:100%;max-width:800px;margin:0 auto;animation:fadeUp .45s ease both;}
-.screen.quiz{max-width:480px;}
-.hidden{display:none!important;}
-.qs{width:100%;background:var(--card);border-radius:var(--radius-xl);box-shadow:0 4px 20px rgba(0,0,0,.06),0 0 0 1px rgba(0,0,0,.03);overflow:hidden;margin:0 auto;}
-.qh{padding:14px 18px 6px;display:flex;align-items:center;justify-content:space-between;}.qh img{height:80px;cursor:pointer;}.back-to-grid{font-size:13px;font-weight:600;color:var(--brand);cursor:pointer;white-space:nowrap;}
-.sc{font-size:12px;color:var(--text-light);font-weight:600;}
-.tb{padding:2px 18px 0;display:flex;align-items:center;gap:6px;}.tb .i{font-size:16px;}.tb .n{font-size:13px;font-weight:700;color:var(--brand);}
-.pw{padding:12px 18px 8px;}.pt{height:4px;background:#f0f0f0;border-radius:2px;overflow:hidden;}.pf{height:100%;background:var(--brand);border-radius:2px;transition:width .5s cubic-bezier(.22,1,.36,1);}
-.ii{width:100%;aspect-ratio:16/10;overflow:hidden;position:relative;}.ii img{width:100%;height:100%;object-fit:cover;}.ii .img-cap{position:absolute;bottom:12px;left:12px;padding:4px 10px;background:rgba(0,0,0,.55);border-radius:6px;font-size:11px;font-weight:600;color:#fff;letter-spacing:.02em;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);}
-.ib{padding:16px 24px 0;}.ibg{display:inline-block;padding:5px 14px;background:var(--brand-light);border-radius:20px;margin-bottom:14px;font-size:12px;font-weight:600;color:var(--brand);letter-spacing:.04em;text-transform:uppercase;}.ib h2{font-size:22px;font-weight:700;margin-bottom:10px;color:var(--text-dark);}.ib p{font-size:15px;line-height:1.75;color:var(--text-mid);}.ibtn{padding:20px 24px 24px;}
-.btn{display:flex;align-items:center;justify-content:center;width:100%;padding:16px;background:var(--brand);color:#fff;border:none;border-radius:var(--radius-md);font-size:16px;font-weight:700;font-family:var(--font);cursor:pointer;box-shadow:0 4px 20px var(--brand-glow);transition:transform .15s;-webkit-tap-highlight-color:transparent;text-decoration:none;flex-direction:column;}.btn:active{transform:scale(.98);}.btn-g{background:var(--green);box-shadow:0 4px 16px rgba(34,197,94,.3);}.btn small{font-size:11px;font-weight:400;margin-top:4px;opacity:.85;}
-.btn-cta{display:inline-flex;align-items:center;justify-content:center;width:auto;padding:16px 32px;}
-.qhd{padding:14px 20px 12px;background:linear-gradient(135deg,var(--brand),#ff5629cc);position:relative;overflow:hidden;}.qhd .c1{position:absolute;top:-30px;right:-30px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.08);}.qhd .c2{position:absolute;bottom:-20px;left:30px;width:70px;height:70px;border-radius:50%;background:rgba(255,255,255,.05);}.qn{display:inline-block;padding:3px 10px;background:rgba(255,255,255,.2);border-radius:8px;font-size:11px;font-weight:700;color:#fff;letter-spacing:.08em;margin-bottom:8px;}.qhd h2{font-size:17px;font-weight:700;color:#fff;line-height:1.4;position:relative;}.qw{height:6px;background:linear-gradient(135deg,var(--brand),#ff5629cc);clip-path:ellipse(120% 100% at 50% 0%);margin-top:-1px;}
-.os{padding:8px 24px 0;display:flex;flex-direction:column;gap:8px;}.op{width:100%;padding:14px 16px;border:2px solid var(--border);border-radius:var(--radius-md);font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;text-align:left;transition:all .25s;display:flex;align-items:center;gap:12px;line-height:1.45;background:#fff;-webkit-tap-highlight-color:transparent;}.op .lb{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;background:#f5f5f5;color:#888;transition:all .25s;}.op.correct{border-color:var(--green);background:var(--green-light);color:#15803d;}.op.correct .lb{background:var(--green);color:#fff;}.op.wrong{border-color:var(--red);background:var(--red-light);color:#dc2626;animation:shakeX .35s;}.op.wrong .lb{background:var(--red);color:#fff;}.op.dim{border-color:#eee;background:var(--disabled-bg);color:var(--disabled-text);cursor:default;}.op.dim .lb{background:#f0f0f0;color:#ccc;}.op.used{border-color:#e5e5e5;background:var(--disabled-bg);color:var(--disabled-text);cursor:default;}.op.used .lb{background:#f0f0f0;color:#ccc;}
-.ht{margin:12px 24px 0;padding:14px 16px;background:var(--hint-bg);border-radius:12px;border:1px solid var(--hint-border);font-size:14px;color:var(--hint-text);line-height:1.5;animation:fadeUp .35s;}.fw{padding:12px 24px 24px;animation:fadeUp .4s;}.ff{padding:14px 16px;background:var(--green-light);border-radius:12px;border:1px solid var(--green-border);margin-bottom:14px;font-size:14px;color:#15803d;line-height:1.6;}
-.cmp{text-align:center;padding:48px 24px 32px;animation:fadeUp .6s;}.cmp-t{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--brand),#FFB800);display:flex;align-items:center;justify-content:center;margin:0 auto 28px;box-shadow:0 8px 32px var(--brand-glow);animation:pulseGlow 2s infinite;font-size:44px;}.cmp h2{font-size:24px;font-weight:800;margin-bottom:8px;color:var(--text-dark);}.cmp p{font-size:15px;color:#666;margin-bottom:24px;line-height:1.6;}.cmp p strong{color:var(--brand);}.cmp .eb{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--brand-light);border-radius:14px;border:2px solid #ff562925;margin-bottom:28px;font-size:15px;font-weight:700;color:var(--brand);}.cmp .sub{font-size:13px;color:#aaa;margin-bottom:24px;}
-.qf{padding:10px 18px 14px;text-align:center;border-top:1px solid var(--border-light);font-size:11px;color:var(--text-faint);font-weight:500;letter-spacing:.02em;}
-.cw{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1000;overflow:hidden;}.cp{position:absolute;top:-12px;animation:confettiFall 2s ease-in forwards;}
-.scr{animation:fadeUp .45s ease both;}.scr.hidden{display:none!important;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-@keyframes shakeX{0%,100%{transform:translateX(0)}20%{transform:translateX(-8px)}40%{transform:translateX(8px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
-@keyframes confettiFall{0%{transform:translateY(0) rotate(0);opacity:1}80%{opacity:1}100%{transform:translateY(100vh) rotate(1080deg);opacity:0}}
-@keyframes pulseGlow{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
-.intro-container{max-width:800px;margin:0 auto;padding:0;}
-.intro-body{padding:32px 24px;}
-.intro-header{text-align:center;margin-bottom:24px;}.intro-header h1{font-size:28px;font-weight:800;color:var(--text-dark);margin-bottom:12px;line-height:1.2;}.intro-header p{font-size:15px;color:var(--text-mid);line-height:1.65;max-width:600px;margin:0 auto 10px;}
-.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}.cards-grid .card{background:var(--bg);padding:20px 16px;border-radius:var(--radius-md);border:1px solid var(--border);text-align:center;}.cards-grid .card .card-step{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;font-size:14px;font-weight:700;margin-bottom:10px;}.cards-grid .card h3{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:6px;}.cards-grid .card p{font-size:13px;color:var(--text-mid);line-height:1.5;}
-.prize-section{margin-top:28px;}.prize-row{display:flex;flex-direction:row;gap:16px;justify-content:center;align-items:flex-start;}.prize-thumb{text-align:center;flex:1;min-width:0;}.prize-thumb img{width:100%;height:160px;object-fit:contain;border-radius:10px;border:1px solid var(--border);background:#fff;padding:8px;display:block;}.prize-thumb span{display:block;font-size:11px;color:var(--text-light);margin-top:6px;font-weight:600;}
-@media(max-width:540px){.prize-row{flex-direction:column;align-items:center;}.prize-thumb{width:100%;max-width:320px;}.prize-thumb img{height:180px;}}
-.intro-cta{text-align:center;margin-bottom:8px;}
-.intro-disclaimer{text-align:center;font-size:12px;color:var(--text-light);margin-top:12px;}
-.intro-tagline{text-align:center;margin-bottom:20px;}.intro-tagline p{font-size:16px;color:var(--text-mid);line-height:1.65;max-width:600px;margin:0 auto 10px;}.intro-partnership{font-size:11px;color:var(--text-light);text-align:center;margin-top:10px;letter-spacing:.01em;}
-.hub-container{max-width:960px;margin:0 auto;padding:40px 24px;}
-.hub-header{text-align:center;margin-bottom:32px;}.hub-header .back-link{display:inline-block;font-size:14px;color:var(--brand);margin-bottom:16px;cursor:pointer;}.hub-header h2{font-size:24px;font-weight:800;color:var(--text-dark);margin-bottom:8px;}.hub-header p{font-size:15px;color:var(--text-mid);}
-.entry-counter{display:inline-flex;align-items:center;gap:10px;background:var(--brand-light);padding:12px 20px;border-radius:20px;margin:24px 0;font-size:15px;font-weight:700;color:var(--brand);}.counter-bar{height:6px;background:#f0f0f0;border-radius:3px;width:100px;overflow:hidden;}.counter-fill{height:100%;background:var(--brand);border-radius:3px;transition:width .3s;}
-.quiz-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:40px;}
-.quiz-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;cursor:pointer;transition:all .25s;}.quiz-card:hover{border-color:var(--brand);box-shadow:0 4px 12px rgba(255,86,41,.15);}
-.quiz-card.locked{opacity:.5;cursor:default;}.quiz-card.locked:hover{border-color:var(--border);box-shadow:none;}
-.quiz-card-header{padding:16px;text-align:center;}.quiz-card-icon{font-size:32px;margin-bottom:8px;}.quiz-card-title{font-size:14px;font-weight:700;color:var(--text-dark);margin-bottom:6px;}.quiz-card-subtitle{font-size:12px;color:var(--text-light);}
-.quiz-card-footer{padding:0 16px 16px;text-align:center;}.quiz-badge{display:inline-block;padding:6px 12px;border-radius:12px;font-size:12px;font-weight:700;}.quiz-badge.done{background:var(--green-light);color:#15803d;}.quiz-badge.pending{background:var(--brand-light);color:var(--brand);}.quiz-badge.soon{background:#f5f5f5;color:#aaa;}
-.hub-footer{text-align:center;font-size:12px;color:var(--text-light);padding-top:24px;border-top:1px solid var(--border-light);}.hub-footer a{color:var(--brand);}
-.hub-section-label{grid-column:1/-1;font-size:13px;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:.06em;padding:8px 0 0;}
-@media(max-width:540px){.cards-grid{grid-template-columns:1fr;}.intro-header h1{font-size:26px;}.quiz-grid{grid-template-columns:1fr;}}
-@media(min-width:541px) and (max-width:767px){.quiz-grid{grid-template-columns:repeat(2,1fr);}}
-@media(min-width:768px){
-.screen.quiz{max-width:960px;}
-.qs{max-width:none;}
-.qs .scr{display:grid;grid-template-columns:1fr 1fr;align-items:start;}
-.qs .scr .ii{aspect-ratio:8/5;height:auto;position:relative;margin-top:50px;}.qs .scr .ii img{width:100%;height:100%;object-fit:cover;border-radius:0;display:block;}
-.qs .scr .q-right{display:flex;flex-direction:column;overflow-y:auto;scrollbar-width:none;-ms-overflow-style:none;}.qs .scr .q-right::-webkit-scrollbar{display:none;}
-.qs .scr .q-right .ib{flex:1;padding:24px 28px 0;}
-.qs .scr .q-right .ibtn{padding:20px 28px 28px;}
-.qs .scr .q-right .qhd{padding:28px 28px 24px;margin-left:28px;margin-right:28px;border-radius:var(--radius-md);}
-.qs .scr .q-right .qw{display:none;}
-.qs .scr .q-right .os{padding:12px 28px 0;}
-.qs .scr .q-right .ht{margin:12px 28px 0;}
-.qs .scr .q-right .fw{padding:12px 28px 20px;}
-.qs .scr .q-right .op{padding:12px 14px;font-size:13px;}.qs .scr .q-right .op .lb{width:26px;height:26px;}
-.qs .cmp{padding:60px 40px 40px;}
-.qs .scr .cmp{grid-column:1/-1;}.qs .scr .cmp .btn{max-width:360px;margin:0 auto;}
-.qh{padding:14px 24px 6px;}.tb{padding:2px 24px 0;}.pw{padding:12px 24px 8px;}
-.quiz-grid{grid-template-columns:repeat(3,1fr);}
-.register-form-row{display:grid;grid-template-columns:1fr 1fr;gap:0 20px;}
-.intro-header h1{font-size:36px;}
+/* ── the only two faces. Both local; no Google Fonts, no third family. ── */
+@font-face{font-family:'Taiwan Sans';
+  src:url('fonts/taiwan-sans.woff2') format('woff2'),
+      url('fonts/taiwan-sans.woff') format('woff');
+  font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Montserrat';
+  src:url('fonts/montserrat.woff2') format('woff2');
+  font-weight:100 900;font-style:normal;font-display:swap}
+
+:root{
+  --paper:#F7F4EF;--card:#FFFFFF;--ink:#372E22;--body:#4C4234;--mid:#6B5D4A;
+  --light:#9A8B74;--border:#DFD3BA;--border-l:#EAE0CB;--orange:#FF5629;
+  --gold:#E5863B;--mango:#FFCA03;--grass:#007758;--moss:#004740;--purple:#8146C6;
+  --summer:#269AF9;--trunk:#814724;
+  --font:'Montserrat',-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;
+  --disp:'Taiwan Sans','Montserrat',var(--font);
+  --tile:clamp(128px,15vw,206px);--gap:10px;
 }
-@media(min-width:1024px){.quiz-grid{grid-template-columns:repeat(4,1fr);}.hub-container{max-width:1080px;}}
-.register-container{max-width:800px;margin:0 auto;padding:40px 24px;}
-.register-header{text-align:center;margin-bottom:36px;}.register-header h2{font-size:24px;font-weight:800;color:var(--text-dark);margin-bottom:8px;}.register-header p{font-size:14px;color:var(--text-mid);}
-.form-group{margin-bottom:20px;}.form-group label{display:block;font-size:14px;font-weight:600;color:var(--text-dark);margin-bottom:8px;}.form-group input,.form-group select{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:var(--radius-md);font-size:14px;font-family:var(--font);transition:all .25s;}.form-group input:focus,.form-group select:focus{outline:none;border-color:var(--brand);}
-.form-checkbox{display:flex;align-items:flex-start;gap:10px;margin-bottom:16px;font-size:13px;color:var(--text-mid);line-height:1.5;}.form-checkbox input[type="checkbox"]{width:18px;height:18px;margin-top:2px;cursor:pointer;flex-shrink:0;}
-.form-disclaimer{font-size:13px;color:var(--text-light);text-align:center;margin-bottom:24px;line-height:1.6;}
-.form-footer{text-align:center;font-size:13px;color:var(--text-light);padding-top:20px;border-top:1px solid var(--border-light);}.form-footer a{color:var(--brand);cursor:pointer;text-decoration:underline;}
-.toggle-link{color:var(--brand);cursor:pointer;margin-left:4px;}
-.hub-banner{display:flex;align-items:flex-start;gap:12px;padding:14px 18px;border-radius:var(--radius-md);margin-bottom:20px;font-size:14px;line-height:1.55;animation:fadeUp .4s ease both;position:relative;}
-.hub-banner.banner-new{background:#fff8f0;border:1px solid #ffd5c2;color:#c0410a;}
-.hub-banner.banner-returning{background:#f0f7ff;border:1px solid #bdd9ff;color:#1a5fb5;}
-.hub-banner.banner-maxed{background:var(--green-light);border:1px solid var(--green-border);color:#15803d;}
-.hub-banner .bicon{font-size:20px;flex-shrink:0;margin-top:1px;}
-.hub-banner .bmsg{flex:1;}
-.hub-banner .bmsg strong{display:block;margin-bottom:2px;}
-.hub-banner .bclose{font-size:18px;color:inherit;opacity:.5;cursor:pointer;flex-shrink:0;line-height:1;padding:0 2px;background:none;border:none;font-family:inherit;}.hub-banner .bclose:hover{opacity:1;}
+*{margin:0;padding:0;box-sizing:border-box}
+/* Taiwan Sans ships ONE weight (400). Anything asking for 700 makes the
+   browser synthesise bold, which thickens the strokes and stops it looking
+   like Taiwan Sans. Every element on the display face asks for 400. */
+h1,h2,h3,h4,b,strong,.logo,.tile h3,.tile .num,.tile .flag,.lines b,
+.layer-hd h2,.sub-i .st,.roll,.roll-again,.sechd h2,.sechd .sub,
+.offer .no,.offer h3,.offer .tag,.card .n,.card h3,.card .tag,
+.win h2,.row .n,.anno b,.pane h1{font-weight:400}
+/* The embedding element sets a fixed height. Fill it exactly — that is what
+   removes the blank band — and never scroll inside the iframe. */
+html,body{margin:0}
+body{background:var(--paper);color:var(--body);font-family:var(--font);
+  -webkit-font-smoothing:antialiased}
+.board-sec{width:100%}
+.wrap{max-width:1300px;margin:0 auto;padding:0 20px}
+
+.hdr{border-bottom:1px solid var(--border);background:var(--paper);position:sticky;top:0;z-index:30}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;height:58px;gap:16px}
+.logo{font-family:var(--disp);font-size:19px;letter-spacing:.12em;color:var(--orange);text-transform:uppercase;white-space:nowrap}
+.nav{display:flex;gap:5px;flex-wrap:wrap}
+.nav a{font-family:var(--font);font-weight:600;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);text-decoration:none;border:1px solid var(--border);padding:6px 10px;border-radius:2px;white-space:nowrap}
+.nav a:hover{color:var(--orange);border-color:var(--orange)}
+
+.board-sec{padding:10px 0}
+.board{position:relative;display:grid;gap:var(--gap);
+  grid-template-columns:var(--tile) 1fr 1fr var(--tile);
+  grid-template-rows:var(--tile) minmax(190px,auto) minmax(190px,auto) var(--tile)}
+.centre{grid-area:2/2/4/4}
+.p1{grid-area:1/1}.p2{grid-area:1/2}.p3{grid-area:1/3}.p4{grid-area:1/4}
+.p5{grid-area:2/4}.p6{grid-area:3/4}.p7{grid-area:4/4}.p8{grid-area:4/3}
+.p9{grid-area:4/2}.p10{grid-area:4/1}.p11{grid-area:3/1}.p12{grid-area:2/1}
+
+.tile{position:relative;overflow:hidden;border-radius:10px;background:var(--hue,var(--grass));
+  display:flex;flex-direction:column;justify-content:flex-end;min-height:0;isolation:isolate;
+  border:none;padding:0;cursor:pointer;text-align:left;font:inherit;color:inherit;
+  transition:transform .14s cubic-bezier(.2,.9,.25,1)}
+.tile:hover{transform:translateY(-3px)}
+.tile:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+/* ── colour code: a sliver across the top of every square ──
+   green  = the six 100 Ways themes
+   orange = promos and prizes
+   mango  = What's On
+   Set per square from its `kind` — see accentFor() below. */
+.tile .bar{position:absolute;top:0;left:0;right:0;height:6px;z-index:3;
+  background:var(--accent,var(--grass))}
+.tile{--accent:var(--grass)}
+.tile.k-promo{--accent:var(--orange)}
+.tile.k-ways{--accent:var(--grass)}
+.tile.k-now{--accent:var(--mango)}
+.tile.k-start{--accent:var(--ink)}
+.tile .cap{padding-top:13px}
+.tile .ph{position:absolute;inset:0;z-index:-2;
+  background:radial-gradient(120% 90% at 30% 22%,rgba(255,255,255,.30),transparent 62%),
+             linear-gradient(160deg,var(--hue) 0%,color-mix(in srgb,var(--hue) 62%,#000) 100%)}
+.tile .pic{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  object-position:50% 38%;z-index:-2}
+.tile .scrim{position:absolute;left:0;right:0;bottom:0;height:56%;z-index:-1;
+  background:linear-gradient(to top,rgba(20,14,8,.80) 0%,rgba(20,14,8,.42) 46%,transparent 100%)}
+.tile .cap{display:block;padding:10px 11px}
+.tile .kind{display:block;font-family:var(--font);font-weight:600;font-size:8.5px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.72);margin-bottom:3px}
+.tile h3{font-family:var(--disp);font-size:16px;line-height:1.05;letter-spacing:.02em;text-transform:uppercase;color:#fff}
+.tile .sub{display:block;font-family:var(--font);font-size:10px;line-height:1.35;color:rgba(255,255,255,.82);margin-top:3px}
+.tile .num{position:absolute;top:7px;left:8px;font-family:var(--disp);font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.6)}
+.tile .flag{position:absolute;top:6px;right:7px;background:var(--mango);color:var(--ink);font-family:var(--disp);font-size:9px;letter-spacing:.05em;padding:3px 6px;border-radius:2px}
+.tile .layers{position:absolute;right:8px;bottom:8px;display:flex;gap:2px}
+.tile .layers i{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.85)}
+.tile[aria-expanded="true"]{transform:translateY(-3px);box-shadow:0 0 0 3px var(--ink)}
+
+/* ── carrier tiles: white partner panel, logo optically normalised ── */
+.tile.air{background:#fff;justify-content:center;align-items:center;padding:14px 16px}
+.tile.air .ph,.tile.air .scrim{display:none}
+.tile.air img{width:100%;max-width:190px;height:auto;display:block}
+.tile.air .cond{position:absolute;left:0;right:0;bottom:0;padding:8px 11px;
+  font-family:var(--font);font-weight:600;font-size:9.5px;letter-spacing:.04em;
+  color:var(--mid);border-top:1px solid var(--border-l);background:#fff;text-align:center}
+.tile.air .num{color:var(--light)}
+.tile.air .layers i{background:rgba(55,46,34,.35)}
+/* ── START: solid orange, the plane mark, no logos on the face.
+   The carriers live in the card that opens. ── */
+.tile.start{background:var(--orange);justify-content:center;align-items:center;
+  padding:14px 12px;text-align:center;gap:6px}
+.tile.start .ph,.tile.start .scrim,.tile.start .layers{display:none}
+.tile.start .cap{padding:0;display:flex;flex-direction:column;align-items:center;gap:3px}
+.tile.start .kind{display:none}
+.tile.start .big{font-family:var(--disp);font-size:clamp(20px,2.4vw,34px);line-height:.95;
+  color:#fff;letter-spacing:.01em}
+.tile.start .plane{width:62%;max-width:120px;height:auto;display:block;margin:2px 0 1px}
+.tile.start h3{font-size:13px;color:#fff;letter-spacing:.06em}
+.tile.start .sub{display:none}
+.subs.g3{grid-template-columns:1fr 1fr 1fr}
+.sub-i .mk{background:#fff;border-radius:2px;padding:10px 12px;margin-bottom:8px;
+  display:flex;align-items:center;justify-content:center;min-height:58px}
+.sub-i .mk img{max-width:100%;max-height:46px;object-fit:contain}
+
+.centre{background:var(--card);border:1px solid var(--border);border-radius:10px;
+  display:grid;overflow:hidden;min-height:0}
+.pane{grid-area:1/1;min-height:0;padding:22px 24px;
+  display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
+  align-items:center;gap:18px;text-align:left}
+/* ── stage: the bear standing on the island, dice in the air ──
+   Fixed height so the artwork sizes to the panel instead of the
+   panel growing to the artwork. */
+.stage{position:relative;height:clamp(200px,21vw,290px);width:100%;min-height:0}
+.stage .map{position:absolute;left:0;bottom:0;height:76%;width:auto;
+  color:var(--grass);opacity:.22;pointer-events:none}
+.stage .bear{position:absolute;left:39%;bottom:0;height:74%;width:auto;
+  object-fit:contain;filter:drop-shadow(0 8px 14px rgba(28,20,10,.22))}
+/* Two dice, thrown separately. One image tumbling as a block never
+   reads as a roll — real dice separate, spin at different rates and
+   settle at different moments. Each also bounces twice and wobbles. */
+.dice{position:absolute;top:2%;right:0;width:22%;height:40%;pointer-events:none}
+.cube{position:absolute;width:52%;height:auto;transform-origin:50% 50%;
+  filter:drop-shadow(0 4px 7px rgba(28,20,10,.26));will-change:transform}
+.cube.a{left:0;bottom:0}
+.cube.b{right:0;top:0;width:48%}
+.dice.tumble .cube.a{animation:throwA 1.55s cubic-bezier(.16,.72,.24,1) both}
+.dice.tumble .cube.b{animation:throwB 1.72s cubic-bezier(.13,.76,.28,1) both}
+@keyframes throwA{
+  0%  {transform:translate(0,0)        rotate(0deg)   scale(1)}
+  14% {transform:translate(-14%,-140%) rotate(240deg) scale(1.12)}
+  30% {transform:translate(-6%,-4%)    rotate(470deg) scale(.97)}   /* land */
+  42% {transform:translate(6%,-62%)    rotate(610deg) scale(1.05)}  /* bounce */
+  56% {transform:translate(14%,-2%)    rotate(700deg) scale(.98)}
+  68% {transform:translate(18%,-22%)   rotate(752deg) scale(1.01)}
+  82% {transform:translate(21%,0)      rotate(784deg) scale(1)}
+  90% {transform:translate(21%,-4%)    rotate(790deg)}
+  100%{transform:translate(21%,0)      rotate(792deg)}
+}
+@keyframes throwB{
+  0%  {transform:translate(0,0)        rotate(0deg)    scale(1)}
+  12% {transform:translate(16%,-118%)  rotate(-200deg) scale(1.1)}
+  28% {transform:translate(9%,-6%)     rotate(-390deg) scale(.96)}
+  40% {transform:translate(2%,-78%)    rotate(-540deg) scale(1.06)}
+  55% {transform:translate(-6%,-3%)    rotate(-650deg) scale(.98)}
+  70% {transform:translate(-11%,-26%)  rotate(-722deg) scale(1.02)}
+  84% {transform:translate(-15%,0)     rotate(-766deg) scale(1)}
+  93% {transform:translate(-15%,-5%)   rotate(-772deg)}
+  100%{transform:translate(-15%,0)     rotate(-774deg)}
+}
+.words{display:flex;flex-direction:column;gap:9px;min-width:0}
+/* hidden beats every display rule below, including .pane.layer's grid */
+.pane[hidden]{display:none!important}
+.kick{font-family:var(--font);font-weight:600;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--light)}
+.pane h1{font-family:var(--disp);font-size:clamp(30px,3.9vw,54px);line-height:.94;text-transform:uppercase;color:var(--ink)}
+.pane h1 em{font-style:normal;color:var(--orange)}
+.lede{font-family:var(--font);font-size:13.5px;line-height:1.5;letter-spacing:.01em;color:var(--mid);max-width:34ch}
+.lines{display:flex;flex-direction:column;gap:4px}
+.lines b{font-family:var(--disp);font-size:14px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);font-weight:400}
+
+/* .pane.layer, not .layer: the card borrows the centre panel's class,
+   and a .pane rule between 861-1180px would otherwise force two columns */
+.pane.layer{grid-area:2/2/4/4;z-index:10;background:var(--card);border:1px solid var(--border);
+  border-radius:10px;text-align:left;padding:0;gap:0;overflow:hidden;
+  display:grid;grid-template-columns:1fr;grid-template-rows:auto 1fr;align-items:stretch}
+
+/* ── the manifesto card ───────────────────────────────────
+   One voice, then three pictures. The paragraph leads; the pictures
+   sit at the foot so every card ends on the same beat.        */
+.man-wrap{min-height:0;overflow:auto;padding:14px 18px 16px;
+  display:flex;flex-direction:column;gap:11px}
+.man-lead{font-family:var(--disp);font-weight:400;font-size:clamp(15px,1.45vw,20px);
+  line-height:1.12;text-transform:uppercase;color:var(--ink)}
+.man{font-family:var(--font);font-size:13px;line-height:1.58;color:var(--mid);max-width:62ch}
+.man-cta{font-family:var(--font);font-weight:600;font-size:11px;letter-spacing:.04em;
+  color:var(--orange);text-decoration:none;align-self:flex-start;
+  border-bottom:1px solid currentColor;padding-bottom:1px}
+.man-cta:hover{color:var(--ink)}
+.gal{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:auto;padding-top:2px}
+.gal figure{margin:0;min-width:0}
+.gal .ph{position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;
+  background:var(--hue,var(--grass));display:block}
+.gal .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 42%;display:block}
+/* a carrier mark, not a photograph: white card, logo contained, never cropped */
+.gal .ph.mark{background:#fff;display:flex;align-items:center;justify-content:center;padding:9px}
+.gal .ph.mark img{width:auto;height:auto;max-width:86%;max-height:62%;object-fit:contain}
+.gal figcaption{font-family:var(--font);font-size:10px;line-height:1.3;color:var(--light);
+  margin-top:5px;display:block}
+.gal figcaption b{font-weight:600;color:var(--mid);display:block;font-family:var(--font)}
+/* the opened card shows the square's OWN photo — no extra artwork to source */
+.layer-pic{position:relative;overflow:hidden;background:var(--hue,var(--grass));min-height:0;height:100%}
+.layer-pic img{width:100%;height:100%;object-fit:cover;object-position:50% 38%;display:block}
+.layer-body{display:flex;flex-direction:column;min-width:0;min-height:0;overflow:hidden}
+.layer-logo{display:flex;align-items:center;justify-content:center;background:#fff;
+  padding:26px 18px;border-bottom:1px solid var(--border-l);flex:none}
+.layer-logo img{width:58%;max-width:280px;height:auto;display:block}
+.layer-body>.layer-hd{flex:none}
+.layer-hd{display:flex;align-items:flex-start;gap:12px;padding:15px 17px 11px;border-bottom:1px solid var(--border-l)}
+.layer-hd .lk{font-family:var(--font);font-weight:600;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--light);display:block}
+.layer-hd h2{font-family:var(--disp);font-size:24px;line-height:1.05;text-transform:uppercase;color:var(--ink)}
+.layer-hd p{font-family:var(--font);font-size:11.5px;color:var(--mid);margin-top:4px;line-height:1.45}
+.close{margin-left:auto;flex:none;background:none;border:1px solid var(--border);border-radius:2px;
+  font-family:var(--font);font-weight:600;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);padding:6px 10px;cursor:pointer}
+.close:hover{border-color:var(--orange);color:var(--orange)}
+.subs{flex:1;display:grid;gap:1px;background:var(--card);overflow:auto;align-content:start}
+.subs.g1{grid-template-columns:1fr}.subs.g2{grid-template-columns:1fr 1fr}
+.sub-i{background:var(--card);box-shadow:0 0 0 1px var(--border-l);padding:12px 15px;display:flex;flex-direction:column;justify-content:center;gap:3px;text-decoration:none}
+.sub-i:hover{background:#fff}
+.sub-i .sc{font-family:var(--font);font-weight:600;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange)}
+.sub-i .st{font-family:var(--disp);font-size:15px;text-transform:uppercase;color:var(--ink)}
+.sub-i .st.amt{font-size:22px}
+.sub-i .sd{font-family:var(--font);font-size:11px;color:var(--mid);line-height:1.4}
+
+/* ── OhBear token + the roll control ── */
+.token{position:absolute;left:0;top:0;width:var(--tk,34px);height:auto;z-index:20;
+  pointer-events:none;filter:drop-shadow(0 3px 6px rgba(28,20,10,.42));
+  transition:transform .26s cubic-bezier(.34,1.3,.5,1);will-change:transform}
+.roll{align-self:flex-start;display:inline-flex;align-items:center;gap:9px;cursor:pointer;
+  background:var(--ink);color:var(--paper);border:none;border-radius:3px;
+  padding:9px 14px 9px 10px;font-family:var(--disp);font-size:14px;letter-spacing:.06em;
+  text-transform:uppercase}
+.roll:hover{background:#2a2219}
+.roll:disabled{opacity:.55;cursor:default}
+.roll .die{width:26px;height:26px;background:var(--paper);border-radius:4px;flex:none;
+  display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);gap:2px;padding:4px}
+.roll.rolling .die{animation:shake .32s linear infinite}
+@keyframes shake{0%{transform:rotate(-9deg)}50%{transform:rotate(9deg)}100%{transform:rotate(-9deg)}}
+.roll .die i{border-radius:50%;background:var(--ink);opacity:0}
+.roll .die i.on{opacity:1}
+.roll-again{margin-left:auto;flex:none;background:var(--ink);color:var(--paper);border:none;
+  border-radius:2px;font-family:var(--font);font-weight:600;font-size:9.5px;letter-spacing:.1em;
+  text-transform:uppercase;padding:6px 10px;cursor:pointer}
+.roll-again:hover{background:#2a2219}
+.layer-hd .close{margin-left:8px}
+/* ── 排排站: the same content, standing in a row ── */
+.stack{padding:8px 0 0}
+.sec{padding:40px 0 8px;scroll-margin-top:64px}
+.sechd{margin-bottom:20px;max-width:720px}
+.sechd h2{font-family:var(--disp);font-size:clamp(24px,3.6vw,40px);color:var(--ink);line-height:1.05}
+.sechd .sub{font-family:var(--disp);font-size:clamp(16px,2vw,22px);color:var(--orange);
+  line-height:1.15;margin-top:2px}
+.sechd .note{display:block;font-size:13px;color:var(--mid);margin-top:9px;line-height:1.55}
+/* numbered offer rows, as the live site has them */
+.offer{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;
+  padding:20px 0;border-top:1px solid var(--border)}
+.offer:last-child{border-bottom:1px solid var(--border)}
+.offer .no{font-family:var(--disp);font-size:40px;line-height:.85;color:var(--orange)}
+.offer h3{font-family:var(--disp);font-size:22px;text-transform:uppercase;color:var(--ink);line-height:1.1}
+.offer p{font-size:13px;color:var(--mid);line-height:1.6;margin-top:6px;max-width:62ch}
+.offer .cta{display:inline-block;margin-top:9px;font-family:var(--font);font-weight:700;
+  font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--orange);text-decoration:none}
+.offer .cta:hover{text-decoration:underline}
+.offer .shot{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:3px;
+  background:var(--hue,var(--grass));margin-top:12px;max-width:320px}
+.offer .tag{display:inline-block;background:var(--mango);color:var(--ink);font-family:var(--disp);
+  font-size:11px;padding:2px 7px;border-radius:2px;margin-left:8px;vertical-align:3px}
+.cards{display:grid;gap:10px}
+.c3{grid-template-columns:repeat(3,1fr)}
+.c4{grid-template-columns:repeat(4,1fr)}
+.c2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--border-l);border-radius:3px;overflow:hidden;
+  display:flex;flex-direction:column;text-decoration:none}
+.card:hover{border-color:var(--orange)}
+.card .top{background:#fff;padding:20px 18px;display:flex;align-items:center;justify-content:center;
+  min-height:96px;border-bottom:1px solid var(--border-l)}
+.card .top img{max-width:78%;max-height:52px;object-fit:contain}
+.card .shot{display:block;aspect-ratio:16/9;width:100%;object-fit:cover;display:block;background:var(--hue,var(--grass))}
+.card .bd{padding:15px 17px 17px;flex:1;display:flex;flex-direction:column;gap:5px}
+.card .n{font-family:var(--disp);font-size:13px;letter-spacing:.14em;color:var(--orange)}
+.card h3{font-family:var(--disp);font-size:19px;text-transform:uppercase;color:var(--ink);line-height:1.1}
+.card p{font-size:12.5px;color:var(--mid);line-height:1.5;flex:1}
+.card .go{font-family:var(--font);font-weight:600;font-size:10px;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--orange);margin-top:4px}
+.card .tag{align-self:flex-start;background:var(--mango);color:var(--ink);font-family:var(--disp);
+  font-size:11px;letter-spacing:.04em;padding:2px 7px;border-radius:2px}
+.win{background:var(--ink);color:var(--paper);border-radius:3px;padding:34px 30px;text-align:center;margin-top:8px}
+.win h2{font-family:var(--disp);font-size:clamp(26px,4vw,44px);text-transform:uppercase;line-height:1.02}
+.win p{font-size:13px;color:#b9ab94;margin:9px auto 0;max-width:54ch}
+.list-sec{padding:30px 0 52px}
+.rule{display:flex;align-items:baseline;gap:12px;margin-bottom:12px}
+.rule h2{font-family:var(--font);font-weight:600;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--light)}
+.rule span{flex:1;border-bottom:1px solid var(--border)}
+.rows{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:6px}
+.row{border:1px solid var(--border-l);border-radius:3px;padding:9px 11px;text-decoration:none;display:block}
+.row:hover{border-color:var(--orange)}
+.row .k{display:block;font-family:var(--font);font-weight:600;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--light)}
+.row .n{display:block;font-family:var(--disp);font-size:13px;text-transform:uppercase;color:var(--mid);margin-top:2px}
+
+.anno{background:#1d1710;color:#cdbfa6;font-family:var(--font);font-size:11.5px;line-height:1.6;padding:14px 0}
+.anno .wrap{display:flex;gap:10px;align-items:flex-start}
+.anno b{color:var(--mango);font-family:var(--disp);letter-spacing:.09em;font-size:12px;text-transform:uppercase;white-space:nowrap}
+
+@media (max-width:1000px){
+  .c4{grid-template-columns:repeat(2,1fr)}
+}
+/* Narrow desktops: the middle still has two columns, but the artwork and
+   the type both have to give or the taglines wrap onto two lines. */
+@media (max-width:1180px) and (min-width:861px){
+  .pane{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);padding:18px 18px}
+  .lines b{font-size:12.5px;letter-spacing:.05em}
+  .lede{font-size:11.5px;max-width:30ch}
+    .kick{font-size:9px;letter-spacing:.14em}
+  .stage .map{height:70%}
+  .stage .bear{height:68%}
+}
+@media (max-width:860px){
+  .c3,.c4,.c2{grid-template-columns:1fr}
+  .sec{padding:28px 0 4px}
+  :root{--gap:6px}
+  .nav{display:none}
+  .board-sec{padding:6px 0}
+  /* Tiles stay square (sized from WIDTH). The two middle rows absorb any
+     leftover height, so a taller box is filled by the centre panel rather
+     than left blank. Capped at 1.55x width so the side squares cannot
+     stretch absurdly if the box is very tall. */
+  /* Height comes from content, never from 100vh. Inside an iframe, vh is
+     the iframe's own height, so a vh-based board feeds its height back into
+     the host that is sizing it and the pair locks at the starting value. */
+  .board{grid-template-columns:repeat(4,1fr);
+         --row:calc((100vw - 28px)/4);
+         grid-template-rows:var(--row) minmax(150px,auto) minmax(150px,auto) var(--row);
+         margin:0 auto}
+
+  .centre{grid-area:2/2/4/4;min-height:0}
+  .p1{grid-area:1/1}.p2{grid-area:1/2}.p3{grid-area:1/3}.p4{grid-area:1/4}
+  .p5{grid-area:2/4}.p6{grid-area:3/4}.p7{grid-area:4/4}.p8{grid-area:4/3}
+  .p9{grid-area:4/2}.p10{grid-area:4/1}.p11{grid-area:3/1}.p12{grid-area:2/1}
+  /* size to content, centred in the middle band — a one-item layer
+     should not become a tall empty panel */
+  .pane.layer{grid-area:2/1/4/5;min-height:0;align-self:center;
+         height:max-content;max-height:100%;box-shadow:0 8px 28px rgba(28,20,10,.28);
+         grid-template-columns:1fr;grid-template-rows:auto auto}
+  /* stacked: photo strip on top, text under. height:100% from the desktop
+     rule has to be undone or aspect-ratio never applies */
+  .layer-pic{aspect-ratio:16/9;width:100%;height:auto}
+  .token{--tk:22px}
+  .roll{font-size:11px;padding:6px 10px 6px 7px;gap:6px}
+  .roll .die{width:19px;height:19px;padding:3px;gap:1.5px}
+  .pane{padding:10px 9px;gap:7px;grid-template-columns:1fr;
+        grid-template-rows:auto auto;text-align:center;justify-items:center}
+  .stage{height:96px;width:100%}
+  .stage .map{height:86%;left:2%}
+  .stage .bear{height:76%;left:38%}
+  .dice{width:24%;height:42%;right:0;top:0}
+  .words{align-items:center;gap:5px}
+  .roll{align-self:center}
+  .pane h1{font-size:clamp(17px,6vw,26px)}
+  .lede{font-size:10.5px;max-width:28ch}
+  /* on a phone the taglines earn their space; the four-line
+     regional kicker does not */
+  .kick{display:none}
+    .lines b{font-size:12px;letter-spacing:.06em}
+  .tile .bar{height:4px}
+  .tile .cap{padding:8px 5px 5px;overflow:hidden}
+  /* TILES.md sized 9px against KAOHSIUNG (9 chars); DADAOCHENG is 10 and
+     overran, so drop a notch and clip rather than let it bleed */
+  .tile h3{font-size:clamp(9.5px,2.3vw,17px);letter-spacing:-.01em;line-height:1.1;
+           overflow:hidden;overflow-wrap:normal;hyphens:none}
+  /* Content stays. At 768-860px a square is 180-204px — as big as desktop —
+     so there is nothing to hide. Type scales with the viewport; the genuinely
+     cramped sizes are handled in the <=560px block below. */
+  .tile .kind{font-size:clamp(7px,1.35vw,9.5px);letter-spacing:.12em;margin-bottom:2px}
+  .tile .sub{font-size:clamp(8px,1.7vw,12px);line-height:1.3;margin-top:2px}
+  .tile .flag{font-size:clamp(7.5px,1.5vw,10px);padding:3px 6px}
+  .tile .num{font-size:clamp(7px,1.2vw,9px)}
+  .tile .layers{display:none}
+  .tile .scrim{height:64%}
+  /* a fare condition cannot be read in 76px — it lives in the layer instead */
+  .tile.air{padding:8px}
+  .tile.air img{max-width:100%}
+  .tile.air .cond{font-size:clamp(7px,1.3vw,9.5px);padding:4px 5px}
+  /* left-align like every other square, so the label stops before the
+     bottom-right corner where the token rests */
+  .tile.start{padding:7px 5px;gap:1px;align-items:flex-start;
+              justify-content:flex-end;text-align:left}
+  .tile.start .cap{align-items:flex-start}
+  .tile.start .big{font-size:11px}
+  .tile.start .plane{width:58%;margin:1px 0}
+  /* "TPE Airport" is 74px wide in a 76px square — it fills the row, so no
+     token position clears it. START! plus the plane carries the meaning at
+     this size; the full name is in the card. */
+  .tile.start h3{font-size:clamp(7px,1.5vw,12px)}
+  .tile.start .plane{width:66%;margin:2px 0 0}
+
+  .subs.g3{grid-template-columns:1fr 1fr 1fr}
+  .sub-i .mk{min-height:0;padding:5px 6px;margin-bottom:4px}
+  .sub-i .mk img{max-height:18px}
+  .layer-hd{padding:9px 10px 7px;gap:7px}
+  .layer-hd h2{font-size:clamp(15px,2.6vw,22px)}
+  .layer-hd .lk{font-size:clamp(8px,1.3vw,9px)}
+  .layer-hd p{font-size:clamp(10.5px,1.6vw,12px);margin-top:3px}
+  /* the manifesto card. Squares here are 180-204px, so the card is wide:
+     the paragraph and all three captions stay, only the scale changes. */
+  .man-wrap{padding:11px 13px 13px;gap:9px}
+  .man-lead{font-size:clamp(13.5px,2.15vw,18px)}
+  .man{font-size:clamp(11.5px,1.7vw,13px);line-height:1.5}
+  .man-cta{font-size:clamp(10px,1.4vw,11px)}
+  .gal{gap:7px}
+  .gal figcaption{font-size:clamp(8.5px,1.25vw,10px);margin-top:4px}
+  .close{padding:4px 7px;font-size:9px}
+  .layer-logo{padding:16px 14px} .layer-logo img{width:52%;max-width:190px}
+  .sub-i{padding:9px 11px} .sub-i .st{font-size:clamp(11px,1.9vw,15px)}
+  .sub-i .st.amt{font-size:clamp(15px,2.6vw,21px)}
+  .sub-i .sc{font-size:clamp(8px,1.3vw,9.5px)}
+  .sub-i .sd{font-size:clamp(9.5px,1.5vw,11px);line-height:1.35}
+}
+/* Below 560px a square is under ~128px. Only here is there really not
+   enough room, and even then the offer badge stays — it is the point. */
+@media (max-width:560px){
+  .tile .kind{display:none}
+  .tile .sub{display:none}
+  .tile .num{display:none}
+  .tile h3{font-size:9.5px}
+  .tile .flag{font-size:7px;padding:2px 4px;top:5px;right:4px}
+  .tile.start h3{display:none}
+  .tile.air .cond{display:none}
+  .layer-hd .lk{display:none}
+  /* captions name the places, so they stay even here */
+  .man-wrap{padding:9px 10px 11px;gap:7px}
+  .man-lead{font-size:13px}
+  .man{font-size:11.5px;line-height:1.45}
+  .gal{gap:5px}
+  .gal figcaption{font-size:8.5px;margin-top:3px}
+  .sub-i .sd{font-size:9.5px}
+}
+
 </style>
 </head>
 <body>
+<section class="board-sec"><div class="wrap">
+  <div class="board" id="board">
+    <div class="centre"><div class="pane" id="manifesto"></div></div>
+    <img class="token" id="token" alt="" aria-hidden="true"
+         src="img/token.png">
+    <div class="pane layer" id="layer" hidden></div>
+  </div>
+</div></section>
 
-<!-- SCREEN 1: INTRO -->
-<div id="screen-intro" class="screen"><div class="intro-container"><div class="intro-body"><div class="intro-tagline"><p class="intro-partnership"><strong>Taiwan Tourism Administration</strong> in partnership with <strong>China Airlines</strong>, <strong>EVA Air</strong>, and <strong>STARLUX Airlines</strong>.</p></div><div class="intro-header"><h1>Win a Round-Trip Flight to Taiwan</h1></div><div class="intro-cta"><a class="btn btn-cta" onclick="handleIntroCTA()">Get My Free Entry<small>No purchase necessary</small></a></div><div class="intro-disclaimer">See <a href="https://feeltaiwan.com/kickoff-terms" target="_blank" style="color:var(--brand);">Official Rules</a> for details.</div><div class="intro-tagline" style="margin-top:20px;margin-bottom:4px;"><p>We're giving away <strong>3 round-trip tickets from SFO to TPE</strong>.</p><p>The world is buzzing with adventure this summer! Looking forward to your next move? Hike legendary mountain trails, ride scenic coastal routes, and discover why Taiwan belongs on every traveler's bucket list.</p></div><div class="cards-grid" style="margin-top:28px;"><div class="card"><div class="card-step">1</div><h3>Register for Free</h3><p>Sign up to receive your first sweepstakes entry instantly.</p></div><div class="card"><div class="card-step">2</div><h3>Win a Flight</h3><p>3 winners drawn. Each receives one round-trip ticket SFO ↔ TPE.</p></div><div class="card"><div class="card-step">3</div><h3>Earn More Entries</h3><p>Complete up to 12 Taiwan quizzes. Each one earns you 1 bonus entry.</p></div></div><div class="intro-header" style="margin-top:24px;margin-bottom:0;"><p>Register for your free entry, then take the Taiwan quizzes. Each quiz you complete gives you one additional entry.</p><p>Plus, you'll also have a chance to win bonus prizes, including a <strong>Hakka Floral Tote Bag</strong> and an <strong>OhBear Hand Towel</strong>.</p><p>It's the perfect way to learn more about Taiwan while increasing your chances to win a trip there.</p><p style="margin-top:4px;font-size:13px;">Winners will be announced in early July 2026 via Taiwan Tourism North America's social media accounts.</p></div><div class="prize-section"><div class="prize-row"><div class="prize-thumb"><img src="https://raw.githubusercontent.com/iven-doho/taiwan-quiz/main/images/boardingpass.png" alt="Round-trip flight to Taiwan"><span>Round-trip Flight SFO ↔ TPE</span></div><div class="prize-thumb"><img src="https://raw.githubusercontent.com/iven-doho/taiwan-quiz/main/images/Hakka%20Floral%20Tote%20Bag.png" alt="Hakka Floral Tote Bag"><span>Hakka Floral Tote Bag</span></div><div class="prize-thumb"><img src="https://raw.githubusercontent.com/iven-doho/taiwan-quiz/main/images/OhBear%20Hand%20Towel.png" alt="OhBear Hand Towel"><span>OhBear Hand Towel</span></div></div></div></div></div></div>
-
-<!-- SCREEN 2: REGISTRATION -->
-<div id="screen-register" class="screen hidden"><div class="register-container"><div class="register-header"><h2>Register for Free Entry</h2><p>One step to start your Taiwan adventure</p></div><div id="register-mode-new"><form id="register-form" onsubmit="handleRegisterSubmit(event)"><div class="register-form-row"><div class="form-group"><label for="firstName">First Name *</label><input type="text" id="firstName" name="firstName" required placeholder="First Name"></div><div class="form-group"><label for="lastName">Last Name *</label><input type="text" id="lastName" name="lastName" required placeholder="Last Name"></div></div><div class="form-group"><label for="email">Email Address *</label><input type="email" id="email" name="email" required placeholder="your@email.com"></div><div class="form-group"><label for="phone">Phone (optional)</label><input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000"></div><div class="form-group"><label for="zipcode">ZIP Code *</label><input type="text" id="zipcode" name="zipcode" required placeholder="12345"></div><div class="form-checkbox"><input type="checkbox" id="age-check" name="age-check" required><label for="age-check" style="margin:0;">I confirm I am 18+ and a US resident</label></div><div class="form-checkbox"><input type="checkbox" id="rules-check" name="rules-check" required><label for="rules-check" style="margin:0;">I agree to the <a href="https://feeltaiwan.com/kickoff-terms" target="_blank" style="color:var(--brand);">Official Rules</a></label></div><div class="form-checkbox"><input type="checkbox" id="optin-check" name="optin-check"><label for="optin-check" style="margin:0;">Send me exclusive Taiwan travel tips and updates (optional)</label></div><div class="form-disclaimer">No purchase necessary. See <a href="https://feeltaiwan.com/kickoff-terms" target="_blank" style="color:var(--brand);">Official Rules</a> for details.</div><button type="submit" class="btn" id="register-btn">Register & Get Free Entry →</button></form></div><div id="register-mode-returning" style="display:none;"><form id="returning-form" onsubmit="handleReturningSubmit(event)"><div class="form-group"><label for="returning-email">Email Address</label><input type="email" id="returning-email" name="returning-email" required placeholder="your@email.com"></div><button type="submit" class="btn">Continue Where You Left Off →</button></form></div><div class="form-footer"><span id="toggle-text">Already registered? <span class="toggle-link" onclick="toggleRegisterMode()">Sign in →</span></span></div></div></div>
-
-<!-- SCREEN 3: QUIZ HUB -->
-<div id="screen-hub" class="screen hidden"><div class="hub-container"><div class="hub-header"><div class="back-link" onclick="goTo('intro')">← Back to intro</div><h2>Welcome, <span id="hub-name">Friend</span>!</h2><p>Explore Taiwan, One Quiz at a Time</p></div><div id="hub-banner" class="hub-banner hidden"></div><div style="text-align:center;"><div class="entry-counter"><span>🎫</span><span id="entries-text">0 / 13 entries</span></div><div class="counter-bar" style="margin:12px auto;width:200px;"><div class="counter-fill" id="counter-fill" style="width:0%;"></div></div></div><div class="quiz-grid" id="quiz-grid"></div><div class="hub-footer">⚽ Kick Off Your Next Adventure in Taiwan · <a href="https://feeltaiwan.com/kickoff-terms" target="_blank">Official Rules</a> · No purchase necessary</div></div></div>
-
-<!-- QUIZ 1: Reach the Summit -->
-<div id="screen-quiz-1" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q1_sc">1/5</span></div>
-  <div class="tb" id="q1_tb"><span class="i">⛰️</span><span class="n">Reach the Summit</span></div>
-  <div class="pw" id="q1_pw"><div class="pt"><div class="pf" id="q1_pf" style="width:20%"></div></div></div>
-
-  <div class="scr" id="q1_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/01-1.png" alt="Yushan Main Peak"><span class="img-cap">Yushan Main Peak</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Taiwan's Jade Mountain</h2><p>Yushan (Jade Mountain) rises to 3,952 meters (12,966 feet). It is Taiwan's highest peak and the tallest in Northeast Asia.</p><p style="margin-top:12px">Many of Taiwan's mountain routes, including Yushan, require permits to help manage access. Some popular routes and mountain huts are assigned by lottery about a month in advance.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_1()">Continue →</button></div>
-    </div>
-  </div>
-
-  <div class="scr hidden" id="q1_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/01-2.png" loading="lazy" alt="Hehuanshan (Hehuan Mt.)"><span class="img-cap">Hehuanshan (Hehuan Mt.)</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>The Baiyue Challenge</h2><p>Taiwan has 268 peaks above 3,000 meters (nearly 10,000 feet), packing serious mountain terrain into a small island. The most iconic hiking goal is the Baiyue, Taiwan's Hundred Peaks, a celebrated checklist of 100 signature summits.</p><p style="margin-top:12px">From knife-edge ridgelines to wide-open alpine views, every peak feels like a new chapter. Choose your first Baiyue summit and kick off your Taiwan adventure.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_1()">Continue →</button></div>
-    </div>
-  </div>
-
-  <div class="scr hidden" id="q1_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/01-3.png" loading="lazy" alt="Yushan"><span class="img-cap">Yushan</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>How tall is Yushan, Taiwan's highest peak and the tallest in Northeast Asia?</h2></div><div class="qw"></div>
-      <div class="os" id="q1_o2">
-        <button class="op" onclick="ans_1(2,0,3)"><span class="lb">A</span><span>2,476m (8,123 ft)</span></button>
-        <button class="op" onclick="ans_1(2,1,3)"><span class="lb">B</span><span>2,852m (9,357 ft)</span></button>
-        <button class="op" onclick="ans_1(2,2,3)"><span class="lb">C</span><span>3,416m (11,207 ft)</span></button>
-        <button class="op" onclick="ans_1(2,3,3)"><span class="lb">D</span><span>3,952m (12,966 ft)</span></button>
-      </div>
-      <div class="ht hidden" id="q1_h2"><strong>Hint:</strong> It is taller than Japan's famous Mt. Fuji! 🗻</div>
-      <div class="fw hidden" id="q1_f2"><div class="ff"><strong>🎉 Correct!</strong> At 3,952m, Yushan stands taller than any peak in Japan, Korea, or Southeast Asia. And yes, it is a hike you can actually do.</div><button class="btn btn-g" onclick="go_1()">Continue →</button></div>
-      <div style="height:20px" id="q1_sp2"></div>
-    </div>
-  </div>
-
-  <div class="scr hidden" id="q1_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/01-4.png" loading="lazy" alt="Dabajianshan (Dabajian Mt.)"><span class="img-cap">Dabajianshan (Dabajian Mt.)</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>How many peaks in Taiwan exceed 3,000 meters?</h2></div><div class="qw"></div>
-      <div class="os" id="q1_o3">
-        <button class="op" onclick="ans_1(3,0,3)"><span class="lb">A</span><span>36 peaks</span></button>
-        <button class="op" onclick="ans_1(3,1,3)"><span class="lb">B</span><span>48 peaks</span></button>
-        <button class="op" onclick="ans_1(3,2,3)"><span class="lb">C</span><span>100 peaks</span></button>
-        <button class="op" onclick="ans_1(3,3,3)"><span class="lb">D</span><span>268 peaks</span></button>
-      </div>
-      <div class="ht hidden" id="q1_h3"><strong>Hint:</strong> Taiwan packs serious altitude into a small island. ⛰️</div>
-      <div class="fw hidden" id="q1_f3"><div class="ff"><strong>🎉 Correct!</strong> Taiwan's 268 peaks above 3,000m make it one of the most mountainous islands on Earth.</div><button class="btn btn-g" onclick="go_1()">Continue →</button></div>
-      <div style="height:20px" id="q1_sp3"></div>
-    </div>
-  </div>
-
-  <div class="scr hidden" id="q1_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/01-5.png" loading="lazy" alt="Jiaming Lake"><span class="img-cap">Jiaming Lake</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>How are permits for popular mountain trails like Yushan typically allocated?</h2></div><div class="qw"></div>
-      <div class="os" id="q1_o4">
-        <button class="op" onclick="ans_1(4,0,1)"><span class="lb">A</span><span>First come, first served online booking</span></button>
-        <button class="op" onclick="ans_1(4,1,1)"><span class="lb">B</span><span>A lottery system, with a separate first-come-first-served quota for international visitors on weekdays</span></button>
-        <button class="op" onclick="ans_1(4,2,1)"><span class="lb">C</span><span>Only available through licensed tour operators</span></button>
-        <button class="op" onclick="ans_1(4,3,1)"><span class="lb">D</span><span>No permits needed, trails are open to everyone</span></button>
-      </div>
-      <div class="ht hidden" id="q1_h4"><strong>Hint:</strong> There is a weekday quota for international visitors that does not require the lottery if you apply early enough. 🌏</div>
-      <div class="fw hidden" id="q1_f4"><div class="ff"><strong>🎉 Correct!</strong> Popular routes use a lottery, but international visitors can apply for a separate weekday quota on a first-come-first-served basis. Apply early and you can skip the lottery entirely.</div><button class="btn btn-g" onclick="go_1()">Continue →</button></div>
-      <div style="height:20px" id="q1_sp4"></div>
-    </div>
-  </div>
-
-  <div class="scr hidden" id="q1_s5">
-    <div class="cmp">
-      <div class="cmp-t">✈️</div>
-      <h2>Quiz Complete!</h2>
-      <p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p>
-      <div class="eb">🎫 +1 BONUS ENTRY EARNED</div>
-      <p class="sub" id="q1_remaining">11 more quizzes available — keep exploring Taiwan!</p>
-      <button class="btn" onclick="goTo('hub')">Back to Quizzes →</button>
-    </div>
-  </div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-
-<!-- QUIZZES 2-12: Coming Soon placeholders -->
-<div id="screen-quiz-2" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q2_sc">1/5</span></div>
-  <div class="tb" id="q2_tb"><span class="i">🚲</span><span class="n">Ride Around the Island</span></div>
-  <div class="pw" id="q2_pw"><div class="pt"><div class="pf" id="q2_pf" style="width:20%"></div></div></div>
-
-  <div class="scr" id="q2_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/02-1.png" alt="Xinwei Scenic Bridge, Kaohsiung"><span class="img-cap">Xinwei Scenic Bridge, Kaohsiung</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Taiwan's Cycling Route No. 1</h2><p>The route circles the entire island, roughly 960 km (about 600 miles) of dedicated bike paths along the coastline, through rice paddies, past hot springs, and over mountain terrain.</p><p style="margin-top:12px">Riders typically complete it in 9 to 12 days. The route is fully sign-posted with rest stops and bike repair stations every few kilometers.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_2()">Continue →</button></div>
-    </div>
-  </div>
-
-  <div class="scr hidden" id="q2_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/02-2.png" loading="lazy" alt="Sun Moon Lake, Nantou"><span class="img-cap">Sun Moon Lake, Nantou</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Sun Moon Lake: A World-Class Cycling Route</h2><p>The roughly 30 km (18-mile) loop around Sun Moon Lake was named one of the world's top 10 most beautiful bike paths by CNN Travel. The lakeside path hugs the shoreline through forests, passing indigenous Thao villages and grand temples.</p><p style="margin-top:12px">Every autumn, the Sun Moon Lake Come! Bikeday festival draws thousands of cyclists.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_2()">Continue →</button></div>
-    </div>
-  </div>
-
-  <div class="scr hidden" id="q2_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/02-3.png" loading="lazy" alt="Mr. Brown Blvd., Taitung"><span class="img-cap">Mr. Brown Blvd., Taitung</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>How long is Taiwan's Cycling Route No. 1 that circles the entire island?</h2></div><div class="qw"></div>
-      <div class="os" id="q2_o2">
-        <button class="op" onclick="ans_2(2,0,3)"><span class="lb">A</span><span>350 km (about 220 miles)</span></button>
-        <button class="op" onclick="ans_2(2,1,3)"><span class="lb">B</span><span>520 km (about 320 miles)</span></button>
-        <button class="op" onclick="ans_2(2,2,3)"><span class="lb">C</span><span>740 km (about 460 miles)</span></button>
-        <button class="op" onclick="ans_2(2,3,3)"><span class="lb">D</span><span>960 km (about 600 miles)</span></button>
-      </div>
-      <div class="ht hidden" id="q2_h2"><strong>Hint:</strong> Riders typically complete it in 9 to 12 days, so do the math! 🚴</div>
-      <div class="fw hidden" id="q2_f2"><div class="ff"><strong>🎉 Correct!</strong> One of the world's great cycling circuits, fully sign-posted with rest stops the whole way. One island, one ride, total freedom.</div><button class="btn btn-g" onclick="go_2()">Continue →</button></div>
-      <div style="height:20px" id="q2_sp2"></div>
-    </div>
-  </div>
-
-  <div class="scr hidden" id="q2_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/02-4.png" loading="lazy" alt="Sun Moon Lake, Nantou"><span class="img-cap">Sun Moon Lake, Nantou</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>Which of the following is true about the Sun Moon Lake cycling route?</h2></div><div class="qw"></div>
-      <div class="os" id="q2_o3">
-        <button class="op" onclick="ans_2(3,0,3)"><span class="lb">A</span><span>It was ranked among the world's top 10 most beautiful bike paths by CNN Travel</span></button>
-        <button class="op" onclick="ans_2(3,1,3)"><span class="lb">B</span><span>The route passes through indigenous Thao villages along the lakeshore</span></button>
-        <button class="op" onclick="ans_2(3,2,3)"><span class="lb">C</span><span>Every autumn, a cycling festival draws thousands of riders to the lake</span></button>
-        <button class="op" onclick="ans_2(3,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q2_h3"><strong>Hint:</strong> One of these alone would make it worth the trip, but Sun Moon Lake delivers on all fronts!</div>
-      <div class="fw hidden" id="q2_f3"><div class="ff"><strong>🎉 Correct!</strong> CNN Travel ranked it among the world's most beautiful bike paths, the Thao community adds cultural depth, and the annual Come! Bikeday festival makes autumn the perfect time to ride.</div><button class="btn btn-g" onclick="go_2()">Continue →</button></div>
-      <div style="height:20px" id="q2_sp3"></div>
-    </div>
-  </div>
-
-  <div class="scr hidden" id="q2_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/02-5.png" loading="lazy" alt="Ride to Wuling, Hehuanshan"><span class="img-cap">Ride to Wuling, Hehuanshan</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>The Taiwan KOM (King of the Mountain) Challenge is one of the world's toughest single-day cycling races. How high does the route climb?</h2></div><div class="qw"></div>
-      <div class="os" id="q2_o4">
-        <button class="op" onclick="ans_2(4,0,3)"><span class="lb">A</span><span>1,200 m (about 3,900 ft)</span></button>
-        <button class="op" onclick="ans_2(4,1,3)"><span class="lb">B</span><span>2,000 m (about 6,500 ft)</span></button>
-        <button class="op" onclick="ans_2(4,2,3)"><span class="lb">C</span><span>2,600 m (about 8,500 ft)</span></button>
-        <button class="op" onclick="ans_2(4,3,3)"><span class="lb">D</span><span>3,275 m (about 10,745 ft)</span></button>
-      </div>
-      <div class="ht hidden" id="q2_h4"><strong>Hint:</strong> The finish line is at Wuling Pass, one of the highest paved roads in Asia!</div>
-      <div class="fw hidden" id="q2_f4"><div class="ff"><strong>🎉 Correct!</strong> The KOM climbs from near sea level to Wuling Pass at 3,275 m in a single day. But Taiwan's cycling isn't all extreme climbs. Flat riverside paths and gentle valley routes make it just as welcoming for casual riders.</div><button class="btn btn-g" onclick="go_2()">Continue →</button></div>
-      <div style="height:20px" id="q2_sp4"></div>
-    </div>
-  </div>
-
-  <div class="scr hidden" id="q2_s5">
-    <div class="cmp">
-      <div class="cmp-t">✈️</div>
-      <h2>Quiz Complete!</h2>
-      <p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p>
-      <div class="eb">🎫 +1 BONUS ENTRY EARNED</div>
-      <p class="sub" id="q2_remaining">10 more quizzes available — keep exploring Taiwan!</p>
-      <button class="btn" onclick="goTo('hub')">Back to Quizzes →</button>
-    </div>
-  </div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-<!-- QUIZ 3: Run the Races -->
-<div id="screen-quiz-3" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q3_sc">1/5</span></div>
-  <div class="tb" id="q3_tb"><span class="i">🏃</span><span class="n">Run the Races</span></div>
-  <div class="pw" id="q3_pw"><div class="pt"><div class="pf" id="q3_pf" style="width:20%"></div></div></div>
-  <div class="scr" id="q3_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/03-1.png" alt="Taipei Marathon"><span class="img-cap">Taipei Marathon</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Taiwan: A Runner's Paradise</h2><p>Taiwan has one of the highest densities of running events in the world, hosting everything from World Athletics Gold Label road races to mountain ultras and island-hopping marathons.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_3()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q3_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/03-2.png" loading="lazy" alt="New Taipei City Railway Relay"><span class="img-cap">New Taipei City Railway Relay</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>From Gold Labels to Village Feasts</h2><p>Taiwan's race scene has it all. The Wan Jin Shi and Taipei marathons both carry World Athletics Gold Label certification, putting them on par with the world's top road races.</p><p style="margin-top:12px">But Taiwan is just as famous for races with heart, where entire towns turn out to cheer and aid stations feel more like night markets than water stops.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_3()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q3_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/03-3.png" loading="lazy" alt="Wan Jin Shi Marathon"><span class="img-cap">Wan Jin Shi Marathon</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>Which of the following is true about the Wan Jin Shi Marathon?</h2></div><div class="qw"></div>
-      <div class="os" id="q3_o2">
-        <button class="op" onclick="ans_3(2,0,3)"><span class="lb">A</span><span>It was Taiwan's first marathon to earn a World Athletics Gold Label</span></button>
-        <button class="op" onclick="ans_3(2,1,3)"><span class="lb">B</span><span>The course runs along Taiwan's northern coastline past Yehliu Geopark's famous rock formations</span></button>
-        <button class="op" onclick="ans_3(2,2,3)"><span class="lb">C</span><span>It draws thousands of international runners each March</span></button>
-        <button class="op" onclick="ans_3(2,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q3_h2"><strong>Hint:</strong> Named after three coastal districts: Wanli, Jinshan, and Shimen.</div>
-      <div class="fw hidden" id="q3_f2"><div class="ff"><strong>🎉 Correct!</strong> Wan Jin Shi checks every box: world-class certification, a stunning coastal course, and an international field every spring.</div><button class="btn btn-g" onclick="go_3()">Continue →</button></div>
-      <div style="height:20px" id="q3_sp2"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q3_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/03-4.png" loading="lazy" alt="Challenge Taiwan Triathlon"><span class="img-cap">Challenge Taiwan Triathlon</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>Challenge Taiwan, one of the world's largest triathlon events, is held in Taitung — known as the "Hometown of the Sun." What makes this event stand out beyond the race itself?</h2></div><div class="qw"></div>
-      <div class="os" id="q3_o3">
-        <button class="op" onclick="ans_3(3,0,2)"><span class="lb">A</span><span>It offers prize money higher than any other triathlon in Asia</span></button>
-        <button class="op" onclick="ans_3(3,1,2)"><span class="lb">B</span><span>The entire course is flat, making it the fastest triathlon in the world</span></button>
-        <button class="op" onclick="ans_3(3,2,2)"><span class="lb">C</span><span>It combines world-class racing with Taitung's stunning coastlines, mountain views, warm sunshine, and a festival-like community atmosphere</span></button>
-        <button class="op" onclick="ans_3(3,3,2)"><span class="lb">D</span><span>It is the only triathlon held entirely indoors</span></button>
-      </div>
-      <div class="ht hidden" id="q3_h3"><strong>Hint:</strong> Think less "cut-throat competition" and more "race-cation."</div>
-      <div class="fw hidden" id="q3_f3"><div class="ff"><strong>🎉 Correct!</strong> Challenge Taiwan is more than a race. Set between the Pacific Ocean and the mountains, it showcases Taitung's natural beauty, sunny climate, and laid-back charm.</div><button class="btn btn-g" onclick="go_3()">Continue →</button></div>
-      <div style="height:20px" id="q3_sp3"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q3_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/03-5.png" loading="lazy" alt="Penghu Cross-Sea Marathon"><span class="img-cap">Penghu Cross-Sea Marathon</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>The Penghu Cross-Sea Marathon is the only marathon in Taiwan with a course that does what?</h2></div><div class="qw"></div>
-      <div class="os" id="q3_o4">
-        <button class="op" onclick="ans_3(4,0,3)"><span class="lb">A</span><span>Runs entirely on sand</span></button>
-        <button class="op" onclick="ans_3(4,1,3)"><span class="lb">B</span><span>Follows a high-speed rail line</span></button>
-        <button class="op" onclick="ans_3(4,2,3)"><span class="lb">C</span><span>Loops the same route twice</span></button>
-        <button class="op" onclick="ans_3(4,3,3)"><span class="lb">D</span><span>Crosses between multiple islands</span></button>
-      </div>
-      <div class="ht hidden" id="q3_h4"><strong>Hint:</strong> Runners cross a famous ocean bridge along the way!</div>
-      <div class="fw hidden" id="q3_f4"><div class="ff"><strong>🎉 Correct!</strong> The course crosses the Penghu Great Bridge and passes through four islands, with basalt sea cliffs, historic lighthouses, and ocean views the entire way.</div><button class="btn btn-g" onclick="go_3()">Continue →</button></div>
-      <div style="height:20px" id="q3_sp4"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q3_s5"><div class="cmp"><div class="cmp-t">✈️</div><h2>Quiz Complete!</h2><p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p><div class="eb">🎫 +1 BONUS ENTRY EARNED</div><p class="sub" id="q3_remaining">9 more quizzes available — keep exploring Taiwan!</p><button class="btn" onclick="goTo('hub')">Back to Quizzes →</button></div></div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-
-<!-- QUIZ 4: Dive Into the Blue -->
-<div id="screen-quiz-4" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q4_sc">1/5</span></div>
-  <div class="tb" id="q4_tb"><span class="i">🏄</span><span class="n">Dive Into the Blue</span></div>
-  <div class="pw" id="q4_pw"><div class="pt"><div class="pf" id="q4_pf" style="width:20%"></div></div></div>
-  <div class="scr" id="q4_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/04-1.png" alt="Green Island"><span class="img-cap">Green Island</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Taiwan: An Island of Water Adventures</h2><p>Surrounded by ocean, Taiwan offers water sports year-round. Snorkel with green sea turtles at Xiaoliuqiu, dive among coral reefs off Green Island and Lanyu, surf Pacific swells along the east coast, or join a whale watching tour out of Hualien.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_4()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q4_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/04-2.png" loading="lazy" alt="Lanyu"><span class="img-cap">Lanyu</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Lanyu: Where Ocean Culture Runs Deep</h2><p>Lanyu (Orchid Island), off Taiwan's southeast coast, is home to the indigenous Tao people, who have maintained their ocean-going canoe culture and flying fish traditions for centuries.</p><p style="margin-top:12px">The island also offers world-class diving with visibility that often exceeds 30 meters (about 100 feet).</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_4()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q4_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/04-3.png" loading="lazy" alt="Xiaoliuqiu"><span class="img-cap">Xiaoliuqiu</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>Xiaoliuqiu, a small coral island off Taiwan's southwest coast, is nicknamed "Green Turtle Paradise." Roughly how many green sea turtles live permanently around the island?</h2></div><div class="qw"></div>
-      <div class="os" id="q4_o2">
-        <button class="op" onclick="ans_4(2,0,3)"><span class="lb">A</span><span>50</span></button>
-        <button class="op" onclick="ans_4(2,1,3)"><span class="lb">B</span><span>150</span></button>
-        <button class="op" onclick="ans_4(2,2,3)"><span class="lb">C</span><span>400</span></button>
-        <button class="op" onclick="ans_4(2,3,3)"><span class="lb">D</span><span>800+</span></button>
-      </div>
-      <div class="ht hidden" id="q4_h2"><strong>Hint:</strong> You are practically guaranteed to see them while snorkeling, any time of year!</div>
-      <div class="fw hidden" id="q4_f2"><div class="ff"><strong>🎉 Correct!</strong> Xiaoliuqiu has one of the highest concentrations of green sea turtles in the world, and it is just a 30-minute ferry ride from Pingtung.</div><button class="btn btn-g" onclick="go_4()">Continue →</button></div>
-      <div style="height:20px" id="q4_sp2"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q4_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/04-4.png" loading="lazy" alt="Dapeng Bay"><span class="img-cap">Dapeng Bay</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>Dapeng Bay in Pingtung is one of Taiwan's top destinations for sailing and yacht experiences. What makes its waters uniquely suited for water sports?</h2></div><div class="qw"></div>
-      <div class="os" id="q4_o3">
-        <button class="op" onclick="ans_4(3,0,3)"><span class="lb">A</span><span>It is fed by underground hot springs</span></button>
-        <button class="op" onclick="ans_4(3,1,3)"><span class="lb">B</span><span>It has the strongest ocean currents in Taiwan</span></button>
-        <button class="op" onclick="ans_4(3,2,3)"><span class="lb">C</span><span>It is located on a high-altitude mountain lake</span></button>
-        <button class="op" onclick="ans_4(3,3,3)"><span class="lb">D</span><span>It is Taiwan's largest lagoon, with calm, sheltered waters and steady winds</span></button>
-      </div>
-      <div class="ht hidden" id="q4_h3"><strong>Hint:</strong> The bay has only one narrow inlet connecting it to the open sea!</div>
-      <div class="fw hidden" id="q4_f3"><div class="ff"><strong>🎉 Correct!</strong> Dapeng Bay's sheltered lagoon creates ideal conditions for sailing, SUP, and yacht cruises. Every spring, the Dapeng Bay Marine Festival fills the bay with hundreds of sails.</div><button class="btn btn-g" onclick="go_4()">Continue →</button></div>
-      <div style="height:20px" id="q4_sp3"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q4_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/04-5.png" loading="lazy" alt="Dolphin and Whale Watching in Yilan"><span class="img-cap">Dolphin and Whale Watching in Yilan</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>Which of the following water activities can you do in Taiwan?</h2></div><div class="qw"></div>
-      <div class="os" id="q4_o4">
-        <button class="op" onclick="ans_4(4,0,3)"><span class="lb">A</span><span>Surf Pacific swells along the east coast</span></button>
-        <button class="op" onclick="ans_4(4,1,3)"><span class="lb">B</span><span>Watch dolphins and whales off Hualien</span></button>
-        <button class="op" onclick="ans_4(4,2,3)"><span class="lb">C</span><span>Sail across the calm lagoon of Dapeng Bay</span></button>
-        <button class="op" onclick="ans_4(4,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q4_h4"><strong>Hint:</strong> Taiwan is surrounded by ocean, and locals have made the most of every stretch of it!</div>
-      <div class="fw hidden" id="q4_f4"><div class="ff"><strong>🎉 Correct!</strong> From surfing and whale watching to sailing and snorkeling with sea turtles, Taiwan's coastline offers water adventures in every direction.</div><button class="btn btn-g" onclick="go_4()">Continue →</button></div>
-      <div style="height:20px" id="q4_sp4"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q4_s5"><div class="cmp"><div class="cmp-t">✈️</div><h2>Quiz Complete!</h2><p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p><div class="eb">🎫 +1 BONUS ENTRY EARNED</div><p class="sub" id="q4_remaining">8 more quizzes available — keep exploring Taiwan!</p><button class="btn" onclick="goTo('hub')">Back to Quizzes →</button></div></div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-
-<!-- QUIZ 5: Chase the Thrill -->
-<div id="screen-quiz-5" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q5_sc">1/5</span></div>
-  <div class="tb" id="q5_tb"><span class="i">🧗</span><span class="n">Chase the Thrill</span></div>
-  <div class="pw" id="q5_pw"><div class="pt"><div class="pf" id="q5_pf" style="width:20%"></div></div></div>
-  <div class="scr" id="q5_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/05-1.png" alt="Paragliding, Yilan"><span class="img-cap">Paragliding, Yilan</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Taiwan's Outdoor Playground</h2><p>Beyond hiking and water sports, Taiwan is packed with outdoor adventures for every comfort level. Float above the East Rift Valley in a hot air balloon, raft the rapids of Hualien's Xiuguluan River, paddleboard across Sun Moon Lake at sunrise, or paraglide over the oceanfront cliffs of Yilan.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_5()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q5_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/05-2.png" loading="lazy" alt="Taitung Hot Air Balloon Festival"><span class="img-cap">Taitung Hot Air Balloon Festival</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>The Taitung Hot Air Balloon Festival</h2><p>Every summer, the Luye Highland in Taitung hosts the Taiwan International Balloon Festival, one of the world's top 12 balloon festivals as named by Travel Channel.</p><p style="margin-top:12px">Over a million visitors come each year for tethered rides, special-shaped balloons from around the globe, and night glow concerts where balloons light up in sync with music after dark.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_5()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q5_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/05-3.png" loading="lazy" alt="Xiuguluan River"><span class="img-cap">Xiuguluan River</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>Hualien's Xiuguluan River is Taiwan's most popular white water rafting destination. What makes this river geographically unique?</h2></div><div class="qw"></div>
-      <div class="os" id="q5_o2">
-        <button class="op" onclick="ans_5(2,0,3)"><span class="lb">A</span><span>It flows through an underground cave system</span></button>
-        <button class="op" onclick="ans_5(2,1,3)"><span class="lb">B</span><span>It is entirely fed by hot springs</span></button>
-        <button class="op" onclick="ans_5(2,2,3)"><span class="lb">C</span><span>It runs in a perfect circle back to its starting point</span></button>
-        <button class="op" onclick="ans_5(2,3,3)"><span class="lb">D</span><span>It is the only river in Taiwan that cuts through the Coastal Mountain Range, creating dramatic canyons and over 20 sets of rapids</span></button>
-      </div>
-      <div class="ht hidden" id="q5_h2"><strong>Hint:</strong> The scenery along the route exists because of how this river carved its path to the Pacific!</div>
-      <div class="fw hidden" id="q5_f2"><div class="ff"><strong>🎉 Correct!</strong> This three-to-four-hour rafting trip takes you through steep canyon walls with a mix of calm stretches and exciting rapids. Accessible for beginners.</div><button class="btn btn-g" onclick="go_5()">Continue →</button></div>
-      <div style="height:20px" id="q5_sp2"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q5_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/05-4.png" loading="lazy" alt="Twin Candlesticks, North Coast and Guanyinshan National Scenic Area"><span class="img-cap">Twin Candlesticks, North Coast and Guanyinshan National Scenic Area</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>Stand-up paddleboarding (SUP) has become one of Taiwan's most popular outdoor activities. Which of these is a favorite SUP spot?</h2></div><div class="qw"></div>
-      <div class="os" id="q5_o3">
-        <button class="op" onclick="ans_5(3,0,3)"><span class="lb">A</span><span>Sun Moon Lake at sunrise</span></button>
-        <button class="op" onclick="ans_5(3,1,3)"><span class="lb">B</span><span>Beneath the towering Qingshui Cliffs in Hualien</span></button>
-        <button class="op" onclick="ans_5(3,2,3)"><span class="lb">C</span><span>Along the coastline of Penghu</span></button>
-        <button class="op" onclick="ans_5(3,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q5_h3"><strong>Hint:</strong> From calm mountain lakes to dramatic ocean cliffs, Taiwan has a SUP spot for every vibe!</div>
-      <div class="fw hidden" id="q5_f3"><div class="ff"><strong>🎉 Correct!</strong> Taiwan's diverse geography means SUP ranges from glassy lake surfaces to paddling beneath some of Asia's tallest sea cliffs.</div><button class="btn btn-g" onclick="go_5()">Continue →</button></div>
-      <div style="height:20px" id="q5_sp3"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q5_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/05-5.png" loading="lazy" alt="Rock Climbing, Longdong, North Coast and Guanyinshan National Scenic Area"><span class="img-cap">Rock Climbing, Longdong, North Coast and Guanyinshan National Scenic Area</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>Longdong, on Taiwan's northeast coast, is one of Asia's largest natural rock climbing sites. What kind of rock are climbers scaling there?</h2></div><div class="qw"></div>
-      <div class="os" id="q5_o4">
-        <button class="op" onclick="ans_5(4,0,2)"><span class="lb">A</span><span>Volcanic basalt</span></button>
-        <button class="op" onclick="ans_5(4,1,2)"><span class="lb">B</span><span>Limestone karst</span></button>
-        <button class="op" onclick="ans_5(4,2,2)"><span class="lb">C</span><span>Sandstone sea cliffs</span></button>
-        <button class="op" onclick="ans_5(4,3,2)"><span class="lb">D</span><span>Granite boulders</span></button>
-      </div>
-      <div class="ht hidden" id="q5_h4"><strong>Hint:</strong> The cliffs face the open ocean, and the rock was shaped by centuries of wind and waves!</div>
-      <div class="fw hidden" id="q5_f4"><div class="ff"><strong>🎉 Correct!</strong> Longdong's sandstone sea cliffs have over 500 routes for every skill level, making it a bucket-list destination for climbers across Asia.</div><button class="btn btn-g" onclick="go_5()">Continue →</button></div>
-      <div style="height:20px" id="q5_sp4"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q5_s5"><div class="cmp"><div class="cmp-t">✈️</div><h2>Quiz Complete!</h2><p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p><div class="eb">🎫 +1 BONUS ENTRY EARNED</div><p class="sub" id="q5_remaining">7 more quizzes available — keep exploring Taiwan!</p><button class="btn" onclick="goTo('hub')">Back to Quizzes →</button></div></div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-
-<!-- QUIZ 6: National Parks -->
-<div id="screen-quiz-6" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q6_sc">1/5</span></div>
-  <div class="tb" id="q6_tb"><span class="i">🌲</span><span class="n">National Parks</span></div>
-  <div class="pw" id="q6_pw"><div class="pt"><div class="pf" id="q6_pf" style="width:20%"></div></div></div>
-  <div class="scr" id="q6_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/06-1.png" alt="Taroko National Park"><span class="img-cap">Taroko National Park</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Nine National Parks on One Small Island</h2><p>Taiwan has nine national parks, each protecting a completely different landscape: volcanic fumaroles, marble gorges, high-altitude forests, coral atolls, and coastal wetlands.</p><p style="margin-top:12px">Endemic species like the Formosan black bear and the Taiwan blue magpie call these parks home.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_6()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q6_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/06-2.png" loading="lazy" alt="Taijiang National Park"><span class="img-cap">Taijiang National Park</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Nature, Closer Than You Think</h2><p>Many of Taiwan's most dramatic landscapes are surprisingly easy to reach. Yangmingshan National Park, with its steaming volcanic fumaroles and hot springs, sits just minutes from downtown Taipei by bus.</p><p style="margin-top:12px">Kenting on the southern tip offers tropical coastline and coral reefs within a short drive from Kaohsiung.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_6()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q6_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/06-3.png" loading="lazy" alt="Yangmingshan National Park"><span class="img-cap">Yangmingshan National Park</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>Yangmingshan National Park sits on a volcanic landscape just outside Taipei city center. What visible signs of its volcanic past can visitors still discover today?</h2></div><div class="qw"></div>
-      <div class="os" id="q6_o2">
-        <button class="op" onclick="ans_6(2,0,3)"><span class="lb">A</span><span>Ancient lava rivers flowing to the sea</span></button>
-        <button class="op" onclick="ans_6(2,1,3)"><span class="lb">B</span><span>A permanently snow-covered volcanic crater</span></button>
-        <button class="op" onclick="ans_6(2,2,3)"><span class="lb">C</span><span>Petrified forests from eruptions millions of years ago</span></button>
-        <button class="op" onclick="ans_6(2,3,3)"><span class="lb">D</span><span>Active fumaroles, sulfur vents, and natural hot springs</span></button>
-      </div>
-      <div class="ht hidden" id="q6_h2"><strong>Hint:</strong> The Datun Volcanic Group may be dormant, but the earth beneath your feet is very much alive!</div>
-      <div class="fw hidden" id="q6_f2"><div class="ff"><strong>🎉 Correct!</strong> Yangmingshan's fumaroles and hot springs are proof that the volcanoes are only sleeping. One of the few places where you can go from a capital city to steaming sulfur vents in under an hour.</div><button class="btn btn-g" onclick="go_6()">Continue →</button></div>
-      <div style="height:20px" id="q6_sp2"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q6_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/06-4.png" loading="lazy" alt="Taiwan Blue Magpie"><span class="img-cap">Taiwan Blue Magpie</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>Taiwan is home to several endemic species found nowhere else on Earth. Which of these animals is protected within Taiwan's national parks?</h2></div><div class="qw"></div>
-      <div class="os" id="q6_o3">
-        <button class="op" onclick="ans_6(3,0,3)"><span class="lb">A</span><span>The Formosan black bear</span></button>
-        <button class="op" onclick="ans_6(3,1,3)"><span class="lb">B</span><span>The Taiwan blue magpie</span></button>
-        <button class="op" onclick="ans_6(3,2,3)"><span class="lb">C</span><span>The Formosan landlocked salmon</span></button>
-        <button class="op" onclick="ans_6(3,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q6_h3"><strong>Hint:</strong> Taiwan's parks protect creatures from the mountains to the rivers!</div>
-      <div class="fw hidden" id="q6_f3"><div class="ff"><strong>🎉 Correct!</strong> Taiwan's national parks preserve habitats for species found nowhere else, from the Formosan black bear in Yushan to the landlocked salmon in Shei-Pa's cold mountain streams.</div><button class="btn btn-g" onclick="go_6()">Continue →</button></div>
-      <div style="height:20px" id="q6_sp3"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q6_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/06-5.png" loading="lazy" alt="Shei-Pa National Park"><span class="img-cap">Shei-Pa National Park</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>How many national parks does Taiwan have?</h2></div><div class="qw"></div>
-      <div class="os" id="q6_o4">
-        <button class="op" onclick="ans_6(4,0,3)"><span class="lb">A</span><span>3</span></button>
-        <button class="op" onclick="ans_6(4,1,3)"><span class="lb">B</span><span>5</span></button>
-        <button class="op" onclick="ans_6(4,2,3)"><span class="lb">C</span><span>7</span></button>
-        <button class="op" onclick="ans_6(4,3,3)"><span class="lb">D</span><span>9</span></button>
-      </div>
-      <div class="ht hidden" id="q6_h4"><strong>Hint:</strong> From coral atolls in the South China Sea to volcanic peaks above Taipei, the range is extraordinary!</div>
-      <div class="fw hidden" id="q6_f4"><div class="ff"><strong>🎉 Correct!</strong> Nine national parks protect everything from coral atolls to marble gorges to alpine peaks. Taiwan packs more ecological diversity into its parks than countries many times its size.</div><button class="btn btn-g" onclick="go_6()">Continue →</button></div>
-      <div style="height:20px" id="q6_sp4"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q6_s5"><div class="cmp"><div class="cmp-t">✈️</div><h2>Quiz Complete!</h2><p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p><div class="eb">🎫 +1 BONUS ENTRY EARNED</div><p class="sub" id="q6_remaining">6 more quizzes available — keep exploring Taiwan!</p><button class="btn" onclick="goTo('hub')">Back to Quizzes →</button></div></div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-
-<!-- QUIZ 7: Ride the Rails -->
-<div id="screen-quiz-7" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q7_sc">1/5</span></div>
-  <div class="tb" id="q7_tb"><span class="i">🚄</span><span class="n">Ride the Rails</span></div>
-  <div class="pw" id="q7_pw"><div class="pt"><div class="pf" id="q7_pf" style="width:20%"></div></div></div>
-  <div class="scr" id="q7_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/07-1.png" alt="East Longitudinal Valley"><span class="img-cap">East Longitudinal Valley</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>A Train Ride Through Every Landscape</h2><p>Taiwan's rail network connects nearly every corner of the island. High Speed Rail whisks you from Taipei to Kaohsiung in around 1.5 hours. The round-island railway hugs the dramatic east coast, where mountains drop straight into the Pacific.</p><p style="margin-top:12px">And heritage lines like the Alishan Forest Railway climb through cloud forests into breathtaking mountain scenery.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_7()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q7_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/07-2.png" loading="lazy" alt="Railway Bento (Lunchbox)"><span class="img-cap">Railway Bento (Lunchbox)</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>The Railway Bento</h2><p>No Taiwan train ride is complete without a railway bento, the classic boxed meal sold at stations and onboard trains across the island.</p><p style="margin-top:12px">Some stations have their own regional specialties, and loyal fans debate which one makes the best version.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_7()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q7_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/07-3.png" loading="lazy" alt="Taiwan High Speed Rail"><span class="img-cap">Taiwan High Speed Rail</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>Taipei and Kaohsiung are about 350 km (around 200 miles) apart. How quickly does the High Speed Rail connect Taiwan's two largest cities?</h2></div><div class="qw"></div>
-      <div class="os" id="q7_o2">
-        <button class="op" onclick="ans_7(2,0,3)"><span class="lb">A</span><span>About 4 hours</span></button>
-        <button class="op" onclick="ans_7(2,1,3)"><span class="lb">B</span><span>About 3 hours</span></button>
-        <button class="op" onclick="ans_7(2,2,3)"><span class="lb">C</span><span>About 2.5 hours</span></button>
-        <button class="op" onclick="ans_7(2,3,3)"><span class="lb">D</span><span>About 1.5 hours</span></button>
-      </div>
-      <div class="ht hidden" id="q7_h2"><strong>Hint:</strong> These trains run at up to 300 km/h (186 mph)!</div>
-      <div class="fw hidden" id="q7_f2"><div class="ff"><strong>🎉 Correct!</strong> The HSR makes day trips between north and south Taiwan effortless, with trains departing every 15 to 30 minutes throughout the day.</div><button class="btn btn-g" onclick="go_7()">Continue →</button></div>
-      <div style="height:20px" id="q7_sp2"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q7_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/07-4.png" loading="lazy" alt="Alishan Forest Railway"><span class="img-cap">Alishan Forest Railway</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>The Alishan Forest Railway uses a rare engineering technique to climb steep mountain slopes. What is it?</h2></div><div class="qw"></div>
-      <div class="os" id="q7_o3">
-        <button class="op" onclick="ans_7(3,0,3)"><span class="lb">A</span><span>A cable-pulled funicular system</span></button>
-        <button class="op" onclick="ans_7(3,1,3)"><span class="lb">B</span><span>Magnetic levitation on steep sections</span></button>
-        <button class="op" onclick="ans_7(3,2,3)"><span class="lb">C</span><span>Tunnels that spiral upward inside the mountain</span></button>
-        <button class="op" onclick="ans_7(3,3,3)"><span class="lb">D</span><span>Z-shaped switchbacks where the train reverses direction to gain elevation</span></button>
-      </div>
-      <div class="ht hidden" id="q7_h3"><strong>Hint:</strong> The train zigzags its way up, changing direction at each turn!</div>
-      <div class="fw hidden" id="q7_f3"><div class="ff"><strong>🎉 Correct!</strong> These switchbacks help the narrow-gauge train climb from about 30 meters above sea level to over 2,200 meters in elevation, passing through four distinct climate zones along the way.</div><button class="btn btn-g" onclick="go_7()">Continue →</button></div>
-      <div style="height:20px" id="q7_sp3"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q7_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/07-5.png" loading="lazy" alt="Sky Lanterns"><span class="img-cap">Sky Lanterns</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>The Pingxi Branch Line is one of Taiwan's most scenic short railway rides. What is the line's most famous attraction?</h2></div><div class="qw"></div>
-      <div class="os" id="q7_o4">
-        <button class="op" onclick="ans_7(4,0,2)"><span class="lb">A</span><span>A high-speed connection to the coast</span></button>
-        <button class="op" onclick="ans_7(4,1,2)"><span class="lb">B</span><span>Underground tunnels carved through marble</span></button>
-        <button class="op" onclick="ans_7(4,2,2)"><span class="lb">C</span><span>Releasing sky lanterns over the old railway tracks</span></button>
-        <button class="op" onclick="ans_7(4,3,2)"><span class="lb">D</span><span>A rotating restaurant at the final station</span></button>
-      </div>
-      <div class="ht hidden" id="q7_h4"><strong>Hint:</strong> Thousands of glowing wishes float into the sky here every night!</div>
-      <div class="fw hidden" id="q7_f4"><div class="ff"><strong>🎉 Correct!</strong> The Pingxi Line winds through old mining villages, but the sky lantern tradition is what draws visitors from around the world. Write a wish, light it up, and let it go.</div><button class="btn btn-g" onclick="go_7()">Continue →</button></div>
-      <div style="height:20px" id="q7_sp4"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q7_s5"><div class="cmp"><div class="cmp-t">✈️</div><h2>Quiz Complete!</h2><p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p><div class="eb">🎫 +1 BONUS ENTRY EARNED</div><p class="sub" id="q7_remaining">5 more quizzes available — keep exploring Taiwan!</p><button class="btn" onclick="goTo('hub')">Back to Quizzes →</button></div></div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-
-<!-- QUIZ 8: Old Streets, New Cities -->
-<div id="screen-quiz-8" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q8_sc">1/5</span></div>
-  <div class="tb" id="q8_tb"><span class="i">🏙️</span><span class="n">Old Streets, New Cities</span></div>
-  <div class="pw" id="q8_pw"><div class="pt"><div class="pf" id="q8_pf" style="width:20%"></div></div></div>
-  <div class="scr" id="q8_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/08-1.png" alt="Dihua St, Taipei"><span class="img-cap">Dihua St, Taipei</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Where Centuries Layer on Top of Each Other</h2><p>Taiwan's cities are not just modern skylines. Wander down an old street in Lukang, Jiufen, or Anping, and you step into centuries of trade, immigration, and craftsmanship.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_8()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q8_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/08-2.png" loading="lazy" alt="Songshan Cultural Park, Taipei"><span class="img-cap">Songshan Cultural Park, Taipei</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>From Factories to Creative Spaces</h2><p>Across Taiwan, abandoned industrial sites have been reborn as cultural hubs. Huashan 1914 in Taipei was a century-old distillery, now filled with galleries and indie shops. Songshan Cultural Park was a former tobacco factory, now a design hub.</p><p style="margin-top:12px">Pier-2 in Kaohsiung turned harbor warehouses into one of Asia's most vibrant art districts.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_8()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q8_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/08-3.png" loading="lazy" alt="Anping Old Fort, Tainan"><span class="img-cap">Anping Old Fort, Tainan</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>Tainan is considered Taiwan's oldest city. When did its recorded urban history begin?</h2></div><div class="qw"></div>
-      <div class="os" id="q8_o2">
-        <button class="op" onclick="ans_8(2,0,3)"><span class="lb">A</span><span>Around 1850</span></button>
-        <button class="op" onclick="ans_8(2,1,3)"><span class="lb">B</span><span>Around 1750</span></button>
-        <button class="op" onclick="ans_8(2,2,3)"><span class="lb">C</span><span>Around 1700</span></button>
-        <button class="op" onclick="ans_8(2,3,3)"><span class="lb">D</span><span>Around 1624</span></button>
-      </div>
-      <div class="ht hidden" id="q8_h2"><strong>Hint:</strong> The Dutch East India Company built a trading fort here long before Taipei even existed!</div>
-      <div class="fw hidden" id="q8_f2"><div class="ff"><strong>🎉 Correct!</strong> Tainan served as Taiwan's capital for over 200 years and is home to the island's first Confucian temple, first Taoist temple, and over 300 historic sanctuaries.</div><button class="btn btn-g" onclick="go_8()">Continue →</button></div>
-      <div style="height:20px" id="q8_sp2"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q8_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/08-4.png" loading="lazy" alt="Jiufen, New Taipei City"><span class="img-cap">Jiufen, New Taipei City</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>Jiufen in New Taipei City is one of Taiwan's most visited old streets. What transformed this quiet mountain village into a boomtown in the late 1800s?</h2></div><div class="qw"></div>
-      <div class="os" id="q8_o3">
-        <button class="op" onclick="ans_8(3,0,3)"><span class="lb">A</span><span>A tea plantation boom</span></button>
-        <button class="op" onclick="ans_8(3,1,3)"><span class="lb">B</span><span>A new railway station</span></button>
-        <button class="op" onclick="ans_8(3,2,3)"><span class="lb">C</span><span>A typhoon that redirected a major trade route</span></button>
-        <button class="op" onclick="ans_8(3,3,3)"><span class="lb">D</span><span>The discovery of gold</span></button>
-      </div>
-      <div class="ht hidden" id="q8_h3"><strong>Hint:</strong> The mountain was hiding a fortune underground!</div>
-      <div class="fw hidden" id="q8_f3"><div class="ff"><strong>🎉 Correct!</strong> Jiufen's gold rush legacy lives on in its lantern-lit alleyways, hillside tea houses, and stunning ocean views that draw visitors from around the world.</div><button class="btn btn-g" onclick="go_8()">Continue →</button></div>
-      <div style="height:20px" id="q8_sp3"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q8_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/08-5.png" loading="lazy" alt="Pier-2 Art District, Kaohsiung"><span class="img-cap">Pier-2 Art District, Kaohsiung</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>Which of these is a real example of Taiwan turning old buildings into creative spaces?</h2></div><div class="qw"></div>
-      <div class="os" id="q8_o4">
-        <button class="op" onclick="ans_8(4,0,3)"><span class="lb">A</span><span>A century-old distillery in Taipei became Huashan 1914 Creative Park</span></button>
-        <button class="op" onclick="ans_8(4,1,3)"><span class="lb">B</span><span>Abandoned harbor warehouses in Kaohsiung became the Pier-2 Art District</span></button>
-        <button class="op" onclick="ans_8(4,2,3)"><span class="lb">C</span><span>A former tobacco factory in Taipei became Songshan Cultural Park</span></button>
-        <button class="op" onclick="ans_8(4,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q8_h4"><strong>Hint:</strong> Taiwan has a talent for giving old places new life!</div>
-      <div class="fw hidden" id="q8_f4"><div class="ff"><strong>🎉 Correct!</strong> Taiwan has transformed old distilleries, warehouses, and factories into creative spaces that are now among the island's top destinations.</div><button class="btn btn-g" onclick="go_8()">Continue →</button></div>
-      <div style="height:20px" id="q8_sp4"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q8_s5"><div class="cmp"><div class="cmp-t">✈️</div><h2>Quiz Complete!</h2><p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p><div class="eb">🎫 +1 BONUS ENTRY EARNED</div><p class="sub" id="q8_remaining">4 more quizzes available — keep exploring Taiwan!</p><button class="btn" onclick="goTo('hub')">Back to Quizzes →</button></div></div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-
-<!-- QUIZ 9: Food Adventure -->
-<div id="screen-quiz-9" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q9_sc">1/5</span></div>
-  <div class="tb" id="q9_tb"><span class="i">🍜</span><span class="n">Food Adventure</span></div>
-  <div class="pw" id="q9_pw"><div class="pt"><div class="pf" id="q9_pf" style="width:20%"></div></div></div>
-  <div class="scr" id="q9_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/09-1.png" alt="Raohe Night Market, Taipei"><span class="img-cap">Raohe Night Market, Taipei</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Taiwan's Living Room Is a Night Market</h2><p>Every city has its own night market with signature dishes. Shilin in Taipei, Fengjia in Taichung, Liuhe in Kaohsiung. Part food court, part carnival, part neighborhood gathering place.</p><p style="margin-top:12px">For many visitors, the most memorable experience of a trip to Taiwan.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_9()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q9_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/09-2.png" loading="lazy" alt="Beef Hotpot – Bib Gourmand Recommended"><span class="img-cap">Beef Hotpot – Bib Gourmand Recommended</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>From Street Stalls to Michelin Stars</h2><p>Taiwan's food scene stretches from $1 street snacks to 61 Michelin-starred restaurants in 2026, including three with the highest three-star rating.</p><p style="margin-top:12px">But some of the most celebrated food still comes from humble stalls perfecting a single dish for generations.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_9()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q9_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/09-3.png" loading="lazy" alt="Bubble Tea"><span class="img-cap">Bubble Tea</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>Bubble tea (boba) is now a global phenomenon. Which Taiwanese city is home to Chun Shui Tang, one of the tea shops credited with inventing it in the 1980s?</h2></div><div class="qw"></div>
-      <div class="os" id="q9_o2">
-        <button class="op" onclick="ans_9(2,0,3)"><span class="lb">A</span><span>Taipei</span></button>
-        <button class="op" onclick="ans_9(2,1,3)"><span class="lb">B</span><span>Tainan</span></button>
-        <button class="op" onclick="ans_9(2,2,3)"><span class="lb">C</span><span>Kaohsiung</span></button>
-        <button class="op" onclick="ans_9(2,3,3)"><span class="lb">D</span><span>Taichung</span></button>
-      </div>
-      <div class="ht hidden" id="q9_h2"><strong>Hint:</strong> This city sits right in the middle of Taiwan's western corridor!</div>
-      <div class="fw hidden" id="q9_f2"><div class="ff"><strong>🎉 Correct!</strong> Chun Shui Tang in Taichung started adding tapioca balls to iced tea in 1988, and the rest is history.</div><button class="btn btn-g" onclick="go_9()">Continue →</button></div>
-      <div style="height:20px" id="q9_sp2"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q9_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/09-4.png" loading="lazy" alt="Fried Chicken Cutlet"><span class="img-cap">Fried Chicken Cutlet</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>Which of these is a real Taiwanese night market snack?</h2></div><div class="qw"></div>
-      <div class="os" id="q9_o3">
-        <button class="op" onclick="ans_9(3,0,3)"><span class="lb">A</span><span>A fried chicken cutlet bigger than your face</span></button>
-        <button class="op" onclick="ans_9(3,1,3)"><span class="lb">B</span><span>An oyster omelet with sweet potato starch and tangy sauce</span></button>
-        <button class="op" onclick="ans_9(3,2,3)"><span class="lb">C</span><span>Deep-fried stinky tofu served with pickled cabbage</span></button>
-        <button class="op" onclick="ans_9(3,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q9_h3"><strong>Hint:</strong> Taiwanese street food creativity knows no limits!</div>
-      <div class="fw hidden" id="q9_f3"><div class="ff"><strong>🎉 Correct!</strong> These are just three of hundreds of dishes you'll find at night markets across the island.</div><button class="btn btn-g" onclick="go_9()">Continue →</button></div>
-      <div style="height:20px" id="q9_sp3"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q9_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/09-5.png?v=2" loading="lazy" alt="Michelin Three-Star Restaurants in Taiwan"></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>How many restaurants in Taiwan held Michelin stars in 2026?</h2></div><div class="qw"></div>
-      <div class="os" id="q9_o4">
-        <button class="op" onclick="ans_9(4,0,3)"><span class="lb">A</span><span>12</span></button>
-        <button class="op" onclick="ans_9(4,1,3)"><span class="lb">B</span><span>25</span></button>
-        <button class="op" onclick="ans_9(4,2,3)"><span class="lb">C</span><span>38</span></button>
-        <button class="op" onclick="ans_9(4,3,3)"><span class="lb">D</span><span>61</span></button>
-      </div>
-      <div class="ht hidden" id="q9_h4"><strong>Hint:</strong> Three of them hold the highest three-star rating!</div>
-      <div class="fw hidden" id="q9_f4"><div class="ff"><strong>🎉 Correct!</strong> From French fine dining to modern Taiwanese cuisine, Taiwan's Michelin scene spans Taipei, Taichung, and Kaohsiung.</div><button class="btn btn-g" onclick="go_9()">Continue →</button></div>
-      <div style="height:20px" id="q9_sp4"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q9_s5"><div class="cmp"><div class="cmp-t">✈️</div><h2>Quiz Complete!</h2><p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p><div class="eb">🎫 +1 BONUS ENTRY EARNED</div><p class="sub" id="q9_remaining">3 more quizzes available — keep exploring Taiwan!</p><button class="btn" onclick="goTo('hub')">Back to Quizzes →</button></div></div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-
-<!-- QUIZ 10: Experience Different Cultures -->
-<div id="screen-quiz-10" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q10_sc">1/5</span></div>
-  <div class="tb" id="q10_tb"><span class="i">🫖</span><span class="n">Experience Different Cultures</span></div>
-  <div class="pw" id="q10_pw"><div class="pt"><div class="pf" id="q10_pf" style="width:20%"></div></div></div>
-  <div class="scr" id="q10_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/10-1.png" alt="Bunun Tribe"><span class="img-cap">Bunun Tribe</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>A Small Island, A World of Difference</h2><p>A short train ride takes you from major cities to a mountain village where indigenous traditions are part of daily life. Drive a couple of hours further and the food, accent, and architecture all change.</p><p style="margin-top:12px">For an island you can cross in a few hours, Taiwan feels remarkably vast.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_10()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q10_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/10-2.gif" loading="lazy" alt="Sixteen Indigenous Peoples"><span class="img-cap">Sixteen Indigenous Peoples</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Sixteen Indigenous Peoples</h2><p>Taiwan recognizes 16 indigenous peoples, each with its own language, music, and traditions. Visit the east coast to join an Amis harvest festival. Head into the mountains to hear the Bunun's eight-part harmony.</p><p style="margin-top:12px">These are living communities happy to share their culture with visitors.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_10()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q10_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/10-3.png" loading="lazy" alt="Indigo Dyeing"><span class="img-cap">Indigo Dyeing</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>Pounded tea, indigo dyeing, and distinctive village architecture — which cultural tradition do these belong to?</h2></div><div class="qw"></div>
-      <div class="os" id="q10_o2">
-        <button class="op" onclick="ans_10(2,0,3)"><span class="lb">A</span><span>Hokkien</span></button>
-        <button class="op" onclick="ans_10(2,1,3)"><span class="lb">B</span><span>Japanese</span></button>
-        <button class="op" onclick="ans_10(2,2,3)"><span class="lb">C</span><span>Indigenous Amis</span></button>
-        <button class="op" onclick="ans_10(2,3,3)"><span class="lb">D</span><span>Hakka</span></button>
-      </div>
-      <div class="ht hidden" id="q10_h2"><strong>Hint:</strong> Towns like Beipu and Meinong are known for bold flavors and hands-on craftsmanship.</div>
-      <div class="fw hidden" id="q10_f2"><div class="ff"><strong>🎉 Correct!</strong> Hakka villages offer pounded tea, indigo dyeing, and a culture built around resilience and craft.</div><button class="btn btn-g" onclick="go_10()">Continue →</button></div>
-      <div style="height:20px" id="q10_sp2"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q10_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/10-4.png" loading="lazy" alt="Amis Harvest Festival"><span class="img-cap">Amis Harvest Festival</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>What can visitors experience at an Amis harvest festival?</h2></div><div class="qw"></div>
-      <div class="os" id="q10_o3">
-        <button class="op" onclick="ans_10(3,0,3)"><span class="lb">A</span><span>Circle dances with hundreds of locals</span></button>
-        <button class="op" onclick="ans_10(3,1,3)"><span class="lb">B</span><span>Traditional millet wine and wild vegetables</span></button>
-        <button class="op" onclick="ans_10(3,2,3)"><span class="lb">C</span><span>Age-group ceremonies passed down for generations</span></button>
-        <button class="op" onclick="ans_10(3,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q10_h3"><strong>Hint:</strong> The Amis are the largest indigenous group, and their festivals welcome visitors.</div>
-      <div class="fw hidden" id="q10_f3"><div class="ff"><strong>🎉 Correct!</strong> Multi-day celebrations where visitors join the dancing and share the food.</div><button class="btn btn-g" onclick="go_10()">Continue →</button></div>
-      <div style="height:20px" id="q10_sp3"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q10_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/10-5.png" loading="lazy" alt="Austronesian Wedding"><span class="img-cap">Austronesian Wedding</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>What makes Taiwan's cultural landscape unique?</h2></div><div class="qw"></div>
-      <div class="os" id="q10_o4">
-        <button class="op" onclick="ans_10(4,0,3)"><span class="lb">A</span><span>Century-old architecture and modern cities side by side</span></button>
-        <button class="op" onclick="ans_10(4,1,3)"><span class="lb">B</span><span>Indigenous festivals welcome visitors to participate</span></button>
-        <button class="op" onclick="ans_10(4,2,3)"><span class="lb">C</span><span>Every region has its own food, accent, and traditions</span></button>
-        <button class="op" onclick="ans_10(4,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q10_h4"><strong>Hint:</strong> Taiwan's size makes it easy to experience many traditions in a single trip.</div>
-      <div class="fw hidden" id="q10_f4"><div class="ff"><strong>🎉 Correct!</strong> Taiwan packs an incredible range of living cultures into one small island.</div><button class="btn btn-g" onclick="go_10()">Continue →</button></div>
-      <div style="height:20px" id="q10_sp4"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q10_s5"><div class="cmp"><div class="cmp-t">✈️</div><h2>Quiz Complete!</h2><p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p><div class="eb">🎫 +1 BONUS ENTRY EARNED</div><p class="sub" id="q10_remaining">2 more quizzes available — keep exploring Taiwan!</p><button class="btn" onclick="goTo('hub')">Back to Quizzes →</button></div></div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-
-<!-- QUIZ 11: Faith on Every Corner -->
-<div id="screen-quiz-11" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q11_sc">1/5</span></div>
-  <div class="tb" id="q11_tb"><span class="i">🪷</span><span class="n">Faith on Every Corner</span></div>
-  <div class="pw" id="q11_pw"><div class="pt"><div class="pf" id="q11_pf" style="width:20%"></div></div></div>
-  <div class="scr" id="q11_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/11-1.png" alt="City God (Chenghuang) Temple, Hsinchu"><span class="img-cap">City God (Chenghuang) Temple, Hsinchu</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>An Island of Ten Thousand Temples</h2><p>Taiwan has over 12,000 registered temples. Taoist, Buddhist, and folk religion temples stand on nearly every block, many centuries old and still buzzing with daily worship.</p><p style="margin-top:12px">Incense, offerings, and fortune-telling rituals are not relics of the past. They are everyday life.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_11()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q11_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/11-2.png" loading="lazy" alt="Baishatun Mazu Pilgrimage"><span class="img-cap">Baishatun Mazu Pilgrimage</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>The Mazu Pilgrimage</h2><p>Every spring, millions join the Dajia Mazu Pilgrimage, a nine-day, 340 km (about 200 miles) procession honoring the sea goddess Mazu. Entire towns set up free food stations, and strangers open their homes to walkers.</p><p style="margin-top:12px">It has been compared to the Hajj and the Camino de Santiago.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_11()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q11_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/11-3.png" loading="lazy" alt="Dajia Mazu Pilgrimage"><span class="img-cap">Dajia Mazu Pilgrimage</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>Millions walk the Dajia Mazu Pilgrimage each spring. What makes it special for visitors?</h2></div><div class="qw"></div>
-      <div class="os" id="q11_o2">
-        <button class="op" onclick="ans_11(2,0,3)"><span class="lb">A</span><span>Free food stations set up by entire towns along the route</span></button>
-        <button class="op" onclick="ans_11(2,1,3)"><span class="lb">B</span><span>Strangers opening their homes to walkers</span></button>
-        <button class="op" onclick="ans_11(2,2,3)"><span class="lb">C</span><span>No religious requirement to join</span></button>
-        <button class="op" onclick="ans_11(2,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q11_h2"><strong>Hint:</strong> It has been compared to the Camino de Santiago.</div>
-      <div class="fw hidden" id="q11_f2"><div class="ff"><strong>🎉 Correct!</strong> The nine-day, 340 km walk is one of the most welcoming cultural events on Earth. Just show up and walk.</div><button class="btn btn-g" onclick="go_11()">Continue →</button></div>
-      <div style="height:20px" id="q11_sp2"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q11_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/11-4.png" loading="lazy" alt="Beigang Chaotian Temple, Yunlin"><span class="img-cap">Beigang Chaotian Temple, Yunlin</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>What can visitors do at most Taiwanese temples?</h2></div><div class="qw"></div>
-      <div class="os" id="q11_o3">
-        <button class="op" onclick="ans_11(3,0,3)"><span class="lb">A</span><span>Toss divination blocks, burn incense, and pray to the gods</span></button>
-        <button class="op" onclick="ans_11(3,1,3)"><span class="lb">B</span><span>Visit Buddhist monasteries tucked into the mountains</span></button>
-        <button class="op" onclick="ans_11(3,2,3)"><span class="lb">C</span><span>Appreciate centuries-old architecture, carvings, and roof decorations</span></button>
-        <button class="op" onclick="ans_11(3,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q11_h3"><strong>Hint:</strong> Temples in Taiwan are community hubs, not just places of worship!</div>
-      <div class="fw hidden" id="q11_f3"><div class="ff"><strong>🎉 Correct!</strong> Temples are free to enter, and every visit is a mix of ritual, art, and atmosphere.</div><button class="btn btn-g" onclick="go_11()">Continue →</button></div>
-      <div style="height:20px" id="q11_sp3"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q11_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/11-5.png" loading="lazy" alt="Longshan Temple, Taipei"><span class="img-cap">Longshan Temple, Taipei</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>Longshan Temple, built in 1738, is one of Taipei's most famous landmarks. Where is it located?</h2></div><div class="qw"></div>
-      <div class="os" id="q11_o4">
-        <button class="op" onclick="ans_11(4,0,3)"><span class="lb">A</span><span>Next to Taipei 101</span></button>
-        <button class="op" onclick="ans_11(4,1,3)"><span class="lb">B</span><span>On top of Yangmingshan</span></button>
-        <button class="op" onclick="ans_11(4,2,3)"><span class="lb">C</span><span>Inside Taipei Main Station</span></button>
-        <button class="op" onclick="ans_11(4,3,3)"><span class="lb">D</span><span>In Wanhua, one of Taipei's oldest neighborhoods</span></button>
-      </div>
-      <div class="ht hidden" id="q11_h4"><strong>Hint:</strong> This district has been the heart of Taipei since before it was even called Taipei!</div>
-      <div class="fw hidden" id="q11_f4"><div class="ff"><strong>🎉 Correct!</strong> Locals come here to pray, visitors come to soak in the atmosphere. Wanhua is where old Taipei still feels alive.</div><button class="btn btn-g" onclick="go_11()">Continue →</button></div>
-      <div style="height:20px" id="q11_sp4"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q11_s5"><div class="cmp"><div class="cmp-t">✈️</div><h2>Quiz Complete!</h2><p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p><div class="eb">🎫 +1 BONUS ENTRY EARNED</div><p class="sub" id="q11_remaining">1 more quiz available — keep exploring Taiwan!</p><button class="btn" onclick="goTo('hub')">Back to Quizzes →</button></div></div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-
-<!-- QUIZ 12: Rest & Restore -->
-<div id="screen-quiz-12" class="screen quiz hidden"><div class="qs">
-  <div class="qh"><span class="back-to-grid" onclick="goTo('hub')">← Back to Quizzes</span><span class="sc" id="q12_sc">1/5</span></div>
-  <div class="tb" id="q12_tb"><span class="i">🌿</span><span class="n">Rest &amp; Restore</span></div>
-  <div class="pw" id="q12_pw"><div class="pt"><div class="pf" id="q12_pf" style="width:20%"></div></div></div>
-  <div class="scr" id="q12_s0">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/12-1.png" alt="Zhaori Hot Spring, Green Island"><span class="img-cap">Zhaori Hot Spring, Green Island</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>An Island of Hot Springs</h2><p>Taiwan has over 100 hot spring sites. Beitou is just 30 minutes by metro from downtown Taipei, while Jiaoxi in Yilan and Zhiben in Taitung offer soaks surrounded by forest.</p><p style="margin-top:12px">Public or private, hot springs are part of everyday life here.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_12()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q12_s1">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/12-2.png" loading="lazy" alt="Heping Island, North Coast &amp; Guanyinshan National Scenic Area"><span class="img-cap">Heping Island, North Coast &amp; Guanyinshan National Scenic Area</span></div>
-    <div class="q-right">
-      <div class="ib"><div class="ibg">📖 Did You Know?</div><h2>Travel Green, Travel Taiwan</h2><p>Taiwan has six internationally certified Green Destinations and won nine Story Awards at ITB Berlin in recent years.</p><p style="margin-top:12px">Eco-certified hotels and community homestays make it easy to explore responsibly.</p></div>
-      <div class="ibtn"><button class="btn" onclick="go_12()">Continue →</button></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q12_s2">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/12-3.png" loading="lazy" alt="Tea Ceremony, Alishan"><span class="img-cap">Tea Ceremony, Alishan</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 1 OF 3</span><h2>In Taiwan, tea is a form of rest. Which of the following is true about Taiwan's tea culture?</h2></div><div class="qw"></div>
-      <div class="os" id="q12_o2">
-        <button class="op" onclick="ans_12(2,0,3)"><span class="lb">A</span><span>Maokong, just outside Taipei city center, has hillside tea houses reachable by gondola</span></button>
-        <button class="op" onclick="ans_12(2,1,3)"><span class="lb">B</span><span>Alishan's cool mist above 1,000 meters produces some of the world's finest oolong</span></button>
-        <button class="op" onclick="ans_12(2,2,3)"><span class="lb">C</span><span>Tea plantations across the island welcome visitors to taste and learn</span></button>
-        <button class="op" onclick="ans_12(2,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q12_h2"><strong>Hint:</strong> From city escapes to mountain farms, tea culture is everywhere in Taiwan.</div>
-      <div class="fw hidden" id="q12_f2"><div class="ff"><strong>🎉 Correct!</strong> A gondola ride to Maokong or a trip to the misty fields of Alishan. Taiwan makes it easy to experience one of the world's great tea traditions firsthand.</div><button class="btn btn-g" onclick="go_12()">Continue →</button></div>
-      <div style="height:20px" id="q12_sp2"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q12_s3">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/12-4.png" loading="lazy" alt="Nanya, Northeast and Yilan Coast National Scenic Area"><span class="img-cap">Nanya, Northeast and Yilan Coast National Scenic Area</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 2 OF 3</span><h2>Taiwan has six destinations certified by the international Green Destinations program. Which is one of them?</h2></div><div class="qw"></div>
-      <div class="os" id="q12_o3">
-        <button class="op" onclick="ans_12(3,0,3)"><span class="lb">A</span><span>Sun Moon Lake, famous for its cycling path and indigenous Thao culture</span></button>
-        <button class="op" onclick="ans_12(3,1,3)"><span class="lb">B</span><span>Northeast and Yilan Coast, famous for its dramatic sea cliffs and fishing villages</span></button>
-        <button class="op" onclick="ans_12(3,2,3)"><span class="lb">C</span><span>Penghu, famous for its basalt columns and sea turtle conservation</span></button>
-        <button class="op" onclick="ans_12(3,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q12_h3"><strong>Hint:</strong> Taiwan has earned more Green Destinations certifications than most countries in Asia!</div>
-      <div class="fw hidden" id="q12_f3"><div class="ff"><strong>🎉 Correct!</strong> All three are certified, along with the East Coast, North Coast, and Southwest Coast. Six in total, making Taiwan one of Asia's leaders in sustainable tourism.</div><button class="btn btn-g" onclick="go_12()">Continue →</button></div>
-      <div style="height:20px" id="q12_sp3"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q12_s4">
-    <div class="ii"><img src="https://iven-doho.github.io/taiwan-quiz/images/12-5.png" loading="lazy" alt="Wulai Hot Springs, New Taipei City"><span class="img-cap">Wulai Hot Springs, New Taipei City</span></div>
-    <div class="q-right">
-      <div class="qhd"><div class="c1"></div><div class="c2"></div><span class="qn">QUESTION 3 OF 3</span><h2>Which of the following can visitors enjoy in Taiwan?</h2></div><div class="qw"></div>
-      <div class="os" id="q12_o4">
-        <button class="op" onclick="ans_12(4,0,3)"><span class="lb">A</span><span>Soaking in volcanic hot springs after a day of hiking</span></button>
-        <button class="op" onclick="ans_12(4,1,3)"><span class="lb">B</span><span>Sipping high mountain oolong at a hillside tea house</span></button>
-        <button class="op" onclick="ans_12(4,2,3)"><span class="lb">C</span><span>Staying at eco-certified farms and homestays in rural villages</span></button>
-        <button class="op" onclick="ans_12(4,3,3)"><span class="lb">D</span><span>All of the above</span></button>
-      </div>
-      <div class="ht hidden" id="q12_h4"><strong>Hint:</strong> Taiwan's compact size means you can do all of these in a single trip!</div>
-      <div class="fw hidden" id="q12_f4"><div class="ff"><strong>🎉 Correct!</strong> Taiwan is full of adventure, but it also knows how to slow you down. The best trips here have both.</div><button class="btn btn-g" onclick="go_12()">Continue →</button></div>
-      <div style="height:20px" id="q12_sp4"></div>
-    </div>
-  </div>
-  <div class="scr hidden" id="q12_s5"><div class="cmp"><div class="cmp-t">✈️</div><h2>Quiz Complete!</h2><p>You've earned <strong>1 bonus entry</strong> for the<br>Taiwan flight sweepstakes!</p><div class="eb">🎫 +1 BONUS ENTRY EARNED</div><p class="sub" id="q12_remaining">You've explored all 12 quizzes — good luck! 🤞</p><button class="btn" onclick="goTo('hub')">Back to Quizzes →</button></div></div>
-  <div class="qf">⚽ Kick Off Your Next Adventure in Taiwan</div>
-</div></div>
-
-<div class="cw hidden" id="conf"></div>
-
+<!-- Bump ?v= whenever you edit content.js, or browsers keep serving the
+     old copy and your change appears to do nothing. A hard refresh
+     (Cmd+Shift+R) also works. -->
+<script src="content.js?v=9"></script>
 <script>
-var API_URL='https://script.google.com/macros/s/AKfycbyhJiJyyL_7f2bMeserpTD8HrIIiAfIFXj6WznnqQEWbKduOOk1bR-UF1wXx5PZnJLrxQ/exec';
-var currentUser=null;
-var TOTAL_QUIZZES=12;
-var TOTAL_ENTRIES=TOTAL_QUIZZES+1;
-var activeQuizId=null;
-var activeQuizScreen=-1;
+const board=document.getElementById('board'),layer=document.getElementById('layer'),
+      rowsEl=null;
+// the middle of the board, from CENTRE in content.js
+const TAIWAN_SVG =
+  '<svg class="map" viewBox="43.5 21.8 152.0 211.8" fill="currentColor" aria-hidden="true">'
+  + '<path d="M168.50,23.75 171.25,24.00 179.25,31.75 188.25,35.25 193.50,42.50 188.00,48.00 184.75,55.00 184.50,60.25 186.25,67.25 185.75,74.25 177.50,90.50 173.75,95.75 172.75,99.50 172.75,103.75 171.50,106.75 171.75,112.25 167.75,125.25 167.75,127.50 166.50,130.00 163.75,141.75 159.75,154.00 153.75,166.50 136.50,190.50 132.50,198.50 129.75,208.25 129.50,214.75 127.25,228.00 127.50,231.00 126.75,231.50 122.50,229.00 119.50,230.50 118.00,229.00 118.00,216.25 115.00,208.25 108.25,200.50 98.25,195.50 96.25,193.25 92.00,185.25 87.00,168.25 83.50,163.00 79.50,159.25 81.00,155.50 81.25,149.50 85.00,142.50 86.00,139.25 86.00,136.50 84.25,133.00 85.25,131.00 87.75,119.50 87.50,116.25 88.75,114.25 93.75,112.75 94.50,106.00 98.00,102.50 100.25,97.00 103.00,94.25 103.00,92.75 107.25,85.75 108.25,81.75 111.75,79.75 114.00,77.50 118.25,68.50 120.00,66.25 128.00,60.00 129.75,57.75 131.25,54.75 132.00,50.50 135.00,46.25 134.75,44.25 136.50,40.50 141.25,38.00 145.25,37.00 152.00,34.00 159.75,32.50 162.25,27.75 166.75,24.25 168.50,23.75Z"/><path d="M166.00,220.25 167.50,220.25 169.75,222.50 170.50,224.50 170.00,225.50 168.25,225.50 166.00,223.75 165.50,223.00 166.00,220.25Z"/><path d="M52.75,126.50 55.00,127.50 55.75,129.25 53.00,131.50 51.50,131.50 50.50,129.75 52.75,126.50Z"/><path d="M46.50,140.25 49.25,140.50 49.50,142.00 48.50,143.25 46.00,143.00 46.50,140.25Z"/><path d="M46.75,123.50 48.00,124.50 48.00,126.50 47.25,127.75 46.00,127.75 45.50,126.25 46.75,123.50Z"/><path d="M51.50,120.25 53.50,121.75 52.25,123.50 50.00,122.75 50.00,121.50 51.50,120.25Z"/><path d="M163.25,184.00 165.25,184.75 165.25,185.50 163.50,187.00 162.25,186.00 162.25,184.50 163.25,184.00Z"/></svg>';
+document.getElementById('manifesto').innerHTML =
+  `<div class="stage">${TAIWAN_SVG}
+     <img class="bear" src="img/bear.webp" alt="">
+     <span class="dice" id="dice3d">
+       <img class="cube a" src="img/die-orange.webp" alt="">
+       <img class="cube b" src="img/die-cream.webp" alt=""></span></div>
+   <div class="words">
+     <h1>${CENTRE.title[0]} <em>${CENTRE.title[1]}</em></h1>
+     <span class="lede">${CENTRE.lede}</span>
+     <span class="lines">${CENTRE.lines.map(l=>`<b>${l}</b>`).join('')}</span>
+     <button class="roll" id="roll">
+       <span class="die" id="die" aria-hidden="true"></span>${CENTRE.button}</button>
+   </div>`;
+const brandEl=document.getElementById('brand'); if(brandEl) brandEl.textContent=M.brand;
 
-var quizData={
-  1:{title:'Reach the Summit',icon:'⛰️',section:'land',ready:true},
-  2:{title:'Ride Around the Island',icon:'🚲',section:'land',ready:true},
-  3:{title:'Run the Races',icon:'🏃',section:'land',ready:true},
-  4:{title:'Dive Into the Blue',icon:'🏄',section:'land',ready:true},
-  5:{title:'Chase the Thrill',icon:'🧗',section:'land',ready:true},
-  6:{title:'National Parks',icon:'🌲',section:'land',ready:true},
-  7:{title:'Ride the Rails',icon:'🚄',section:'people',ready:true},
-  8:{title:'Old Streets, New Cities',icon:'🏙️',section:'people',ready:true},
-  9:{title:'Food Adventure',icon:'🍜',section:'people',ready:true},
-  10:{title:'Experience Different Cultures',icon:'🫖',section:'people',ready:true},
-  11:{title:'Faith on Every Corner',icon:'🪷',section:'people',ready:true},
-  12:{title:'Rest & Restore',icon:'🌿',section:'people',ready:true}
-};
 
-var _mpCid=(function(){var k='tw_cid';try{var id=localStorage.getItem(k);if(!id){id=Math.random().toString(36).substr(2)+'.'+Date.now();localStorage.setItem(k,id);}return id;}catch(e){return Math.random().toString(36).substr(2)+'.'+Date.now();}})();
-var _mpSid=Date.now().toString();
-// Sync with GA4's actual client_id & session_id so MP events join the real session
-(function syncGA4Ids(){
-  if(typeof gtag==='undefined'){setTimeout(syncGA4Ids,500);return;}
-  gtag('get','G-1KFW5EHHT4','client_id',function(cid){if(cid){_mpCid=cid;try{localStorage.setItem('tw_cid',cid);}catch(e){}}});
-  gtag('get','G-1KFW5EHHT4','session_id',function(sid){if(sid)_mpSid=sid.toString();});
-})();
-// Listen for UTM params sent from parent page (feeltaiwan.com) via postMessage
-window.addEventListener('message',function(e){
-  if(!e.data||e.data.type!=='tw_utms')return;
-  var u=e.data.utms||{};
-  var cfg={};
-  if(u.utm_source)cfg.campaign_source=u.utm_source;
-  if(u.utm_medium)cfg.campaign_medium=u.utm_medium;
-  if(u.utm_campaign)cfg.campaign_name=u.utm_campaign;
-  if(u.utm_content)cfg.campaign_content=u.utm_content;
-  if(u.utm_term)cfg.campaign_term=u.utm_term;
-  if(Object.keys(cfg).length)gtag('set',cfg);
+/* colour code, driven by the square's `kind` in content.js */
+function accentFor(d){
+  if(d.cls==='start') return 'k-start';
+  const k=(d.kind||'').toLowerCase();
+  if(k.includes('promo')) return 'k-promo';
+  if(k.includes("what")) return 'k-now';
+  if(k.includes('ways'))  return 'k-ways';
+  return 'k-ways';
+}
+const PLANE = '<svg class="plane" viewBox="0 0 120 46" fill="none" aria-hidden="true"><path d="M4 30.5 L30 24 L18 10 h7.5 l17 12 L66 16.5 c6-1.6 10.5-1.2 11.6 1.2 1.1 2.4-1.6 5.2-7.3 7.2 L44 30.6 l-13 15.3 h-7.6 L30 31.9 L4 34.6 Z" fill="#fff"/><path d="M84 22 h24 M100 14 l10 8 -10 8" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+TILES.forEach((d,i)=>{
+  const b=document.createElement('button');
+  b.className='tile p'+(i+1)+(d.cls?' '+d.cls:'')+' '+accentFor(d);
+  if(d.hue) b.style.setProperty('--hue',d.hue);
+  b.setAttribute('aria-expanded','false');
+  const n=String(i+1).padStart(2,'0');
+  b.innerHTML = d.cls==='start'
+    ? `<span class="bar"></span><span class="num">${n}</span>
+       <span class="cap"><span class="big">START!</span>
+         ${PLANE}
+         <h3>TPE Airport</h3></span>`
+    : d.cls==='air'
+    ? `<span class="num">${n}</span><img src="${LOGO}${d.logo}.png" alt="${d.t}">
+       <span class="layers"><i></i></span><span class="cond">${d.cond}</span>`
+    : `<span class="ph"></span>`
+      + (d.photo?`<img class="pic" src="photos/${d.photo}.webp" alt="" onerror="this.remove()">`:'')
+      +`<span class="scrim"></span><span class="bar"></span><span class="num">${n}</span>`
+      +(d.flag?`<span class="flag">${d.flag}</span>`:'')
+      +`<span class="layers">${'<i></i>'.repeat(Math.min((d.gal||[]).length,4))}</span>`
+      +`<span class="cap"><span class="kind">${d.kind}</span><h3>${d.t}</h3>`
+      +`<span class="sub">${d.s}</span></span>`;
+  b.addEventListener('click',()=>open(d,b));
+  board.appendChild(b);
+
 });
+const slug=t=>t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+let cur=null;
+function open(d,btn){
+  if(cur===btn){close();return;}
+  if(cur)cur.setAttribute('aria-expanded','false');
+  cur=btn; btn.setAttribute('aria-expanded','true');
+  const hue=d.hue||'#007758';
 
-function sendMP(eventName,params){
-  var p={};if(params){for(var k in params){if(params.hasOwnProperty(k))p[k]=params[k];}}
-  p.session_id=_mpSid;p.engagement_time_msec=100;
-  var url='https://www.google-analytics.com/mp/collect?measurement_id=G-1KFW5EHHT4&api_secret=ihghy6IrQqGmnH7ZhZu5lg';
-  var body=JSON.stringify({client_id:_mpCid,events:[{name:eventName,params:p}]});
-  try{navigator.sendBeacon(url,body);}catch(e){fetch(url,{method:'POST',body:body}).catch(function(){});}
+  // three pictures. A missing file removes its own <img> and leaves the
+  // square's colour behind it, so an unshot card still looks deliberate.
+  const gal=(d.gal||[]).map(g=>{
+    const inner = g.logo
+      ? `<span class="ph mark"><img src="${LOGO}${g.logo}.png" alt="" onerror="this.remove()"></span>`
+      : `<span class="ph"><img src="photos/cards/${g.i}.webp" alt="" onerror="this.remove()"></span>`;
+    const cap = g.c ? `<figcaption>${g.sub?`<b>${g.c}</b>${g.sub}`:g.c}</figcaption>` : '';
+    return `<figure>${inner}${cap}</figure>`;
+  }).join('');
+
+  const cta = d.cta ? `<a class="man-cta" href="${d.cta.u}">${d.cta.t} \u2192</a>` : '';
+
+  layer.innerHTML=`<div class="layer-hd">
+      <div><span class="lk">${d.kind||''}</span><h2>${d.t}</h2></div>
+      <button class="roll-again" id="ra">Roll again</button>
+      <button class="close" id="cl">Close \u00d7</button></div>
+    <div class="man-wrap" style="--hue:${hue}">
+      <p class="man-lead">${d.s||''}</p>
+      <p class="man">${d.body||''}</p>
+      ${cta}
+      <div class="gal">${gal}</div>
+    </div>`;
+  layer.hidden=false;
+  document.getElementById('cl').addEventListener('click',close);
+  const ra=document.getElementById('ra'); if(ra) ra.addEventListener('click',roll);
 }
+function close(){layer.hidden=true; if(cur)cur.setAttribute('aria-expanded','false'); cur=null;}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
 
-function track(eventName,params){
-  gtag('event',eventName,params);
-  try{window.top.postMessage({type:'ga4_event',event:eventName,params:params||{}},'*');}catch(e){}
-  sendMP(eventName,params);
-}
-
-function saveLocal(){if(currentUser)localStorage.setItem('tw_user',JSON.stringify(currentUser));}
-function loadLocal(){try{var u=localStorage.getItem('tw_user');return u?JSON.parse(u):null;}catch(e){return null;}}
-function handleIntroCTA(){
-  track('intro_cta_click',{user_status:currentUser?'returning':'new'});
-  if(currentUser){renderHub();goTo('hub');}else{goTo('register');}
-}
-
-function goTo(screen,quizId){
-  if(screen==='hub'&&activeQuizId&&activeQuizScreen>=0&&activeQuizScreen<5){
-    var sl=activeQuizScreen<=1?'info_page_'+(activeQuizScreen+1):'question_'+(activeQuizScreen-1);
-    track('quiz_exit',{quiz_id:activeQuizId,quiz_title:quizData[activeQuizId].title,exit_screen:sl,exit_screen_index:activeQuizScreen});
-  }
-  if(!quizId){activeQuizId=null;activeQuizScreen=-1;}
-  // Screen & page tracking
-  var sn=quizId?('Quiz '+quizId+' — '+quizData[quizId].title):screen==='intro'?'Intro':screen==='register'?'Register':screen==='hub'?'Hub':'';
-  var sc=quizId?'quiz':screen;
-  if(sn){
-    track('page_view',{page_title:sn+' — Taiwan Sweepstakes',page_location:'https://feeltaiwan.com/kickoff'});
-    track('screen_view',{screen_name:sn,screen_category:sc});
-  }
-  if(screen==='hub'&&currentUser){
-    track('hub_view',{quizzes_completed:currentUser.quizzesCompleted.length,total_entries:currentUser.totalEntries,is_returning:currentUser.quizzesCompleted.length>0});
-  }
-  document.querySelectorAll('.screen').forEach(function(s){s.classList.add('hidden');});
-  var target=quizId?'quiz-'+quizId:screen;
-  var el=document.getElementById('screen-'+target);
-  if(el){
-    el.classList.remove('hidden');
-    if(screen==='hub')renderHub();
-    if(quizId&&quizData[quizId].ready){setTimeout(function(){initQuiz(quizId);},50);}
-    window.scrollTo({top:0,behavior:'smooth'});
-    try{window.parent.postMessage({type:'scrollToQuiz'},'*');}catch(e){}
-  }
-}
-
-function toggleRegisterMode(){var newMode=document.getElementById('register-mode-new');var retMode=document.getElementById('register-mode-returning');var tgl=document.querySelector('.toggle-link');var hdr=document.querySelector('.register-header');if(retMode.style.display==='none'){retMode.style.display='block';newMode.style.display='none';tgl.textContent='New here? Register →';hdr.querySelector('h2').textContent='Welcome Back';hdr.querySelector('p').textContent='Enter your email to continue where you left off';}else{retMode.style.display='none';newMode.style.display='block';tgl.textContent='Sign in →';hdr.querySelector('h2').textContent='Register for Free Entry';hdr.querySelector('p').textContent='One step to start your Taiwan adventure';}}
-
-function handleReturningSubmit(e){
-  e.preventDefault();
-  var em=document.getElementById('returning-email').value.trim();
-  if(!em){alert('Please enter your email');return;}
-  var btn=e.target.querySelector('button');
-  btn.textContent='Looking up…';btn.disabled=true;
-  if(API_URL.indexOf('YOUR_')===0){
-    currentUser={email:em,name:'Friend',totalEntries:1,quizzesCompleted:[],_banner:'returning',_synced:true};
-    saveLocal();renderHub();goTo('hub');return;
-  }
-  fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'lookup',email:em})})
-    .then(function(r){return r.json();})
-    .then(function(d){
-      if(d.found){
-        currentUser={email:em,name:d.name||'Friend',totalEntries:d.totalEntries||1,quizzesCompleted:d.quizzesCompleted||[],_banner:'returning',_synced:true};
-        saveLocal();renderHub();goTo('hub');
-      }else{
-        btn.textContent='Continue Where You Left Off →';btn.disabled=false;
-        alert('Email not found. Please register first.');toggleRegisterMode();
-      }
-    })
-    .catch(function(){
-      btn.textContent='Continue Where You Left Off →';btn.disabled=false;
-      alert('Connection error. Please try again.');
-    });
-}
-
-function handleRegisterSubmit(e){
-  e.preventDefault();
-  var fn=document.getElementById('firstName').value.trim();
-  var ln=document.getElementById('lastName').value.trim();
-  var em=document.getElementById('email').value.trim();
-  var ph=document.getElementById('phone').value.trim();
-  var zc=document.getElementById('zipcode').value.trim();
-  var age=document.getElementById('age-check').checked;
-  var rules=document.getElementById('rules-check').checked;
-  var optIn=document.getElementById('optin-check').checked;
-  if(!fn||!ln||!em||!zc||!age||!rules){alert('Please fill all required fields and agree to terms');return;}
-
-  // Optimistic: go to hub instantly, sync in background
-  var regPayload={action:'register',email:em,firstName:fn,lastName:ln,phone:ph,zipCode:zc,age:age,rules:rules,optIn:optIn};
-  currentUser={email:em,name:fn+' '+ln,totalEntries:1,quizzesCompleted:[],_banner:'new',_synced:false,_regData:regPayload};
-  track('sign_up',{method:'sweepstakes_form'});
-  saveLocal();renderHub();goTo('hub');
-
-  if(API_URL.indexOf('YOUR_')===0){currentUser._synced=true;saveLocal();return;}
-  fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(regPayload)})
-    .then(function(r){return r.json();})
-    .then(function(d){
-      if(d.exists){
-        // email already in sheet — restore their real data, flip to returning banner
-        currentUser.totalEntries=d.totalEntries||1;
-        currentUser.quizzesCompleted=d.quizzesCompleted||[];
-        currentUser._banner='returning';
-      } else {
-        // confirmed new registration
-        track('registration_complete',{method:'sweepstakes_form',entry_count:1});
-      }
-      currentUser._synced=true;currentUser._regData=null;
-      saveLocal();renderHub();
-    })
-    .catch(function(){/* silent — will retry before first quiz submit */});
-}
-
-function getQuizOrder(){
-  try{var stored=sessionStorage.getItem('tw_quiz_order');if(stored)return JSON.parse(stored);}catch(e){}
-  var ids=[];for(var i=1;i<=TOTAL_QUIZZES;i++)ids.push(i);
-  for(var j=ids.length-1;j>0;j--){var k=Math.floor(Math.random()*(j+1));var t=ids[j];ids[j]=ids[k];ids[k]=t;}
-  try{sessionStorage.setItem('tw_quiz_order',JSON.stringify(ids));}catch(e){}
-  return ids;
-}
-
-function renderHub(){
-  if(!currentUser){goTo('intro');return;}
-  var firstName=currentUser.name.split(' ')[0];
-  document.getElementById('hub-name').textContent=firstName;
-  var entries=currentUser.totalEntries||1;
-  document.getElementById('entries-text').textContent=entries+' / '+TOTAL_ENTRIES+' entries';
-  document.getElementById('counter-fill').style.width=(entries/TOTAL_ENTRIES*100)+'%';
-
-  // Banner
-  var banner=document.getElementById('hub-banner');
-  if(currentUser._banner){
-    var type=currentUser._banner;
-    var icon,cls,title,msg;
-    if(type==='new'){
-      icon='🎉';cls='banner-new';title="You're in!";
-      msg='Your first entry is confirmed. Now explore Taiwan and earn up to 12 more.';
-    }else if(entries>=TOTAL_ENTRIES){
-      icon='🏆';cls='banner-maxed';title="You've maxed out your entries!";
-      msg='13 chances to win. Fingers crossed and good luck!';
-    }else{
-      icon='👋';cls='banner-returning';title='Welcome back, '+firstName+'!';
-      msg='You have '+entries+(entries===1?' entry':' entries')+' so far. Keep going!';
-    }
-    banner.className='hub-banner '+cls;
-    banner.innerHTML='<span class="bicon">'+icon+'</span><span class="bmsg"><strong>'+title+'</strong>'+msg+'</span><button class="bclose" onclick="dismissBanner()">✕</button>';
-    banner.classList.remove('hidden');
-    currentUser._banner=null;saveLocal();
-    if(window._bannerTimer)clearTimeout(window._bannerTimer);
-    window._bannerTimer=setTimeout(dismissBanner,5000);
-  }
-
-  var grid=document.getElementById('quiz-grid');
-  grid.innerHTML='';
-
-  var quizOrder=getQuizOrder();
-  for(var oi=0;oi<quizOrder.length;oi++){
-    var i=quizOrder[oi];
-    var q=quizData[i];
-    var done=currentUser.quizzesCompleted.indexOf(i)>=0;
-    var card=document.createElement('div');
-    card.className='quiz-card'+((!q.ready&&!done)?' locked':'');
-    card.onclick=function(qid){return function(){goTo('quiz',qid);};}(i);
-
-    var badge='';
-    if(done){badge='<span class="quiz-badge done">✓ DONE</span>';}
-    else if(q.ready){badge='<span class="quiz-badge pending">+1 ENTRY</span>';}
-    else{badge='<span class="quiz-badge soon">COMING SOON</span>';}
-
-    card.innerHTML='<div class="quiz-card-header"><div class="quiz-card-icon">'+q.icon+'</div><div class="quiz-card-title">'+q.title+'</div><div class="quiz-card-subtitle">5 pages · 3 questions</div></div><div class="quiz-card-footer">'+badge+'</div>';
-    grid.appendChild(card);
-  }
-}
-
-function initQuiz(qId){
-  activeQuizId=qId;activeQuizScreen=0;
-  var cur=0,TOT=5;
-  var wrongs={2:new Set(),3:new Set(),4:new Set()};
-  var pfx='q'+qId+'_';
-  var qTitle=quizData[qId].title;
-  track('quiz_start',{quiz_id:qId,quiz_title:qTitle});
-
-  function show(n){
-    activeQuizScreen=n;
-    var els=document.querySelectorAll('#screen-quiz-'+qId+' .scr');
-    els.forEach(function(s){s.classList.add('hidden');});
-    var el=document.getElementById(pfx+'s'+n);
-    if(el){el.classList.remove('hidden');el.style.animation='none';el.offsetHeight;el.style.animation='fadeUp .45s ease both';}
-    if(n===0||n===1){track('quiz_page_view',{quiz_id:qId,quiz_title:qTitle,info_page:n+1});}
-    if(n>=2&&n<=4){track('quiz_question_view',{quiz_id:qId,quiz_title:qTitle,question:n-1});}
-    if(n<=4){
-      document.getElementById(pfx+'sc').textContent=(n+1)+'/'+TOT;
-      document.getElementById(pfx+'pf').style.width=((n+1)/TOT*100)+'%';
-      document.getElementById(pfx+'tb').classList.remove('hidden');
-      document.getElementById(pfx+'pw').classList.remove('hidden');
-      document.getElementById(pfx+'sc').classList.remove('hidden');
-    }else{
-      document.getElementById(pfx+'tb').classList.add('hidden');
-      document.getElementById(pfx+'pw').classList.add('hidden');
-      document.getElementById(pfx+'sc').classList.add('hidden');
-    }
-  }
-
-  function go(){cur++;if(cur>TOT)cur=TOT;show(cur);if(cur===5){submitQuizAPI(qId);boom();}window.scrollTo({top:0,behavior:'smooth'});try{window.parent.postMessage({type:'scrollToQuiz'},'*');}catch(e){}}
-
-  function ans(scr,idx,ci){
-    if(wrongs[scr].has(idx))return;
-    var btns=document.querySelectorAll('#screen-quiz-'+qId+' #'+pfx+'o'+scr+' .op');
-    if(idx===ci){
-      btns.forEach(function(b,i){if(i===idx){b.className='op correct';b.querySelector('.lb').textContent='✓';}else{b.className='op dim';}b.onclick=null;});
-      document.getElementById(pfx+'h'+scr).classList.add('hidden');
-      document.getElementById(pfx+'sp'+scr).classList.add('hidden');
-      setTimeout(function(){document.getElementById(pfx+'f'+scr).classList.remove('hidden');},400);
-    }else{
-      wrongs[scr].add(idx);btns[idx].className='op wrong';btns[idx].querySelector('.lb').textContent='✗';
-      setTimeout(function(){btns[idx].className='op used';btns[idx].onclick=null;},800);
-      document.getElementById(pfx+'h'+scr).classList.remove('hidden');
-    }
-  }
-
-  window['go_'+qId]=go;
-  window['ans_'+qId]=function(s,i,c){ans(s,i,c);};
-  show(0);
-}
-
-function dismissBanner(){
-  var b=document.getElementById('hub-banner');
-  if(b){b.classList.add('hidden');}
-  if(window._bannerTimer){clearTimeout(window._bannerTimer);window._bannerTimer=null;}
-}
-
-function fireQuizComplete(qId){
-  if(API_URL.indexOf('YOUR_')===0)return;
-  fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'quiz_complete',email:currentUser.email,quizId:qId,quizTitle:quizData[qId].title})}).catch(function(){});
-}
-
-function submitQuizAPI(qId){
-  if(!currentUser)return;
-  if(currentUser.quizzesCompleted.indexOf(qId)<0){
-    currentUser.quizzesCompleted.push(qId);
-    currentUser.totalEntries=(currentUser.quizzesCompleted.length+1);
-    saveLocal();
-    track('quiz_complete',{quiz_id:qId,quiz_title:quizData[qId].title,total_entries:currentUser.totalEntries});
-  }
-  var remaining=TOTAL_QUIZZES-currentUser.quizzesCompleted.length;
-  if(remaining<0)remaining=0;
-  var remEl=document.getElementById('q'+qId+'_remaining');
-  if(remEl)remEl.textContent=remaining+(remaining===1?' more quiz available':' more quizzes available — keep exploring Taiwan!');
-  // If registration hasn't synced yet, retry it first then submit quiz
-  if(!currentUser._synced&&currentUser._regData){
-    fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(currentUser._regData)})
-      .then(function(r){return r.json();})
-      .then(function(){currentUser._synced=true;currentUser._regData=null;saveLocal();fireQuizComplete(qId);})
-      .catch(function(){fireQuizComplete(qId);});
-  }else{
-    fireQuizComplete(qId);
-  }
-}
-
-function boom(){var w=document.getElementById('conf');w.innerHTML='';w.classList.remove('hidden');var cols=['#ff5629','#FFD700','#4CAF50','#2196F3','#E91E63','#FF9800','#9C27B0'];for(var i=0;i<50;i++){var p=document.createElement('div');p.className='cp';var sz=5+Math.random()*7;p.style.left=(Math.random()*100)+'%';p.style.width=sz+'px';p.style.height=(i%3===0?sz:sz*1.6)+'px';p.style.background=cols[i%cols.length];p.style.borderRadius=(i%4===0)?'50%':'2px';p.style.transform='rotate('+(Math.random()*360)+'deg)';p.style.animationDelay=(Math.random()*.6)+'s';p.style.animationDuration=(1.5+Math.random()*1.5)+'s';w.appendChild(p);}}
-
-currentUser=loadLocal();
-if(currentUser){renderHub();goTo('hub');}else{goTo('intro');}
-
-// Form start tracking — fires once on first field interaction
-(function(){
-  var formStarted=false;
-  document.querySelectorAll('#register-mode-new input, #register-mode-new select').forEach(function(inp){
-    inp.addEventListener('focus',function(){
-      if(!formStarted){formStarted=true;track('form_start',{form_name:'registration'});}
-    },{once:false});
-  });
+/* ── deep link ────────────────────────────────────────────────
+   ?open=<slug> lands with that square already turned, so an ad can point at
+   one offer instead of the homepage. Keeps the board visible behind it, so
+   the visitor still sees there is more under the rest.            */
+(function deepLink(){
+  const want=new URLSearchParams(location.search).get('open');
+  if(!want)return;
+  const i=TILES.findIndex(t=>slug(t.t)===want.toLowerCase());
+  if(i<0)return;
+  const btn=[...board.querySelectorAll('.tile')][i];
+  open(TILES[i],btn);
+  at=i; placeToken(i,false);
+  btn.scrollIntoView({block:'center'});
 })();
+
+/* ── Surprise me ──────────────────────────────────────────────
+   A visitor can always just click. This is the other door: roll, and the
+   token walks that many squares round the board and opens where it lands.
+   Carriers are stepped over — "your surprise is: China Airlines" is not a
+   discovery. Flip STOP_ON_CARRIERS to let it land on them.            */
+const STOP_ON_CARRIERS=false;
+const PIPS={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
+const token=document.getElementById('token'),rollBtn=document.getElementById('roll'),
+      dieEl=document.getElementById('die');
+const squares=()=>[...board.querySelectorAll('.tile')];
+let at=0, rolling=false;
+
+function drawDie(n){
+  dieEl.innerHTML='';
+  const on=new Set(PIPS[n]||[]);
+  for(let i=0;i<9;i++){const d=document.createElement('i');
+    if(on.has(i))d.className='on'; dieEl.appendChild(d);}
+}
+function placeToken(i,animate=true){
+  const t=squares()[i]; if(!t)return;
+  if(!animate) token.style.transition='none';
+  const w=token.offsetWidth||34, h=token.offsetHeight||56;
+  // bottom-RIGHT of the square, not centred: labels sit bottom-left, and a
+  // centred piece lands on top of them once a square is only 76px wide
+  token.style.transform=`translate(${t.offsetLeft+t.offsetWidth-w-4}px,`
+    +`${t.offsetTop+t.offsetHeight-h-4}px)`;
+  if(!animate) requestAnimationFrame(()=>token.style.transition='');
+}
+function step(){ at=(at+1)%squares().length; placeToken(at); }
+
+function roll(){
+  if(rolling)return; rolling=true;
+  rollBtn.disabled=true; rollBtn.classList.add('rolling'); close();
+  const d3=document.getElementById('dice3d');
+  if(d3){ d3.classList.remove('tumble'); void d3.offsetWidth; d3.classList.add('tumble'); }
+  let flick=0;
+  const spin=setInterval(()=>{drawDie(1+Math.floor(Math.random()*6)); flick++;},80);
+  setTimeout(()=>{
+    clearInterval(spin);
+    const n=1+Math.floor(Math.random()*6); drawDie(n);
+    let moved=0;
+    const walk=setInterval(()=>{
+      step(); moved++;
+      if(moved>=n){
+        // never rest on a carrier unless asked to
+        if(!STOP_ON_CARRIERS && TILES[at].cls==='air'){ return; }
+        clearInterval(walk);
+        setTimeout(()=>{
+          const btn=squares()[at]; open(TILES[at],btn);
+          rolling=false; rollBtn.disabled=false; rollBtn.classList.remove('rolling');
+          if(d3) d3.classList.remove('tumble');
+        },240);
+      }
+    },190);
+  },560);
+}
+rollBtn.addEventListener('click',roll);
+drawDie(6);
+placeToken(0,false);
+addEventListener('resize',()=>placeToken(at,false));
+requestAnimationFrame(()=>placeToken(0,false));
+
+/* ── optional: tell the host how tall we actually want to be ──────────
+   Works with no host code at all — the layout above already fills whatever
+   height it is given, so there is never a blank band. But if you add six
+   lines of Velo on the Wix page, the element will match the content exactly
+   and you stop guessing heights per breakpoint:
+
+     $w.onReady(() => {
+       $w('#html1').onMessage(e => {
+         if (e.data && e.data.boardHeight) $w('#html1').height = e.data.boardHeight;
+       });
+     });
+*/
+function wanted(){
+  const b=document.querySelector('.board');
+  return Math.ceil(b.getBoundingClientRect().height + 20);
+}
+function report(){
+  const h=wanted();
+  try{ parent.postMessage({boardHeight:h},'*'); }catch(e){}
+}
+addEventListener('load',report);
+addEventListener('resize',report);
+new ResizeObserver(report).observe(document.querySelector('.board'));
 </script>
 </body>
 </html>

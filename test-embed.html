@@ -1,0 +1,20 @@
+<!DOCTYPE html><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Board embed — auto-height test</title>
+<style>body{margin:0;font:13px system-ui;background:#ddd}
+#log{position:fixed;right:8px;top:8px;background:#111;color:#0f0;padding:8px 10px;font:11px monospace;z-index:9;white-space:pre}
+iframe{display:block;width:100%;border:0;height:300px;background:#fff}</style>
+<div id="log">waiting…</div>
+<iframe id="f" src="index.html"></iframe>
+<script>
+/* mirrors velo-page-code.js: same message shape, same guard */
+let applied=[];
+addEventListener('message',e=>{
+  const h=e&&e.data&&e.data.boardHeight;
+  if(typeof h==='number'&&h>=200&&h<=3000){
+    document.getElementById('f').style.height=Math.round(h)+'px';
+    applied.push(Math.round(h));
+    document.getElementById('log').textContent='applied: '+applied.slice(-4).join(', ');
+  }
+});
+window.__applied=()=>applied;
+</script>
